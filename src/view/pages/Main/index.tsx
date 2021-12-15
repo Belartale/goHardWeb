@@ -14,6 +14,8 @@ const Main: FC = () => {
     const divRef = useRef(null);
     const visible = useOnScreen(divRef, '0px');
 
+    console.log(process.env.APP_NAME);
+
     return (
         <Container>
             <div ref = { divRef }>
