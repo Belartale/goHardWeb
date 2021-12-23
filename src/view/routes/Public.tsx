@@ -14,6 +14,30 @@ export const Public: FC = () => {
                 <Main />
             </Route>
 
+            <Route
+                exact
+                path = '/about'>
+                <Main />
+            </Route>
+
+            <Route
+                exact
+                path = '/services'>
+                <Main />
+            </Route>
+
+            <Route
+                exact
+                path = '/technologies'>
+                <Main />
+            </Route>
+
+            <Route
+                exact
+                path = '/portfolio'>
+                <Main />
+            </Route>
+
             <Redirect to = '/' />
         </Switch>
     );
