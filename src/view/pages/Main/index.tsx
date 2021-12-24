@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 // import { useOnScreen } from '../../../tools/hooks';
 
 // Container
-import { NavBar, Footer } from '../../containers';
+import { Footer } from '../../containers';
 
 // Components
 import { ErrorBoundary } from '../../components';
