@@ -2,7 +2,11 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
-interface TypeProps {}
+
+// Types
+interface TypeProps {
+    children?: React.ReactNode;
+}
 
 const Container = styled.h1`
     font-size: 70px;
@@ -12,10 +16,10 @@ const Container = styled.h1`
     }
 `;
 
-export const Title: FC<TypeProps> = () => {
+export const Title: FC<TypeProps> = ({ children }) => {
     return (
         <Container>
-            Title
+            {children}
         </Container>
     );
 };

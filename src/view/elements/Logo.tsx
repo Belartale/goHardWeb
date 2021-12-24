@@ -2,15 +2,18 @@
 import React, { FC } from 'react';
 // import styled from 'styled-components';
 
-interface TypeProps {}
+interface TypeProps {
+    style?: object;
+}
 
 // const Container = styled.div``;
 
-export const Logo: FC<TypeProps> = () => {
+export const Logo: FC<TypeProps> = ({ style }) => {
     return (
         <svg
             fill = 'none'
             height = '91'
+            style = { style }
             viewBox = '0 0 144 91'
             width = '144'
             xmlns = 'http://www.w3.org/2000/svg'

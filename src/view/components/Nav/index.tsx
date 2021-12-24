@@ -17,7 +17,7 @@ export const Nav: FC<PropTypes> = ({ position }) => {
     return (
         <List
             disablePadding
-            sx = {{ display: 'flex', flexWrap: 'nowrap', flexDirection: position  }}>
+            sx = {{ display: 'flex', flexDirection: position }}>
             <ListItem disablePadding>
                 <ListItemButton
                     component = 'a'

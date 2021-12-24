@@ -8,6 +8,8 @@ import {
     Typography,
     IconButton,
     Drawer,
+    Slide,
+    useScrollTrigger,
 } from '@mui/material';
 
 // Bus
@@ -27,8 +29,30 @@ type PropTypes = {
     children?: React.ReactNode;
 };
 
+type PropsTypesHideOnScroll = {
+    window?: () => Window;
+    children: React.ReactElement;
+};
+
 export const NavBar: FC<PropTypes> = () => {
-    const [ state, setState ] = useState(false);
+    function HideOnScroll(props: PropsTypesHideOnScroll) {
+        const { children, window } = props;
+        const trigger = useScrollTrigger({
+            // eslint-disable-next-line no-undefined
+            target: window ? window() : undefined,
+        });
+
+        return (
+            <Slide
+                appear = { false }
+                direction = 'down'
+                in = { !trigger }>
+                {children}
+            </Slide>
+        );
+    }
+
+    const [ isOpenDrawer, setIsOpenDrawer ] = useState(false);
 
     const toggleDrawer
         = (isOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -41,57 +65,59 @@ export const NavBar: FC<PropTypes> = () => {
             ) {
                 return;
             }
+
+            //? нужно ка-то скрыть <Drawer></Drawer> когда > 900
             // if (window.innerWidth > 900) {
             //     toggleDrawer(false);
             // }
-            setState(isOpen);
+            setIsOpenDrawer(isOpen);
         };
 
     return (
-        <AppBar
-            position = 'fixed'
-            sx = {{ padding: 0 }}>
-            <Toolbar
-                sx = {{ display: 'flex', justifyContent: 'space-between' }}>
-                <Box sx = {{ height: '91px', paddingBottom: '5px' }}>
-                    <Typography
-                        noWrap
-                        component = 'div'
-                        // sx = {{ mr: 2, display: { xs: 'none', md: 'block' }}}
-                        variant = 'h1'>
-                        <Logo />
-                    </Typography>
-                </Box>
-
-                <Box>
-                    <Box sx = {{ display: { xs: 'none', md: 'block' }}}>
-                        <Nav />
+        <HideOnScroll>
+            <AppBar position = 'sticky'>
+                <Toolbar
+                    sx = {{ display: 'flex', justifyContent: 'space-between' }}
+                    variant = 'regular'>
+                    <Box sx = {{ height: '96px' }}>
+                        <Typography
+                            noWrap
+                            component = 'div'
+                            // sx = {{ mr: 2, display: { xs: 'none', md: 'block' }}}
+                            variant = 'h1'>
+                            <Logo />
+                        </Typography>
                     </Box>
 
-                    <IconButton
-                        aria-label = 'menu'
-                        color = 'inherit'
-                        edge = 'start'
-                        size = 'large'
-                        sx = {{ mr: 2, display: { xs: 'block', md: 'none' }}}
-                        onClick = { toggleDrawer(true) }>
-                        <MenuIcon />
-                    </IconButton>
-                    <Drawer
-                        anchor = 'left'
-                        open = { state }
-                        onClose = { toggleDrawer(false) }>
-                        <Box
-                            role = 'presentation'
-                            sx = {{ width: 250 }}
-                            onClick = { toggleDrawer(false) }
-                            onKeyDown = { toggleDrawer(false) }>
+                    <Box>
+                        <Box sx = {{ display: { xs: 'none', md: 'block' }}}>
                             <Nav />
                         </Box>
-                    </Drawer>
-                </Box>
-            </Toolbar>
-        </AppBar>
+
+                        <IconButton
+                            aria-label = 'menu'
+                            color = 'inherit'
+                            edge = 'start'
+                            size = 'large'
+                            sx = {{ mr: 2, display: { xs: 'block', md: 'none' }}}
+                            onClick = { toggleDrawer(true) }>
+                            <MenuIcon />
+                        </IconButton>
+                        <Drawer
+                            anchor = 'left'
+                            open = { isOpenDrawer }
+                            onClose = { toggleDrawer(false) }>
+                            <Box
+                                role = 'presentation'
+                                sx = {{ width: 250 }}
+                                onClick = { toggleDrawer(false) }
+                                onKeyDown = { toggleDrawer(false) }>
+                                <Nav position = 'column' />
+                            </Box>
+                        </Drawer>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+        </HideOnScroll>
     );
 };
-

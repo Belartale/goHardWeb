@@ -12,6 +12,7 @@ import { ErrorBoundary } from '../../components';
 
 // Elements
 import { Title } from '../../elements';
+import { Box } from '@mui/material';
 
 
 // Styles
@@ -31,13 +32,54 @@ const Main: FC = () => {
     //     </Container>
     // );
     return (
-        <div>
-            <NavBar />
+        <Box>
             <header>
-                <Title />
+                <Title>
+                    Main
+                </Title>
             </header>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
+            <h1>TEXt</h1>
             <Footer />
-        </div>
+        </Box>
     );
 };
 

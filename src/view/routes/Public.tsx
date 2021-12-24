@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Pages
-import { Main } from '../pages';
+import { About, Main } from '../pages';
 
 export const Public: FC = () => {
     return (
@@ -17,7 +17,7 @@ export const Public: FC = () => {
             <Route
                 exact
                 path = '/about'>
-                <Main />
+                <About />
             </Route>
 
             <Route
