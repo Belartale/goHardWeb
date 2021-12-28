@@ -1,6 +1,6 @@
 export const defaultTheme = {
-    name:  'defaultTheme',
-    color: {
+    name:   'defaultTheme',
+    colors: {
         button: {
             border: '#228A43',
         },

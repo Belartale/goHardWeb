@@ -30,17 +30,3 @@ export const GlobalStyles = createGlobalStyle`
 //     src: url('${fonts.Nunito}') format('opentype');
 // }
 
-// fonts size
-// 12,15
-// 14
-// 15
-// 18
-// 20
-// 23
-// 24
-// 25
-// 35
-// 44
-// 72
-// 96
-// 100
