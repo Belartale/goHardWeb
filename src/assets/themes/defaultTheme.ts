@@ -1,30 +1,12 @@
+import { white, black, green, grey } from '../colors';
+
 export const defaultTheme = {
     name:   'defaultTheme',
     colors: {
-        button: {
-            border: '#228A43',
-        },
-        card: {
-            background: 'rgba(255, 255, 255, 0.01)',
-            border:     '#606060',
-        },
-        input: {
-            border: 'rgba(165, 165, 165, 0.5)',
-        },
-        form: {
-            border: '#fff',
-        },
-        app: {
-            primary:   '#000000',
-            secondary: 'rgba(0, 0, 0, 0.8)',
-            third:     '#606060',
-        },
-        font: {
-            primary:   '#ffffff',
-            secondary: '#A5A5A5',
-            third:     '#228A43',
-            fourth:    'rgba(34, 138, 67, 0.25)',
-        },
+        primary:   white,
+        secondary: black,
+        success:   green,
+        grey:      grey,
     },
     fonts: {
         first:      '12.15px',

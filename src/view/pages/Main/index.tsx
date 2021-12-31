@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 // import { useOnScreen } from '../../../tools/hooks';
 
 // Container
-import { Footer } from '../../containers';
+import { Footer, MyContainer } from '../../containers';
 
 // Components
 import { ErrorBoundary } from '../../components';
@@ -16,7 +16,7 @@ import { Box } from '@mui/material';
 
 
 // Styles
-// import { Container } from './styles';
+import { Header } from './styles';
 
 const Main: FC = () => {
     // const divRef = useRef(null);
@@ -33,51 +33,19 @@ const Main: FC = () => {
     // );
     return (
         <Box>
-            <header>
-                <Title>
-                    Main
-                </Title>
-            </header>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
+            <Header>
+                <MyContainer  sx = {{ display: 'flex', justifyContent: 'center', alignContent: 'center', height: '1000px' }}>
+                    <Title>
+                        Software
+                        <br />
+                        development
+                        services
+                    </Title>
+                </MyContainer>
+            </Header>
+            <Box>
+
+            </Box>
             <Footer />
         </Box>
     );

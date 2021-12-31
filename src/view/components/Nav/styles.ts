@@ -1,5 +1,6 @@
 // Core
-import styled from 'styled-components';
+import { styled, ListItemText } from '@mui/material';
 
-export const Container = styled.section`
-`;
+export const MyListItemText = styled(ListItemText, {})(({ theme }) => ({
+    color: theme.colors.primary[ 50 ],
+}));

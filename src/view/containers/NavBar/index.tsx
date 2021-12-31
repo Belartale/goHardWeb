@@ -20,9 +20,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 // Elements
 import { Nav } from '../../components';
 
+// Container
+import { MyContainer } from '..';
+
 // Components
 import { Logo } from '../../elements';
 
+// Styles
+import { MyDrawer, MySlide } from './styles';
 
 // Types
 type PropTypes = {
@@ -43,12 +48,12 @@ export const NavBar: FC<PropTypes> = () => {
         });
 
         return (
-            <Slide
+            <MySlide
                 appear = { false }
                 direction = 'down'
                 in = { !trigger }>
                 {children}
-            </Slide>
+            </MySlide>
         );
     }
 
@@ -75,48 +80,52 @@ export const NavBar: FC<PropTypes> = () => {
 
     return (
         <HideOnScroll>
-            <AppBar position = 'sticky'>
-                <Toolbar
-                    sx = {{ display: 'flex', justifyContent: 'space-between' }}
-                    variant = 'regular'>
-                    <Box sx = {{ height: '96px' }}>
-                        <Typography
-                            noWrap
-                            component = 'div'
-                            // sx = {{ mr: 2, display: { xs: 'none', md: 'block' }}}
-                            variant = 'h1'>
-                            <Logo />
-                        </Typography>
-                    </Box>
-
-                    <Box>
-                        <Box sx = {{ display: { xs: 'none', md: 'block' }}}>
-                            <Nav />
+            <AppBar
+                position = 'sticky'>
+                <MyContainer>
+                    <Toolbar
+                        disableGutters
+                        sx = {{ display: 'flex', justifyContent: 'space-between' }}
+                        variant = 'regular'>
+                        <Box sx = {{ height: '96px' }}>
+                            <Typography
+                                noWrap
+                                component = 'div'
+                                // sx = {{ mr: 2, display: { xs: 'none', md: 'block' }}}
+                                variant = 'h1'>
+                                <Logo />
+                            </Typography>
                         </Box>
 
-                        <IconButton
-                            aria-label = 'menu'
-                            color = 'inherit'
-                            edge = 'start'
-                            size = 'large'
-                            sx = {{ mr: 2, display: { xs: 'block', md: 'none' }}}
-                            onClick = { toggleDrawer(true) }>
-                            <MenuIcon />
-                        </IconButton>
-                        <Drawer
-                            anchor = 'left'
-                            open = { isOpenDrawer }
-                            onClose = { toggleDrawer(false) }>
-                            <Box
-                                role = 'presentation'
-                                sx = {{ width: 250 }}
-                                onClick = { toggleDrawer(false) }
-                                onKeyDown = { toggleDrawer(false) }>
-                                <Nav position = 'column' />
+                        <Box>
+                            <Box sx = {{ display: { xs: 'none', md: 'block' }}}>
+                                <Nav />
                             </Box>
-                        </Drawer>
-                    </Box>
-                </Toolbar>
+
+                            <IconButton
+                                aria-label = 'menu'
+                                color = 'inherit'
+                                edge = 'start'
+                                size = 'large'
+                                sx = {{ mr: 2, display: { xs: 'block', md: 'none' }}}
+                                onClick = { toggleDrawer(true) }>
+                                <MenuIcon />
+                            </IconButton>
+                            <MyDrawer
+                                anchor = 'left'
+                                open = { isOpenDrawer }
+                                onClose = { toggleDrawer(false) }>
+                                <Box
+                                    role = 'presentation'
+                                    sx = {{ width: 250 }}
+                                    onClick = { toggleDrawer(false) }
+                                    onKeyDown = { toggleDrawer(false) }>
+                                    <Nav position = 'column' />
+                                </Box>
+                            </MyDrawer>
+                        </Box>
+                    </Toolbar>
+                </MyContainer>
             </AppBar>
         </HideOnScroll>
     );

@@ -1,6 +1,6 @@
 // Core
-import { Box } from '@mui/material';
 import React, { FC } from 'react';
+import { Box } from '@mui/material';
 
 // Bus
 // import {} from '../../../bus/'
@@ -16,15 +16,13 @@ import { Title } from '../../elements';
 // Types
 type PropTypes = {
     /* type props here */
-}
+};
 
 const About: FC<PropTypes> = () => {
     return (
         <Box>
             <header>
-                <Title>
-                    About us
-                </Title>
+                <Title>About us</Title>
             </header>
             <h1>TEXt</h1>
             <h1>TEXt</h1>

@@ -1,13 +1,13 @@
 // Core
-import styled from 'styled-components';
+import { Box, styled } from '@mui/material';
 
-// export const Container = styled.section`
-//     position: relative;
-//     width: 100%;
-//     background-color: ${({ theme }) => theme.second.containerBg};
-// `;
+// Images
+import laptop from '../../../assets/images/laptop.png';
 
-
-export const Container = styled.h1`
-    font-size: 100px
-`;
+export const Header = styled(Box, {})({
+    backgroundImage:    `url(${laptop})`,
+    backgroundRepeat:   'no-repeat',
+    backgroundPosition: 'center center',
+    height:             '100vh',
+    width:              '100%',
+});

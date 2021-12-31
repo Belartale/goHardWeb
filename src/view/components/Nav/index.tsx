@@ -6,7 +6,7 @@ import React, { FC } from 'react';
 // import {} from '../../../bus/'
 
 // Styles
-// import * as S from './styles';
+import { MyListItemText } from './styles';
 
 // Types
 type PropTypes = {
@@ -22,7 +22,7 @@ export const Nav: FC<PropTypes> = ({ position }) => {
                 <ListItemButton
                     component = 'a'
                     href = '/'>
-                    <ListItemText
+                    <MyListItemText
                         primary = 'Company'
                     />
                 </ListItemButton>
@@ -31,14 +31,14 @@ export const Nav: FC<PropTypes> = ({ position }) => {
                 <ListItemButton
                     component = 'a'
                     href = '/about'>
-                    <ListItemText primary = 'About_us' />
+                    <MyListItemText primary = 'About_us' />
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
                 <ListItemButton
                     component = 'a'
                     href = '/services'>
-                    <ListItemText
+                    <MyListItemText
                         primary = 'Your_Services'
                     />
                 </ListItemButton>
@@ -47,14 +47,14 @@ export const Nav: FC<PropTypes> = ({ position }) => {
                 <ListItemButton
                     component = 'a'
                     href = '/technologies'>
-                    <ListItemText primary = 'Technologies' />
+                    <MyListItemText primary = 'Technologies' />
                 </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
                 <ListItemButton
                     component = 'a'
                     href = '/portfolio'>
-                    <ListItemText primary = 'Portfolio' />
+                    <MyListItemText primary = 'Portfolio' />
                 </ListItemButton>
             </ListItem>
         </List>

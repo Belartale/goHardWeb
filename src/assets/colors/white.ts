@@ -1,3 +1,3 @@
 export const white = {
-    base: '#ffffff',
+    50: '#ffffff',
 };
