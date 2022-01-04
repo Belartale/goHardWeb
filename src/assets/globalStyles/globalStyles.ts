@@ -4,7 +4,7 @@ import reset from 'styled-reset';
 
 // Fonts
 // import Roboto from '../fonts/Roboto-Regular.ttf';
-import { fonts } from '../';
+// import { fonts } from '../';
 
 export const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -22,8 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /* Fonts */
-    
-    `;
+`;
 
 // @font-face {
 //     font-family: Nunito;

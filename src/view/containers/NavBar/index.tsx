@@ -7,8 +7,6 @@ import {
     Toolbar,
     Typography,
     IconButton,
-    Drawer,
-    Slide,
     useScrollTrigger,
 } from '@mui/material';
 
@@ -71,7 +69,7 @@ export const NavBar: FC<PropTypes> = () => {
                 return;
             }
 
-            //? нужно ка-то скрыть <Drawer></Drawer> когда > 900
+            //?? нужно ка-то скрыть <Drawer></Drawer> когда > 900
             // if (window.innerWidth > 900) {
             //     toggleDrawer(false);
             // }
@@ -81,7 +79,7 @@ export const NavBar: FC<PropTypes> = () => {
     return (
         <HideOnScroll>
             <AppBar
-                position = 'sticky'>
+                position = 'fixed'>
                 <MyContainer>
                     <Toolbar
                         disableGutters

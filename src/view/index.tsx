@@ -24,15 +24,18 @@ export const AppContainer = styled(
 }));
 
 // Types
+type TypesColors = typeof defaultTheme.colors;
+type TypesFonts = typeof defaultTheme.fonts;
+
 declare module '@mui/material/styles' {
     interface Theme {
-        colors: any; // keyof typeof defaultTheme.colors; //! костыль
-        fontsSize: object;
+        colors: TypesColors;
+        fontsSize: TypesFonts;
     }
 
     interface ThemeOptions {
-        colors?: any;
-        fontsSize?: object;
+        colors?: TypesColors;
+        fontsSize?: TypesFonts;
     }
 }
 

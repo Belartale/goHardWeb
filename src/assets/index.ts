@@ -6,7 +6,7 @@ export * from './colors';
 // Fonts import
 import Nunito from './fonts/Nunito.ttf';
 
-// // Fonts export
+// Fonts export
 export const fonts = {
     Nunito,
 };

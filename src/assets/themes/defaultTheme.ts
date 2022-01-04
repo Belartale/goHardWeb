@@ -1,4 +1,9 @@
+// Core
 import { white, black, green, grey } from '../colors';
+
+// Types
+export type TypesColors = typeof defaultTheme.colors;
+export type TypesFonts = typeof defaultTheme.fonts;
 
 export const defaultTheme = {
     name:   'defaultTheme',
