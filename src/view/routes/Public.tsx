@@ -16,13 +16,13 @@ export const Public: FC = () => {
 
             <Route
                 exact
-                path = '/about'>
+                path = '/about-us'>
                 <About />
             </Route>
 
             <Route
                 exact
-                path = '/services'>
+                path = '/our-services'>
                 <Main />
             </Route>
 

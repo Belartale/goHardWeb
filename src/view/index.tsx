@@ -12,6 +12,9 @@ import { useTogglersRedux } from '../bus/client/togglers';
 // Assets
 import { GlobalStyles, defaultTheme } from '../assets';
 
+// Containers
+import { NavBar } from './containers';
+
 // Styles
 export const AppContainer = styled(
     'div',
@@ -30,18 +33,18 @@ type TypesFonts = typeof defaultTheme.fonts;
 declare module '@mui/material/styles' {
     interface Theme {
         colors: TypesColors;
-        fontsSize: TypesFonts;
+        fonts: TypesFonts;
     }
 
     interface ThemeOptions {
         colors?: TypesColors;
-        fontsSize?: TypesFonts;
+        fonts?: TypesFonts;
     }
 }
 
 export const App: FC = () => {
     const { setTogglerAction } = useTogglersRedux();
-    const [ isDefaultTheme ] = useLocalStorage('isDefaultTheme', true);
+    // const [ isDefaultTheme ] = useLocalStorage('isDefaultTheme', true);
 
     const setOnlineStatusHanlder = useCallback(
         () => void setTogglerAction({
@@ -58,8 +61,8 @@ export const App: FC = () => {
     }, []);
 
     const customTheme = createTheme({
-        colors:    defaultTheme.colors,
-        fontsSize: defaultTheme.fonts,
+        colors: defaultTheme.colors,
+        fonts:  defaultTheme.fonts,
     });
 
     // fontsSize: defaultTheme.fonts,
@@ -68,6 +71,7 @@ export const App: FC = () => {
         <ThemeProvider theme = { customTheme } >
             <GlobalStyles />
             <AppContainer>
+                <NavBar />
                 <Routes />
             </AppContainer>
         </ThemeProvider>

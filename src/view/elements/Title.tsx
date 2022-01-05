@@ -10,9 +10,9 @@ interface TypeProps {
 }
 
 const minusNumber = ({ theme, number }: {
-    theme: {colors: TypesColors, fontsSize: TypesFonts},
+    theme: {colors: TypesColors, fonts: TypesFonts},
     number: number
-}): string => `${Number(theme.fontsSize.thirteenth.slice(0, -2)) - number}px`;
+}): string => `${Number(theme.fonts.thirteenth.slice(0, -2)) - number}px`;
 
 export const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })(({ theme }) => ({
     fontSize:                       '50px',
@@ -23,7 +23,7 @@ export const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })
         fontSize: minusNumber({ theme, number: 80 }),
     },
     [ theme.breakpoints.up('lg') ]: {
-        fontSize: theme.fontsSize.thirteenth,
+        fontSize: theme.fonts.thirteenth,
     },
     display:    'flex',
     alignItems: 'center',

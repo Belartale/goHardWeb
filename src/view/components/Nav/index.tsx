@@ -1,12 +1,16 @@
 // Core
-import { List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import React, { FC } from 'react';
+import { List, ListItem } from '@mui/material';
+// import { useHistory, useLocation } from 'react-router-dom';
+
+// Elements
+import { MenuLink } from '../../elements';
 
 // Bus
 // import {} from '../../../bus/'
 
 // Styles
-import { MyListItemText } from './styles';
+// import { MyListItemText } from './styles';
 
 // Types
 type PropTypes = {
@@ -14,49 +18,53 @@ type PropTypes = {
 }
 
 export const Nav: FC<PropTypes> = ({ position }) => {
+    // const { push } = useHistory();
+    // const { pathname } = useLocation();
+
+
+    // const changeUrl: void = () => {
+
+    // };
+
     return (
         <List
             disablePadding
             sx = {{ display: 'flex', flexDirection: position }}>
-            <ListItem disablePadding>
-                <ListItemButton
-                    component = 'a'
-                    href = '/'>
-                    <MyListItemText
-                        primary = 'Company'
-                    />
-                </ListItemButton>
+            {/* <ListItem disablePadding>
+                <MenuLink
+                    selected
+                    href = '/'
+                    text = 'Company'
+                />
+            </ListItem> */}
+            {/* <ListItem disablePadding>
+                <MenuLink
+                    href = '/about-us'
+                    selected = { false }
+                    text = 'About us'
+                />
             </ListItem>
             <ListItem disablePadding>
-                <ListItemButton
-                    component = 'a'
-                    href = '/about'>
-                    <MyListItemText primary = 'About_us' />
-                </ListItemButton>
+                <MenuLink
+                    href = '/our-services'
+                    selected = { false }
+                    text = 'Our services'
+                />
             </ListItem>
             <ListItem disablePadding>
-                <ListItemButton
-                    component = 'a'
-                    href = '/services'>
-                    <MyListItemText
-                        primary = 'Your_Services'
-                    />
-                </ListItemButton>
+                <MenuLink
+                    href = '/technologies'
+                    selected = { false }
+                    text = 'Technologies'
+                />
             </ListItem>
             <ListItem disablePadding>
-                <ListItemButton
-                    component = 'a'
-                    href = '/technologies'>
-                    <MyListItemText primary = 'Technologies' />
-                </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-                <ListItemButton
-                    component = 'a'
-                    href = '/portfolio'>
-                    <MyListItemText primary = 'Portfolio' />
-                </ListItemButton>
-            </ListItem>
+                <MenuLink
+                    href = '/portfolio'
+                    selected = { false }
+                    text = 'Portfolio'
+                />
+            </ListItem> */}
         </List>
     );
 };

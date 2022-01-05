@@ -6,3 +6,4 @@ export * from './Input';
 export * from './Title';
 export * from './TitleSubtitle';
 export * from './Logo';
+export * from './MenuLink';
