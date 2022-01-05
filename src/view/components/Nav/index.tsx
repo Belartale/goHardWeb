@@ -30,41 +30,9 @@ export const Nav: FC<PropTypes> = ({ position }) => {
         <List
             disablePadding
             sx = {{ display: 'flex', flexDirection: position }}>
-            {/* <ListItem disablePadding>
-                <MenuLink
-                    selected
-                    href = '/'
-                    text = 'Company'
-                />
-            </ListItem> */}
-            {/* <ListItem disablePadding>
-                <MenuLink
-                    href = '/about-us'
-                    selected = { false }
-                    text = 'About us'
-                />
-            </ListItem>
             <ListItem disablePadding>
-                <MenuLink
-                    href = '/our-services'
-                    selected = { false }
-                    text = 'Our services'
-                />
+                <MenuLink/>
             </ListItem>
-            <ListItem disablePadding>
-                <MenuLink
-                    href = '/technologies'
-                    selected = { false }
-                    text = 'Technologies'
-                />
-            </ListItem>
-            <ListItem disablePadding>
-                <MenuLink
-                    href = '/portfolio'
-                    selected = { false }
-                    text = 'Portfolio'
-                />
-            </ListItem> */}
         </List>
     );
 };
