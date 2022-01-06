@@ -24,46 +24,6 @@ const About: FC<PropTypes> = () => {
             <header>
                 <Title>About us</Title>
             </header>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
-            <h1>TEXt</h1>
             <Footer />
         </Box>
     );

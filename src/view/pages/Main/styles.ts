@@ -1,10 +1,10 @@
 // Core
-import { Box, styled } from '@mui/material';
+import styled from 'styled-components';
 
 // Images
 import laptop from '../../../assets/images/laptop.png';
 
-export const Header = styled(Box, {})({
+export const Header = styled.div({
     backgroundImage:    `url(${laptop})`,
     backgroundRepeat:   'no-repeat',
     backgroundPosition: 'center center',

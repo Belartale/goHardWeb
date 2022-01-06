@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Pages
-import { About, Main } from '../pages';
+import { About, Main, Portfolio, Services, Technologies } from '../pages';
 
 export const Public: FC = () => {
     return (
@@ -23,19 +23,19 @@ export const Public: FC = () => {
             <Route
                 exact
                 path = '/our-services'>
-                <Main />
+                <Services />
             </Route>
 
             <Route
                 exact
                 path = '/technologies'>
-                <Main />
+                <Technologies />
             </Route>
 
             <Route
                 exact
                 path = '/portfolio'>
-                <Main />
+                <Portfolio />
             </Route>
 
             <Redirect to = '/' />

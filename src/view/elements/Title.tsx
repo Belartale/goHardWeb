@@ -16,15 +16,18 @@ const minusNumber = ({ theme, number }: {
 
 export const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })(({ theme }) => ({
     fontSize:                       '50px',
+    textAlign:                      'center',
     [ theme.breakpoints.up('sm') ]: {
-        fontSize: minusNumber({ theme, number: 65 }),
+        fontSize: minusNumber({ theme, number: 25 }),
     },
     [ theme.breakpoints.up('md') ]: {
-        fontSize: minusNumber({ theme, number: 80 }),
+        fontSize:  minusNumber({ theme, number: 10 }),
+        textAlign: 'left',
     },
     [ theme.breakpoints.up('lg') ]: {
         fontSize: theme.fonts.thirteenth,
     },
+
     display:    'flex',
     alignItems: 'center',
 
