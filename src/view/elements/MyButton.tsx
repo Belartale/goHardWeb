@@ -21,7 +21,6 @@ export const ButtonStyled = styled(Button, {})(({ theme }) => ({
 export const MyButton: FC<ButtonProps> = ({ children, ...props }) => {
     return (
         <ButtonStyled
-            color = 'success'
             { ...props }
             variant = 'outlined'>
             {children}

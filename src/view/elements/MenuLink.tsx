@@ -15,7 +15,7 @@ export const Container = styled('button', { name: 'ListItemButton' })(({ theme }
 
     color:      theme.colors.primary[ 50 ],
     position:   'relative',
-    fontSize:   theme.fonts.third,
+    fontSize:   theme.fonts.size.third,
     fontFamily: 'Nunito',
     whiteSpace: 'nowrap',
     cursor:     'pointer',
@@ -44,7 +44,7 @@ export const Container = styled('button', { name: 'ListItemButton' })(({ theme }
 // const Container = styled.div`
 //     color:      ${({ theme }) => theme.colors.primary[ 50 ]};
 //     position:   relative;
-//     font-size:   ${({ theme }) => theme.fonts.third};
+//     font-size:   ${({ theme }) => theme.fonts.size.third};
 //     font-family: "Nunito";
 //     transition: all 0.3s;
 

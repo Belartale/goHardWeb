@@ -13,6 +13,7 @@ const Container = styled.section<PropTypes['image']>`
     ${({ image }) => image && {
         backgroundImage:    `url(${image})`,
         backgroundRepeat:   'no-repeat',
+        backgroundSize:     'cover',
         backgroundPosition: 'center center',
     }}
 `;
