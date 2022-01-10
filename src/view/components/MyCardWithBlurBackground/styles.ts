@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, styled } from '@mui/material';
 // backdrop-filter: blur("5px")
 
 export const MyContainer = styled(Card, {})(({ theme }) => ({
-    fontSize:         theme.fonts.size.sixth,
+    // fontSize:         theme.fonts.size.sixth,
     color:            theme.colors.grey[ 50 ],
     background:       'none',
     backgroundFilter: 'blur(100px)',
@@ -14,8 +14,13 @@ export const MyContainer = styled(Card, {})(({ theme }) => ({
     height:           '140px',
 
     ':hover': {
-        //todo title/text === hover green
-        borderColor: `${theme.colors.success[ 50 ]}`,
+        borderColor:           `${theme.colors.success[ 50 ]}`,
+        '.MuiCardHeader-root': {
+            color: `${theme.colors.success[ 50 ]}`,
+        },
+        '.MuiCardContent-root': {
+            color: `${theme.colors.success[ 50 ]}`,
+        },
     },
 }));
 

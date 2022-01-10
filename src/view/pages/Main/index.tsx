@@ -26,7 +26,7 @@ const Main: FC = () => {
     return (
         <Box>
             <Header>
-                <MyContainer  sx = {{ position: 'relative', justifyContent: 'center', height: '100%' }}>
+                <MyContainer  sx = {{ position: 'relative', display: { xs: 'flex', md: 'block' }, justifyContent: 'center', height: '100%' }}>
                     <Title sx = {{ height: '100%' }}>
                         Software
                         <br />
@@ -40,14 +40,15 @@ const Main: FC = () => {
                 <MyContainer>
                     <Grid
                         container
-                        spacing = { '20px' }>
+                        columnSpacing = { '20px' }
+                        rowSpacing = { '40px' }>
                         <Grid
                             item
-                            lg = { 6 }
+                            lg = { 5 }
                             sx = {{ textAlign: { xs: 'center', lg: 'left' }}}
                             xs = { 12 }>
                             <TitleSecond>
-                                About us
+                                <UnderlineText>About</UnderlineText> us
                             </TitleSecond>
                             <Subtitle
                                 paragraph
@@ -60,7 +61,7 @@ const Main: FC = () => {
                                 languages, frameworks, libraries
                                 and tools.
                             </Subtitle>
-                            <MyButton>
+                            <MyButton typeButton = 'lg blur'>
                                 More
                             </MyButton>
                         </Grid>
@@ -68,32 +69,42 @@ const Main: FC = () => {
                             container
                             item
                             justifyContent = 'space-between'
-                            lg = { 6 }
+                            lg = { 7 }
                             xs = { 12 }>
                             <Grid
                                 container
                                 item
-                                spacing = { '6px' }>
-                                <Grid item>
+                                spacing = { '5px' }
+                                sx = {{ justifyContent: 'center' }}>
+                                <Grid
+                                    item>
                                     <MyCardWithBlurBackground
                                         text = 'most relevant and innovative programming languages'
+                                        textSize = '10px'
                                         title = '5'
                                     />
                                 </Grid>
-                                <Grid item>
+                                <Grid
+                                    item>
                                     <MyCardWithBlurBackground
+                                        sx = {{ position: 'relative', top: '30px' }}
                                         text = 'fields of business we implement solutions for'
+                                        textSize = '10px'
                                         title = '4'
                                     />
                                 </Grid>
-                                <Grid item>
+                                <Grid
+                                    item>
                                     <MyCardWithBlurBackground
+                                        sx = {{ position: 'relative', top: '60px' }}
                                         text = 'main directions of our services'
                                         title = '3'
                                     />
                                 </Grid>
-                                <Grid item>
+                                <Grid
+                                    item>
                                     <MyCardWithBlurBackground
+                                        sx = {{ position: 'relative', top: '90px' }}
                                         text = 'united team of professionals'
                                         title = '1'
                                     />
@@ -196,7 +207,7 @@ const Main: FC = () => {
                             </Subtitle>
                         </Grid>
                         <Grid item>
-                            <MyButton>
+                            <MyButton typeButton = 'lg grey'>
                                 More details
                             </MyButton>
                         </Grid>
@@ -238,7 +249,7 @@ const Main: FC = () => {
                                 In our work connected with web development we focus on the most flexible,
                                 innovative and relevant programming languages, frameworks and libraries.
                             </Subtitle>
-                            <MyButton>
+                            <MyButton typeButton = 'lg clear'>
                                 Watch list
                             </MyButton>
                         </Grid>
@@ -272,7 +283,7 @@ const Main: FC = () => {
                         <Grid
                             item
                             sx = {{ mb: '60px' }}>
-                            <MyButton>
+                            <MyButton typeButton = 'lg clear'>
                                 <GreenText>
                                     Our works
                                 </GreenText>

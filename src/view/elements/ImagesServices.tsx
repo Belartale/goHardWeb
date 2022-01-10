@@ -10,8 +10,8 @@ interface TypeProps {
 }
 
 const Container = styled.div`
-    width:            '100px',
-    height:           '62px',
+    width:            '100px';
+    height:           '62px';
 `;
 
 export const ImagesServices: FC<TypeProps> = ({ type }) => {
@@ -288,9 +288,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
             </svg>
         );
     }
-
-
-    // if(type === '') {}
 
     return null;
 };
