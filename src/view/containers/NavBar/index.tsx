@@ -87,9 +87,7 @@ export const NavBar: FC<PropTypes> = () => {
                         variant = 'regular'>
                         <Box sx = {{ height: '96px' }}>
                             <Typography
-                                noWrap
                                 component = 'div'
-                                // sx = {{ mr: 2, display: { xs: 'none', md: 'block' }}}
                                 variant = 'h1'>
                                 <Logo />
                             </Typography>

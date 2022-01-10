@@ -26,8 +26,8 @@ const Main: FC = () => {
     return (
         <Box>
             <Header>
-                <MyContainer  sx = {{ position: 'relative', display: 'flex', justifyContent: 'center', alignContent: 'center', height: '100%' }}>
-                    <Title sx = {{}}>
+                <MyContainer  sx = {{ position: 'relative', justifyContent: 'center', height: '100%' }}>
+                    <Title sx = {{ height: '100%' }}>
                         Software
                         <br />
                         development
@@ -43,7 +43,9 @@ const Main: FC = () => {
                         spacing = { '20px' }>
                         <Grid
                             item
-                            xs = { 6 }>
+                            lg = { 6 }
+                            sx = {{ textAlign: { xs: 'center', lg: 'left' }}}
+                            xs = { 12 }>
                             <TitleSecond>
                                 About us
                             </TitleSecond>
@@ -66,7 +68,8 @@ const Main: FC = () => {
                             container
                             item
                             justifyContent = 'space-between'
-                            xs = { 6 }>
+                            lg = { 6 }
+                            xs = { 12 }>
                             <Grid
                                 container
                                 item

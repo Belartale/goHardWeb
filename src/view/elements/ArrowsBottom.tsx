@@ -5,20 +5,21 @@ import styled from 'styled-components';
 interface TypeProps {}
 
 const Container = styled.button`
-    /* transform: translateY(-53px); */
     padding: 0;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    
+
     position: absolute;
-    bottom: 0;
-    margin-bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    bottom: 20px;
     @media (min-height: 600px) {
-        margin-bottom: 60px;
+        bottom: 40px;
     }
     @media (min-height: 900px) {
-        margin-bottom: 75px;
+        bottom: 75px;
     }
 `;
 

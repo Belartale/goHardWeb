@@ -1,21 +1,8 @@
 // Core
 import React, { FC } from 'react';
-import { Container } from '@mui/material';
+import { Container, ContainerProps } from '@mui/material';
 
-// Bus
-// import {} from '../../../bus/'
-
-// Styles
-// import * as S from './styles';
-
-// Types
-type PropTypes = {
-    /* type props here */
-    children?: React.ReactNode | React.ReactNodeArray;
-    sx?: object;
-}
-
-export const MyContainer: FC<PropTypes> = ({ children, sx }) => {
+export const MyContainer: FC<ContainerProps> = ({ children, sx }) => {
     return (
         <Container
             maxWidth = 'lg'
