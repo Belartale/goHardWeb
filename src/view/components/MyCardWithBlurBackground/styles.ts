@@ -1,37 +1,35 @@
 // Core
-import { Card, CardContent, CardHeader, styled } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 
-// backdrop-filter: blur("5px")
 
-export const MyContainer = styled(Card, {})(({ theme }) => ({
-    // fontSize:         theme.fonts.size.sixth,
-    color:            theme.colors.grey[ 50 ],
+export const CardBox = styled(Box, {})(({ theme }) => ({
+    padding:          '15px',
     background:       'none',
     backgroundFilter: 'blur(100px)',
     border:           `1px solid ${theme.colors.primary[ 50 ]}`,
-    //! with / height
-    width:            '140px',
-    height:           '140px',
+    borderRadius:     '5px',
+    //todo with / height
+    width:            '130px',
+    minHeight:        '130px',
 
     ':hover': {
-        borderColor:           `${theme.colors.success[ 50 ]}`,
-        '.MuiCardHeader-root': {
-            color: `${theme.colors.success[ 50 ]}`,
-        },
-        '.MuiCardContent-root': {
+        borderColor:                         `${theme.colors.success[ 50 ]}`,
+        '.MuiTypography-root, .MuiBox-root': {
             color: `${theme.colors.success[ 50 ]}`,
         },
     },
 }));
 
-export const MyCardHeader = styled(CardHeader, {})(({ theme }) => ({
+export const Title = styled(Box, {})(({ theme }) => ({
     textAlign:  'center',
     fontSize:   theme.fonts.size.eleventh,
     fontFamily: 'Nunito',
+    color:      theme.colors.primary[ 50 ],
 }));
 
-export const MyCardContent = styled(CardContent, {})(({ theme }) => ({
+export const Text = styled(Typography, {})(({ theme }) => ({
     textAlign:  'center',
     fontSize:   theme.fonts.size.second,
     fontFamily: 'Nunito',
+    color:      theme.colors.primary[ 50 ],
 }));

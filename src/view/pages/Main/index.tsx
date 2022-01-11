@@ -87,7 +87,7 @@ const Main: FC = () => {
                                 <Grid
                                     item>
                                     <MyCardWithBlurBackground
-                                        sx = {{ position: 'relative', top: '30px' }}
+                                        sx = {{ position: { xs: 'static', lg: 'relative' }, top: '30px' }}
                                         text = 'fields of business we implement solutions for'
                                         textSize = '10px'
                                         title = '4'
@@ -96,7 +96,7 @@ const Main: FC = () => {
                                 <Grid
                                     item>
                                     <MyCardWithBlurBackground
-                                        sx = {{ position: 'relative', top: '60px' }}
+                                        sx = {{ position: { xs: 'static', lg: 'relative' }, top: '60px' }}
                                         text = 'main directions of our services'
                                         title = '3'
                                     />
@@ -104,7 +104,7 @@ const Main: FC = () => {
                                 <Grid
                                     item>
                                     <MyCardWithBlurBackground
-                                        sx = {{ position: 'relative', top: '90px' }}
+                                        sx = {{ position: { xs: 'static', lg: 'relative' }, top: '90px' }}
                                         text = 'united team of professionals'
                                         title = '1'
                                     />
@@ -293,9 +293,7 @@ const Main: FC = () => {
                     </Grid>
                 </MyContainer>
             </Section>
-            <MyContainer>
-                <Footer />
-            </MyContainer>
+            <Footer />
         </Box>
     );
 };
