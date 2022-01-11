@@ -44,7 +44,7 @@ const Main: FC = () => {
                         rowSpacing = { '40px' }>
                         <Grid
                             item
-                            lg = { 5 }
+                            lg = { 6 }
                             sx = {{ textAlign: { xs: 'center', lg: 'left' }}}
                             xs = { 12 }>
                             <TitleSecond>
@@ -69,7 +69,7 @@ const Main: FC = () => {
                             container
                             item
                             justifyContent = 'space-between'
-                            lg = { 7 }
+                            lg = { 6 }
                             xs = { 12 }>
                             <Grid
                                 container
