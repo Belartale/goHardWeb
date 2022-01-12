@@ -5,7 +5,6 @@ export const MyWrapper = styled(Box, {})`
     .swiper {
         position: relative;
         max-width: 1488px;
-        /* padding-bottom: 30px; */
         @media (max-width: 1550px) {
             & {
                 width: calc(100vw - 48px);

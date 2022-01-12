@@ -38,11 +38,19 @@ export const Slider: FC = () => {
                 loop
                 navigation
                 roundLengths
+                breakpoints = {{
+                    600: {
+                        slidesPerView: 2,
+                    },
+                    900: {
+                        slidesPerView: 3,
+                    },
+                }}
                 pagination = {{
                     el:        '.swiper-pagination',
                     clickable: true,
                 }}
-                slidesPerView = { 3 }
+                slidesPerView = { 1 }
                 spaceBetween = { -70 }>
 
                 <Box position = { 'relative' }>
