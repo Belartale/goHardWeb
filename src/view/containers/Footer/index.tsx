@@ -1,6 +1,9 @@
 // Core
 import React, { FC } from 'react';
-import { Grid, Box, TextField } from '@mui/material';
+import { Grid, Box } from '@mui/material';
+
+// Images
+import imageLogo from '../../../assets/images/logo.png';
 
 // Container
 import { MyContainer } from '..';
@@ -24,7 +27,12 @@ export const Footer: FC = () => {
                         md = { 6 }
                         xs = { 12 } >
                         <Box sx = {{ width: '100%', display: { xs: 'flex', md: 'block' }, justifyContent: 'center' }}>
-                            <Logo />
+                            {/* todo сделать норм логотип */}
+                            {/* <Logo /> */}
+                            <img
+                                alt = 'logo'
+                                src = { imageLogo }
+                            />
                         </Box>
                         <BoxWithTopBorder>
                             <BoxContainer>

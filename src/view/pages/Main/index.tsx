@@ -21,6 +21,7 @@ import { Header } from './styles';
 import laptopOnTable from '../../../assets/images/laptopOnTable.png';
 import keyboard from '../../../assets/images/keyboard.png';
 import laptopWithTechnologies from '../../../assets/images/laptopWithTechnologies.png';
+import { Slider } from '../../components/Slider';
 
 const Main: FC = () => {
     return (
@@ -44,8 +45,9 @@ const Main: FC = () => {
                         rowSpacing = { '40px' }>
                         <Grid
                             item
-                            lg = { 6 }
+                            lg = { 5 }
                             sx = {{ textAlign: { xs: 'center', lg: 'left' }}}
+                            xl = { 6 }
                             xs = { 12 }>
                             <TitleSecond>
                                 <UnderlineText>About</UnderlineText> us
@@ -69,7 +71,8 @@ const Main: FC = () => {
                             container
                             item
                             justifyContent = 'space-between'
-                            lg = { 6 }
+                            lg = { 7 }
+                            xl = { 6 }
                             xs = { 12 }>
                             <Grid
                                 container
@@ -289,7 +292,7 @@ const Main: FC = () => {
                                 </GreenText>
                             </MyButton>
                         </Grid>
-                        <Grid item>Slider</Grid>
+                        <Grid item><Slider/></Grid>
                     </Grid>
                 </MyContainer>
             </Section>

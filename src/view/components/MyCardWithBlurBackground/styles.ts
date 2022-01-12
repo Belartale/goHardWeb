@@ -18,6 +18,12 @@ export const CardBox = styled(Box, {})(({ theme }) => ({
             color: `${theme.colors.success[ 50 ]}`,
         },
     },
+    [ '@media (min-width: 1200px)' ]: {
+        width: '110px',
+    },
+    [ '@media (min-width: 1400px)' ]: {
+        width: '130px',
+    },
 }));
 
 export const Title = styled(Box, {})(({ theme }) => ({

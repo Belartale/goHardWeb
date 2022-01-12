@@ -1,21 +1,65 @@
 // Core
 import React, { FC } from 'react';
-
-// Bus
-// import {} from '../../../bus/'
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Styles
-import * as S from './styles';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { MyWrapper } from './styles';
 
-// Types
-type PropTypes = {
-    /* type props here */
-}
+// Images
+import imagesFirstSlider from '../../../assets/images/firstSlider.png';
+import imagesFirstSliderNext from '../../../assets/images/firstSliderNext.png';
 
-export const Slider: FC<PropTypes> = () => {
+import SwiperCore, {
+    Navigation,
+    Pagination,
+} from 'swiper';
+import { Box } from '@mui/material';
+
+SwiperCore.use([ Navigation ]);
+SwiperCore.use([ Pagination ]);
+
+export const Slider: FC = () => {
+    const arrImages = [
+        { src: imagesFirstSlider, alt: 'img' },
+        { src: imagesFirstSliderNext, alt: 'img' },
+        { src: imagesFirstSlider, alt: 'img' },
+        { src: imagesFirstSliderNext, alt: 'img' },
+        { src: imagesFirstSliderNext, alt: 'img' },
+        { src: imagesFirstSlider, alt: 'img' },
+    ];
+
     return (
-        <S.Container>
-            Component: Slider
-        </S.Container>
+        <MyWrapper>
+            <Swiper
+                centeredSlides
+                loop
+                navigation
+                roundLengths
+                pagination = {{
+                    el:        '.swiper-pagination',
+                    clickable: true,
+                }}
+                slidesPerView = { 3 }
+                spaceBetween = { -70 }>
+
+                <Box position = { 'relative' }>
+                    {arrImages.map((element) => (
+                        <SwiperSlide>
+                            <img
+                                alt = { element.alt }
+                                src = { element.src }
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Box>
+                <Box
+                    className = 'swiper-pagination'
+                    mt = { '20px' }>
+                </Box>
+            </Swiper>
+        </MyWrapper>
     );
 };
