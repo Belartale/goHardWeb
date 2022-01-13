@@ -1,6 +1,6 @@
 // Core
 import React, { FC } from 'react';
-import { List, ListItem } from '@mui/material';
+import { List, ListItem, ListProps } from '@mui/material';
 import { useHistory, useLocation } from 'react-router-dom';
 
 // Elements
@@ -11,49 +11,54 @@ import { MenuLink } from '../../elements';
 // import { MyListItemText } from './styles';
 
 // Types
-type PropTypes = {
-    position?: 'row' | 'column';
+interface PropTypes extends ListProps {
 }
 
-export const Nav: FC<PropTypes> = ({ position }) => {
+export const Nav: FC<PropTypes> = ({ ...props }) => {
     const { push } = useHistory();
+    const { pathname } = useLocation();
 
     return (
         <List
-            disablePadding
-            sx = {{ display: 'flex', flexDirection: position }}>
+            { ...props }
+            disablePadding>
             <ListItem>
                 <MenuLink
-                    href = '/'
-                    push = { push }>
+                    pathname = { pathname }
+                    push = { push }
+                    to = '/'>
                     Company
                 </MenuLink>
             </ListItem>
             <ListItem>
                 <MenuLink
-                    href = '/about-us'
-                    push = { push }>
+                    pathname = { pathname }
+                    push = { push }
+                    to = '/about-us'>
                     About us
                 </MenuLink>
             </ListItem>
             <ListItem>
                 <MenuLink
-                    href = '/our-services'
-                    push = { push }>
+                    pathname = { pathname }
+                    push = { push }
+                    to = '/our-services'>
                     Our services
                 </MenuLink>
             </ListItem>
             <ListItem>
                 <MenuLink
-                    href = '/technologies'
-                    push = { push }>
+                    pathname = { pathname }
+                    push = { push }
+                    to = '/technologies'>
                     Technologies
                 </MenuLink>
             </ListItem>
             <ListItem>
                 <MenuLink
-                    href = '/portfolio'
-                    push = { push }>
+                    pathname = { pathname }
+                    push = { push }
+                    to = '/portfolio'>
                     Portfolio
                 </MenuLink>
             </ListItem>

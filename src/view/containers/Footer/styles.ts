@@ -36,6 +36,11 @@ export const MyTypographyParagraph  = styled(Typography, {})(({ theme }) => ({
     fontWeight: 300,
     color:      theme.colors.grey[ 50 ],
 
+    [ theme.breakpoints.down('md') ]: {
+        '&': {
+            textAlign: 'center',
+        },
+    },
 }));
 
 export const Form  = styled(Box, {})<BoxProps>(({ theme }) => ({

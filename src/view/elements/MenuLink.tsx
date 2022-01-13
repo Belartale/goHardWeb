@@ -5,8 +5,11 @@ import { styled  } from '@mui/material';
 
 interface TypeProps {
     push: any
-    href: string
+    to: string
+    pathname: any
 }
+
+const isActive = {};
 
 export const Container = styled('button', { name: 'ListItemButton' })(({ theme }) => ({
     border:     'none',
@@ -39,12 +42,15 @@ export const Container = styled('button', { name: 'ListItemButton' })(({ theme }
     ':hover':   {
         color: theme.colors.success[ 50 ],
     },
+    '.isActive': {
+        color: 'red !important',
+    },
 }));
 
-export const MenuLink: FC<TypeProps> = ({ children, push, href }) => {
+export const MenuLink: FC<TypeProps> = ({ children, push, to, pathname }) => {
     return (
         <Container
-            onClick = { () => push(href) }>
+            onClick = { () => push(to) }>
             {children}
         </Container>
     );

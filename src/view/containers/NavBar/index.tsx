@@ -21,7 +21,7 @@ import { Nav } from '../../components';
 import { Logo } from '../../elements';
 
 // Styles
-import { MyDrawer, MySlide } from './styles';
+import { IconDrawer, MyDrawer, MySlide } from './styles';
 
 // Types
 type PropTypes = {
@@ -65,7 +65,7 @@ export const NavBar: FC<PropTypes> = () => {
                 return;
             }
 
-            //?? нужно ка-то скрыть <Drawer></Drawer> когда > 900
+            //todo нужно ка-то скрыть <Drawer></Drawer> когда > 900
             // if (window.innerWidth > 900) {
             //     toggleDrawer(false);
             // }
@@ -91,7 +91,7 @@ export const NavBar: FC<PropTypes> = () => {
 
                         <Box>
                             <Box sx = {{ display: { xs: 'none', md: 'block' }}}>
-                                <Nav />
+                                <Nav sx = {{ display: 'flex', flexDirection: 'row' }} />
                             </Box>
 
                             <IconButton
@@ -101,18 +101,23 @@ export const NavBar: FC<PropTypes> = () => {
                                 size = 'large'
                                 sx = {{ mr: 2, display: { xs: 'block', md: 'none' }}}
                                 onClick = { toggleDrawer(true) }>
-                                <MenuIcon />
+                                {/* <MenuIcon /> */}
+                                <IconDrawer>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </IconDrawer>
                             </IconButton>
                             <MyDrawer
-                                anchor = 'left'
+                                anchor = { 'top' }
                                 open = { isOpenDrawer }
                                 onClose = { toggleDrawer(false) }>
                                 <Box
                                     role = 'presentation'
-                                    sx = {{ width: 250 }}
+                                    sx = {{ '& button': { margin: '0 auto' }}}
                                     onClick = { toggleDrawer(false) }
                                     onKeyDown = { toggleDrawer(false) }>
-                                    <Nav position = 'column' />
+                                    <Nav sx = {{ display: 'flex', flexDirection: 'column' }} />
                                 </Box>
                             </MyDrawer>
                         </Box>
