@@ -1,17 +1,14 @@
 // Core
 import React, { FC } from 'react';
 import { styled  } from '@mui/material';
-// import styled from 'styled-components';
+import { NavLink, NavLinkProps } from 'react-router-dom';
 
-interface TypeProps {
-    push: any
-    to: string
-    pathname: any
+interface TypeProps extends NavLinkProps {
+    push: Function
 }
 
-const isActive = {};
 
-export const Container = styled('button', { name: 'ListItemButton' })(({ theme }) => ({
+export const Container = styled(NavLink, { name: 'ListItemButton' })<NavLinkProps>(({ theme }) => ({
     border:     'none',
     background: 'none',
 
@@ -22,6 +19,8 @@ export const Container = styled('button', { name: 'ListItemButton' })(({ theme }
     fontWeight: 700,
     whiteSpace: 'nowrap',
     cursor:     'pointer',
+
+    textDecoration: 'none',
 
     '::before': {
         content:         '""',
@@ -42,16 +41,35 @@ export const Container = styled('button', { name: 'ListItemButton' })(({ theme }
     ':hover':   {
         color: theme.colors.success[ 50 ],
     },
-    '.isActive': {
-        color: 'red !important',
+
+}));
+
+const ContainerBox = styled('div', {})(({ theme }) => ({
+    margin:             '0 auto',
+    '.isActiveNavLink': {
+        color:       theme.colors.success[ 50 ],
+        '&::before': {
+            content:         '""',
+            position:        'absolute',
+            left:            '0',
+            bottom:          '-5px',
+            width:           '100%',
+            height:          '1px',
+            backgroundColor: theme.colors.success[ 50 ],
+        },
     },
 }));
 
-export const MenuLink: FC<TypeProps> = ({ children, push, to, pathname }) => {
+export const MenuLink: FC<TypeProps> = ({ children, push, to }) => {
     return (
-        <Container
-            onClick = { () => push(to) }>
-            {children}
-        </Container>
+        <ContainerBox>
+            <Container
+                exact
+                activeClassName = 'isActiveNavLink'
+                to = { to }
+                onClick = { () => push(to) }>
+                {children}
+            </Container>
+        </ContainerBox>
     );
 };

@@ -9,7 +9,6 @@ import {
     IconButton,
     useScrollTrigger,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 
 // Container
 import { MyContainer } from '..';
@@ -101,7 +100,6 @@ export const NavBar: FC<PropTypes> = () => {
                                 size = 'large'
                                 sx = {{ mr: 2, display: { xs: 'block', md: 'none' }}}
                                 onClick = { toggleDrawer(true) }>
-                                {/* <MenuIcon /> */}
                                 <IconDrawer>
                                     <span></span>
                                     <span></span>

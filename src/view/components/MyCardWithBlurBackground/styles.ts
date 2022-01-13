@@ -12,6 +12,8 @@ export const CardBox = styled(Box, {})(({ theme }) => ({
     width:            '130px',
     minHeight:        '130px',
 
+    backdropFilter: 'blur(10px)',
+
     ':hover': {
         borderColor:                         `${theme.colors.success[ 50 ]}`,
         '.MuiTypography-root, .MuiBox-root': {

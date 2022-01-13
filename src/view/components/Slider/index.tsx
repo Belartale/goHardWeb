@@ -54,8 +54,8 @@ export const Slider: FC = () => {
                 spaceBetween = { -70 }>
 
                 <Box position = { 'relative' }>
-                    {arrImages.map((element) => (
-                        <SwiperSlide>
+                    {arrImages.map((element, index) => (
+                        <SwiperSlide key = { index }>
                             <img
                                 alt = { element.alt }
                                 src = { element.src }
