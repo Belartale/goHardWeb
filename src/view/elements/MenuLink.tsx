@@ -16,6 +16,7 @@ export const Container = styled('button', { name: 'ListItemButton' })(({ theme }
     position:   'relative',
     fontSize:   theme.fonts.size.third,
     fontFamily: 'Nunito',
+    fontWeight: 700,
     whiteSpace: 'nowrap',
     cursor:     'pointer',
 

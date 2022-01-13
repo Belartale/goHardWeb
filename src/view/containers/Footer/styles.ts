@@ -19,6 +19,7 @@ export const MyTypographyContact  = styled(Typography, {})(({ theme }) => ({
     color:                           theme.colors.primary[ 50 ],
     fontSize:                        theme.fonts.size.third,
     fontFamily:                      'Nunito',
+    fontWeight:                      700,
     [ '@media (min-width: 900px)' ]: {
         marginLeft: '10px',
     },
@@ -32,6 +33,7 @@ export const MyTypographyParagraph  = styled(Typography, {})(({ theme }) => ({
     width:      '100%',
     fontSize:   theme.fonts.size.third,
     fontFamily: 'Nunito',
+    fontWeight: 300,
     color:      theme.colors.grey[ 50 ],
 
 }));
@@ -60,7 +62,6 @@ export const MyTextField  = styled(TextField, {})<TextFieldProps>(({ theme }) =>
         color: theme.colors.grey[ 100 ],
     },
 
-
     '& label.Mui-focused': {
         color: theme.colors.primary[ 50 ],
     },
@@ -83,9 +84,6 @@ export const MyTextField  = styled(TextField, {})<TextFieldProps>(({ theme }) =>
 
 
 export const BoxContainer = styled(Box, {})`
-    /* display: block; */
-    
-
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

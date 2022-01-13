@@ -3,8 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 // Fonts
-// import Roboto from '../fonts/Roboto-Regular.ttf';
-import { fonts } from '../';
+import Nunito from '../fonts/Nunito.ttf';
 
 export const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -23,13 +22,8 @@ export const GlobalStyles = createGlobalStyle`
 
     /* Fonts */
      @font-face {
-        font-family: Nunito;
-        src: url(fonts.Nunito) format('ttf');
+        font-family: 'Nunito';
+        src: url(${Nunito}) format('truetype');
     }
 `;
-
-// @font-face {
-//     font-family: Nunito;
-//     src: url('${fonts.Nunito}') format('opentype');
-// }
 

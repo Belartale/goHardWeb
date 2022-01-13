@@ -36,12 +36,17 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
 }
 
     ${({ theme, typeButton }) => (typeButton === 'sm') && { fontSize: theme.fonts.size.fourth, borderRadius: '2px' }}
-    ${({ theme, typeButton }) => (typeButton === 'lg grey') && { fontSize: theme.fonts.size.fourth }}
+    ${({ theme, typeButton }) => (typeButton === 'lg grey')
+    && {
+        fontSize:   theme.fonts.size.fourth,
+        fontWeight: 800,
+    }}
 
     ${({ theme, typeButton }) => typeButton === 'lg blur'
         && {
             backdropFilter: 'blur(10px)',
             fontSize:       theme.fonts.size.fifth,
+            fontWeight:     700,
         }
 }
 
@@ -53,11 +58,18 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
 }
 
     ${({ theme, typeButton }) => (typeButton === 'lg clear')
-        && { color: theme.colors.success[ 50 ], fontSize: theme.fonts.size.eighth }
+        && {
+            color:      theme.colors.success[ 50 ],
+            fontSize:   theme.fonts.size.eighth,
+            fontWeight: 700,
+        }
 }
 
     ${({ typeButton }) => (typeButton === 'sm')
-            && { padding: '10px 30px' }
+            && {
+                padding:    '10px 30px',
+                fontWeight: 800,
+            }
 }
 `;
 

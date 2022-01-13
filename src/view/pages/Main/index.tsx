@@ -55,8 +55,9 @@ const Main: FC = () => {
                             <Subtitle
                                 paragraph
                                 sx = {{
-                                    mt: '50px',
-                                    mb: '60px',
+                                    mt:         '50px',
+                                    mb:         '60px',
+                                    fontFamily: 'Nunito',
                                 }}>We are a fast-growing software development
                                 agency with a strong expertise in the most
                                 relevant and innovative programming

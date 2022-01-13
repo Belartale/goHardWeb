@@ -30,6 +30,7 @@ export const Title = styled(Box, {})(({ theme }) => ({
     textAlign:  'center',
     fontSize:   theme.fonts.size.eleventh,
     fontFamily: 'Nunito',
+    fontWeight: 400,
     color:      theme.colors.primary[ 50 ],
 }));
 
@@ -37,5 +38,6 @@ export const Text = styled(Typography, {})(({ theme }) => ({
     textAlign:  'center',
     fontSize:   theme.fonts.size.second,
     fontFamily: 'Nunito',
+    fontWeight: 700,
     color:      theme.colors.primary[ 50 ],
 }));

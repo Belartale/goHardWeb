@@ -9,8 +9,10 @@ const minusNumber = ({ theme, number }: {
 }): string => `${Number(theme.fonts.size.thirteenth.slice(0, -2)) - number}px`;
 
 const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })(({ theme }) => ({
-    fontSize:  '50px',
-    textAlign: 'center',
+    fontSize:   '50px',
+    fontFamily: 'Nunito',
+    fontWeight: 700,
+    textAlign:  'center',
 
     [ theme.breakpoints.up('sm') ]: {
         fontSize: minusNumber({ theme, number: 25 }),
