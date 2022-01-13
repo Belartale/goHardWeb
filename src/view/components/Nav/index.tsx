@@ -6,8 +6,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 // Elements
 import { MenuLink } from '../../elements';
 
-// Bus
-// import {} from '../../../bus/'
 
 // Styles
 // import { MyListItemText } from './styles';
@@ -19,7 +17,6 @@ type PropTypes = {
 
 export const Nav: FC<PropTypes> = ({ position }) => {
     const { push } = useHistory();
-    const { pathname } = useLocation();
 
     return (
         <List
@@ -28,7 +25,6 @@ export const Nav: FC<PropTypes> = ({ position }) => {
             <ListItem>
                 <MenuLink
                     href = '/'
-                    pathname = { pathname }
                     push = { push }>
                     Company
                 </MenuLink>
@@ -36,7 +32,6 @@ export const Nav: FC<PropTypes> = ({ position }) => {
             <ListItem>
                 <MenuLink
                     href = '/about-us'
-                    pathname = { pathname }
                     push = { push }>
                     About us
                 </MenuLink>
@@ -44,7 +39,6 @@ export const Nav: FC<PropTypes> = ({ position }) => {
             <ListItem>
                 <MenuLink
                     href = '/our-services'
-                    pathname = { pathname }
                     push = { push }>
                     Our services
                 </MenuLink>
@@ -52,7 +46,6 @@ export const Nav: FC<PropTypes> = ({ position }) => {
             <ListItem>
                 <MenuLink
                     href = '/technologies'
-                    pathname = { pathname }
                     push = { push }>
                     Technologies
                 </MenuLink>
@@ -60,7 +53,6 @@ export const Nav: FC<PropTypes> = ({ position }) => {
             <ListItem>
                 <MenuLink
                     href = '/portfolio'
-                    pathname = { pathname }
                     push = { push }>
                     Portfolio
                 </MenuLink>

@@ -63,7 +63,9 @@ const Main: FC = () => {
                                 languages, frameworks, libraries
                                 and tools.
                             </Subtitle>
-                            <MyButton typeButton = 'lg blur'>
+                            <MyButton
+                                href = '/about-us'
+                                typeButton = 'lg blur'>
                                 More
                             </MyButton>
                         </Grid>
@@ -210,7 +212,9 @@ const Main: FC = () => {
                             </Subtitle>
                         </Grid>
                         <Grid item>
-                            <MyButton typeButton = 'lg grey'>
+                            <MyButton
+                                href = '/our-services'
+                                typeButton = 'lg grey'>
                                 More details
                             </MyButton>
                         </Grid>
@@ -252,7 +256,9 @@ const Main: FC = () => {
                                 In our work connected with web development we focus on the most flexible,
                                 innovative and relevant programming languages, frameworks and libraries.
                             </Subtitle>
-                            <MyButton typeButton = 'lg clear'>
+                            <MyButton
+                                href = '/technologies'
+                                typeButton = 'lg clear'>
                                 Watch list
                             </MyButton>
                         </Grid>
@@ -286,13 +292,17 @@ const Main: FC = () => {
                         <Grid
                             item
                             sx = {{ mb: '60px' }}>
-                            <MyButton typeButton = 'lg clear'>
+                            <MyButton
+                                href = '/portfolio'
+                                typeButton = 'lg clear'>
                                 <GreenText>
                                     Our works
                                 </GreenText>
                             </MyButton>
                         </Grid>
-                        <Grid item><Slider/></Grid>
+                        <Grid item>
+                            <Slider/>
+                        </Grid>
                     </Grid>
                 </MyContainer>
             </Section>
