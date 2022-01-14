@@ -6,7 +6,7 @@ import { Box, Grid } from '@mui/material';
 // import { useOnScreen } from '../../../tools/hooks';
 
 // Container
-import { ContainerCenter, Footer, GreenText, MyContainer, Section, UnderlineText } from '../../containers';
+import { ContainerCenter, Footer, GreenText, Header, MyContainer, Section, UnderlineText } from '../../containers';
 
 // Components
 import { ErrorBoundary, MyCardWithBlurBackground, SmallCard, Slider } from '../../components';
@@ -15,9 +15,11 @@ import { ErrorBoundary, MyCardWithBlurBackground, SmallCard, Slider } from '../.
 import { ArrowsBottom, ImagesServices, MyButton, Subtitle, Title, TitleSecond } from '../../elements';
 
 // Styles
-import { Header, TextStroke } from './styles';
+import { TextStroke } from './styles';
+
 
 // Images
+import laptop from '../../../assets/images/laptop.png';
 import laptopOnTable from '../../../assets/images/laptopOnTable.png';
 import keyboard from '../../../assets/images/keyboard.png';
 import laptopWithTechnologies from '../../../assets/images/laptopWithTechnologies.png';
@@ -28,8 +30,8 @@ const Main: FC = () => {
 
     return (
         <Box>
-            <Header>
-                <MyContainer  sx = {{ height: '100%' }}>
+            <Header image = { laptop }>
+                <MyContainer sx = {{ height: '100%' }}>
                     <ContainerCenter position = { 'relative' }>
                         <Title>
                             Software<br />
@@ -39,7 +41,7 @@ const Main: FC = () => {
                                 onMouseOver = { () => setTitleHover(true) }>development
                             </TextStroke> services
                         </Title>
-                        <Title sx = {{ opacity: '0.5', transform: 'scaleY(-100%) translate(0%, -100%)', position: 'absolute', filter: 'blur(5px)' }}>
+                        <Title sx = {{ opacity: '0.5', transform: 'scaleY(-100%) translate(0%, -100%)', position: 'absolute', filter: 'blur(3px)' }}>
                             Software<br />
                             <TextStroke
                                 className = { `${titleHover && 'devActive'}` }>development
@@ -51,7 +53,7 @@ const Main: FC = () => {
             </Header>
             <Section
                 image = { laptopOnTable }
-                position = { 'relative' }>
+                sx = {{ position: 'relative', boxShadow: '0px -30px 20px 0px black' }}>
                 <MyContainer>
                     <Grid
                         container

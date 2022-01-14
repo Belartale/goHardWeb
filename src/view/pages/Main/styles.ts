@@ -1,21 +1,20 @@
 // Core
 import { styled } from '@mui/material';
 
-// Images
-import laptop from '../../../assets/images/laptop.png';
+// // Images
+// import laptop from '../../../assets/images/laptop.png';
 
+// export const Header = styled('header', {})(({ theme }) => ({
+//     backgroundImage:    `url(${laptop})`,
+//     backgroundRepeat:   'no-repeat',
+//     backgroundPosition: 'center center',
+//     height:             '100vh',
+//     width:              '100%',
 
-export const Header = styled('header', {})(({ theme }) => ({
-    backgroundImage:    `url(${laptop})`,
-    backgroundRepeat:   'no-repeat',
-    backgroundPosition: 'center center',
-    height:             '100vh',
-    width:              '100%',
-
-    '& .devActive': {
-        WebkitTextStrokeColor: theme.colors.primary[ 50 ],
-    },
-}));
+//     '& .devActive': {
+//         WebkitTextStrokeColor: theme.colors.primary[ 50 ],
+//     },
+// }));
 
 
 export const TextStroke = styled('span', {})(({ theme }) => ({

@@ -52,6 +52,13 @@ export const Nav: FC<PropTypes> = ({ ...props }) => {
                     Portfolio
                 </MenuLink>
             </ListItem>
+            <ListItem>
+                <MenuLink
+                    push = { push }
+                    to = '/vacancies'>
+                    Vacancies
+                </MenuLink>
+            </ListItem>
         </List>
     );
 };

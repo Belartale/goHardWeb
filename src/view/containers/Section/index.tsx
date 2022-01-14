@@ -16,6 +16,7 @@ padding-top: 90px;
 
 // Types
 interface PropTypes extends BoxProps {
+    //todo any
     image?: any;
 }
 

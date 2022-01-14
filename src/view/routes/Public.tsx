@@ -37,6 +37,11 @@ export const Public: FC = () => {
                 path = '/portfolio'>
                 <Portfolio />
             </Route>
+            <Route
+                exact
+                path = '/vacancies'>
+                <Portfolio />
+            </Route>
 
             <Redirect to = '/' />
         </Switch>

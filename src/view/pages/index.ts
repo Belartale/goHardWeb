@@ -7,3 +7,4 @@ export const About = lazy(() => import(/* webpackChunkName: "About" */ './About'
 export const Services = lazy(() => import(/* webpackChunkName: "Services" */ './Services'));
 export const Technologies = lazy(() => import(/* webpackChunkName: "Technologies" */ './Technologies'));
 export const Portfolio = lazy(() => import(/* webpackChunkName: "Portfolio" */ './Portfolio'));
+export const Vacancies = lazy(() => import(/* webpackChunkName: "Vacancies" */ './Vacancies'));

@@ -1,9 +1,14 @@
 // Core
+import { styled, Typography, TypographyProps } from '@mui/material';
 
-import { styled, Typography } from '@mui/material';
+// Types
+import { PropTypes } from './index';
+interface PropTypesTypography extends TypographyProps {
+    variantText?: 'green'
+}
 
-export const MyTypography = styled(Typography, {})(({ theme }) => ({
+export const MyTypography = styled(Typography, {})<PropTypesTypography>(({ theme, variantText }) => ({
     fontSize:   theme.fonts.size.fourth,
-    color:      theme.colors.primary[ 50 ],
+    color:      (variantText && theme.colors.success[ 50 ]) || theme.colors.primary[ 50 ],
     fontFamily: 'Nunito',
 }));
