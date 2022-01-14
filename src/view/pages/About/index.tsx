@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 import { ContainerCenter, Footer, GreenText, MyContainer, Section } from '../../containers';
 
 // Components
-import { ErrorBoundary } from '../../components';
+import { BigCard, ErrorBoundary } from '../../components';
 
 // Elements
 import { ArrowsBottom, Subtitle, Title } from '../../elements';
@@ -47,12 +47,7 @@ const About: FC<PropTypes> = () => {
             </Section>
             <Section>
                 <MyContainer>
-                    <Subtitle textAlign = { 'center' }>
-                        Working about 2 years on the market, we consider us as a fast-growing and
-                        developing software development agency. We spent a lot of time building a
-                        team of experienced developers/designers, in order to discover new horizons
-                        in the quality of customers services.
-                    </Subtitle>
+                    <BigCard />
                 </MyContainer>
             </Section>
             <Footer />

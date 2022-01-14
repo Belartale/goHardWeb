@@ -2,7 +2,6 @@
 import { styled, Typography, TypographyProps } from '@mui/material';
 
 // Types
-import { PropTypes } from './index';
 interface PropTypesTypography extends TypographyProps {
     variantText?: 'green'
 }

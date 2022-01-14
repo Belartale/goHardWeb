@@ -18,7 +18,7 @@ export const BigCard: FC<PropTypes> = () => {
             <SmallCard
                 text = 'asd'
                 variantText = 'green'>
-
+                asd
             </SmallCard>
         </S.Container>
     );
