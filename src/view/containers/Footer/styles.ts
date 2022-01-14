@@ -94,12 +94,26 @@ export const BoxContainer = styled(Box, {})`
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+
     @media (max-width: 500px) {
-        display: flex;
         justify-content: center;
         flex-direction: column;
         & div:not(:last-child) {
             margin-bottom: 10px;
+        }
+    }
+    @media (min-width: 900px) {
+        justify-content: center;
+        flex-direction: column;
+        & div:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    @media (min-width: 1100px) {
+        justify-content: space-between;
+        flex-direction: row;
+        & div:not(:last-child) {
+            margin-bottom: 0px;
         }
     }
 `;

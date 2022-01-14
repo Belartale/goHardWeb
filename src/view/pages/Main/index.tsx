@@ -1,5 +1,5 @@
 // Core
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Tools
@@ -23,20 +23,35 @@ import keyboard from '../../../assets/images/keyboard.png';
 import laptopWithTechnologies from '../../../assets/images/laptopWithTechnologies.png';
 
 const Main: FC = () => {
+    const [ titleHover, setTitleHover ] = useState(false);
+
+
     return (
         <Box>
             <Header>
-                <MyContainer  sx = {{ position: 'relative', display: { xs: 'flex', md: 'block' }, justifyContent: 'center', height: '100%' }}>
-                    <ContainerCenter>
-                        <Title sx = {{ height: '100%' }}>
-                            <div>Software</div>
-                            <div><TextStroke>development</TextStroke>services</div>
+                <MyContainer  sx = {{ height: '100%' }}>
+                    <ContainerCenter position = { 'relative' }>
+                        <Title>
+                            Software<br />
+                            <TextStroke
+                                className = { `${titleHover && 'devActive'}` }
+                                onMouseLeave = { () => setTitleHover(false) }
+                                onMouseOver = { () => setTitleHover(true) }>development
+                            </TextStroke> services
+                        </Title>
+                        <Title sx = {{ opacity: '0.5', transform: 'scaleY(-100%) translate(0%, -100%)', position: 'absolute', filter: 'blur(5px)' }}>
+                            Software<br />
+                            <TextStroke
+                                className = { `${titleHover && 'devActive'}` }>development
+                            </TextStroke> services
                         </Title>
                     </ContainerCenter>
                     <ArrowsBottom />
                 </MyContainer>
             </Header>
-            <Section image = { laptopOnTable }>
+            <Section
+                image = { laptopOnTable }
+                position = { 'relative' }>
                 <MyContainer>
                     <Grid
                         container

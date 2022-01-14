@@ -21,8 +21,6 @@ interface TypeProps {
 
 export const ImagesServices: FC<TypeProps> = ({ type }) => {
     if (type === 'Web development') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image web development'
@@ -32,8 +30,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
     }
 
     if (type === 'Mobile development') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image mobile development'
@@ -43,8 +39,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
     }
 
     if (type === 'UI/UX design') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image UI/UX design'
@@ -54,8 +48,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
     }
 
     if (type === 'Legacy Code') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image legacy code'
@@ -64,8 +56,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
         );
     }
     if (type === 'Consulting/Estimation') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image consulting and estimation'
@@ -74,8 +64,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
         );
     }
     if (type === 'Code Review') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image code review'
@@ -84,8 +72,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
         );
     }
     if (type === 'Software Maintenance') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image software maintenance'
@@ -94,8 +80,6 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
         );
     }
     if (type === 'Product development') {
-        console.log(`type = ${type}`);
-
         return (
             <img
                 alt = 'image product development'

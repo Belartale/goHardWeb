@@ -1,6 +1,6 @@
 // Core
 import React, { FC } from 'react';
-import { Grid, Box, TextareaAutosize } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 
 // Images
 import imageLogo from '../../../assets/images/logo.png';
@@ -9,10 +9,10 @@ import imageLogo from '../../../assets/images/logo.png';
 import { MyContainer } from '..';
 
 // Elements
-import { Logo, MyButton } from '../../elements';
+import { MyButton } from '../../elements';
 
 // Styles
-import { Container, BoxWithTopBorder, MyTypographyContact, MyTypographyParagraph, Form, MyTextField, BoxContainer } from './styles';
+import { Container, BoxWithTopBorder, MyTypographyContact, Form, MyTextField, BoxContainer } from './styles';
 
 export const Footer: FC = () => {
     return (

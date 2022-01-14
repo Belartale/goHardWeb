@@ -24,10 +24,6 @@ const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })(({ the
     [ theme.breakpoints.up('lg') ]: {
         fontSize: theme.fonts.size.thirteenth,
     },
-
-    // display:       'flex',
-    // flexDirection: 'column',
-    // alignItems:    'center',
 }));
 
 export const Title: FC<TypographyProps> = ({ children, ...props }) => {

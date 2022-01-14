@@ -1,10 +1,10 @@
 // Core
 import React, { FC } from 'react';
-import styled from 'styled-components';
+import { Box, BoxProps, styled } from '@mui/material';
 
 // Styles
-const Container = styled.section<PropTypes['image']>`
-    padding-top: 90px;
+export const Container = styled(Box, {})<PropTypes['image']>`
+padding-top: 90px;
     padding-bottom: 60px;
 
     ${({ image }) => image && {
@@ -12,17 +12,18 @@ const Container = styled.section<PropTypes['image']>`
         backgroundRepeat:   'no-repeat',
         backgroundSize:     'cover',
         backgroundPosition: 'center center',
-    }}
-`;
+    }}`;
 
 // Types
-type PropTypes = {
+interface PropTypes extends BoxProps {
     image?: any;
 }
 
-export const Section: FC<PropTypes> = ({ children, image }) => {
+export const Section: FC<PropTypes> = ({ children, image, ...props }) => {
     return (
-        <Container image = { image }>
+        <Container
+            { ...props }
+            image = { image }>
             {children}
         </Container>
     );
