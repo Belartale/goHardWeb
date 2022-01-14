@@ -20,6 +20,10 @@ export const GlobalStyles = createGlobalStyle`
         -moz-appearance: textfield;
     }
 
+    * {
+        scroll-behavior: smooth;
+    }
+
     /* Fonts */
      @font-face {
         font-family: 'Nunito';

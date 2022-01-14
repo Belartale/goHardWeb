@@ -1,6 +1,6 @@
 // Core
 import React, { FC } from 'react';
-import { Grid, Box } from '@mui/material';
+import { Grid, Box, TextareaAutosize } from '@mui/material';
 
 // Images
 import imageLogo from '../../../assets/images/logo.png';
@@ -16,19 +16,16 @@ import { Container, BoxWithTopBorder, MyTypographyContact, MyTypographyParagraph
 
 export const Footer: FC = () => {
     return (
-        <Container>
+        <Container id = 'footer'>
             <MyContainer>
                 <Grid
                     container
                     columnSpacing = { '30px' }>
                     <Grid
-                        container
                         item
                         md = { 6 }
                         xs = { 12 } >
                         <Box sx = {{ width: '100%', display: { xs: 'flex', md: 'block' }, justifyContent: 'center' }}>
-                            {/* todo сделать норм логотип */}
-                            {/* <Logo /> */}
                             <img
                                 alt = 'logo'
                                 src = { imageLogo }
@@ -83,14 +80,15 @@ export const Footer: FC = () => {
 
                             </BoxContainer>
                         </BoxWithTopBorder>
-                        <MyTypographyParagraph paragraph>
+                        {/* todo Евгений и остальные сказали убрать */}
+                        {/* <MyTypographyParagraph paragraph>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit. Nisl tristique ullamcorper id fames amet
                             consectetur dui nec. Enim sed aenean
                             congue semper etiam ipsum Lorem
                             ipsum dolor sit amet, consectetur
                             adipiscing elit. Nisl tristique
-                        </MyTypographyParagraph>
+                        </MyTypographyParagraph> */}
 
                     </Grid>
 
@@ -146,7 +144,9 @@ export const Footer: FC = () => {
                                     xs = { 12 }>
                                     <MyTextField
                                         fullWidth
+                                        multiline
                                         label = 'How can we help?'
+                                        rows = { 6 }
                                         variant = 'outlined'
                                     />
                                 </Grid>

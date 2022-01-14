@@ -6,34 +6,33 @@ import { Box, Grid } from '@mui/material';
 // import { useOnScreen } from '../../../tools/hooks';
 
 // Container
-import { Footer, GreenText, MyContainer, Section, UnderlineText } from '../../containers';
+import { ContainerCenter, Footer, GreenText, MyContainer, Section, UnderlineText } from '../../containers';
 
 // Components
-import { ErrorBoundary, MyCardWithBlurBackground, SmallCard } from '../../components';
+import { ErrorBoundary, MyCardWithBlurBackground, SmallCard, Slider } from '../../components';
 
 // Elements
 import { ArrowsBottom, ImagesServices, MyButton, Subtitle, Title, TitleSecond } from '../../elements';
 
 // Styles
-import { Header } from './styles';
+import { Header, TextStroke } from './styles';
 
 // Images
 import laptopOnTable from '../../../assets/images/laptopOnTable.png';
 import keyboard from '../../../assets/images/keyboard.png';
 import laptopWithTechnologies from '../../../assets/images/laptopWithTechnologies.png';
-import { Slider } from '../../components/Slider';
 
 const Main: FC = () => {
     return (
         <Box>
             <Header>
                 <MyContainer  sx = {{ position: 'relative', display: { xs: 'flex', md: 'block' }, justifyContent: 'center', height: '100%' }}>
-                    <Title sx = {{ height: '100%' }}>
-                        Software
-                        <br />
-                        development
-                        services
-                    </Title>
+                    <ContainerCenter>
+                        <Title sx = {{ height: '100%' }}>
+                            <div>Software</div>
+                            <div><TextStroke>development</TextStroke>services</div>
+                        </Title>
+                    </ContainerCenter>
                     <ArrowsBottom />
                 </MyContainer>
             </Header>

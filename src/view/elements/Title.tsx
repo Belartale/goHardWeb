@@ -25,8 +25,9 @@ const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })(({ the
         fontSize: theme.fonts.size.thirteenth,
     },
 
-    display:    'flex',
-    alignItems: 'center',
+    // display:       'flex',
+    // flexDirection: 'column',
+    // alignItems:    'center',
 }));
 
 export const Title: FC<TypographyProps> = ({ children, ...props }) => {

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 interface TypeProps {}
 
-const Container = styled.button`
+const Container = styled.a`
     padding: 0;
     border: none;
     background-color: transparent;
@@ -25,7 +25,7 @@ const Container = styled.button`
 
 export const ArrowsBottom: FC<TypeProps> = () => {
     return (
-        <Container>
+        <Container href = '#footer'>
             <svg
                 fill = 'none'
                 height = '52'
