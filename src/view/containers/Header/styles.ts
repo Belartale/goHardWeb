@@ -1,8 +1,8 @@
 // Core
 import { styled } from '@mui/material';
-import { PropTypes } from '.';
+import { PropTypesHeader } from '.';
 
-export const Container = styled('header', {})<PropTypes['image']>(({ theme, image }) => ({
+export const Container = styled('header', {})<PropTypesHeader['image']>(({ theme, image }) => ({
     backgroundImage:    `url(${image})`,
     backgroundRepeat:   'no-repeat',
     backgroundPosition: 'center center',

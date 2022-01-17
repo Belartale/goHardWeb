@@ -8,12 +8,12 @@ import React, { FC } from 'react';
 import * as S from './styles';
 
 // Types
-export interface PropTypes {
+export interface PropTypesHeader {
     //todo any
     image: any
 }
 
-export const Header: FC<PropTypes> = ({ children, ...props }) => {
+export const Header: FC<PropTypesHeader> = ({ children, ...props }) => {
     return (
         <S.Container { ...props }>
             {children}

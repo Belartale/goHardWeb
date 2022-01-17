@@ -1,25 +1,32 @@
 // Core
-import React, { FC } from 'react';
-
-// Components
-import { SmallCard } from '..';
+import { GridProps, Box, Grid } from '@mui/material';
+import React, { FC, ReactElement, ReactNode } from 'react';
 
 // Styles
-import * as S from './styles';
+import { Container, Card, CardTitle, CardSubtitle, CardText } from './styles';
 
 // Types
-type PropTypes = {
-    /* type props here */
+export interface PropTypesBigCard extends GridProps {
+    //todo any > src images
+    firstTitle: number | any
+    secondTitle: ReactElement
+    variantCard: 'grey' | 'transparent'
 }
 
-export const BigCard: FC<PropTypes> = () => {
+export const BigCard: FC<PropTypesBigCard> = ({ firstTitle, secondTitle, variantCard, children, ...props }) => {
     return (
-        <S.Container>
-            <SmallCard
-                text = 'asd'
-                variantText = 'green'>
-                asd
-            </SmallCard>
-        </S.Container>
+        <Container
+            { ...props }
+            variantCard = { variantCard }>
+            <Card
+                variantCard = { variantCard }>
+                <CardTitle variantCard = { variantCard }>{firstTitle}</CardTitle>
+                <CardSubtitle variantCard = { variantCard }>{secondTitle}</CardSubtitle>
+            </Card>
+            <CardText
+                variantCard = { variantCard }>
+                {children}
+            </CardText>
+        </Container>
     );
 };
