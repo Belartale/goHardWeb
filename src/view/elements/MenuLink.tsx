@@ -1,20 +1,29 @@
 // Core
 import React, { FC } from 'react';
-import { styled  } from '@mui/material';
 import { NavLink, NavLinkProps } from 'react-router-dom';
+import { styled  } from '@mui/material';
 
+// Components
+import { PropTypesNav } from '../components';
+
+// Types
 interface TypeProps extends NavLinkProps {
     push: Function
+    fontSize: PropTypesNav['fontSize']
+}
+
+type TypePropsContainer = {
+    fontSize: TypeProps['fontSize']
 }
 
 
-export const Container = styled(NavLink, { name: 'ListItemButton' })<NavLinkProps>(({ theme }) => ({
+export const Container = styled(NavLink, { name: 'ListItemButton' })<TypePropsContainer>(({ theme, fontSize }) => ({
     border:     'none',
     background: 'none',
 
     color:      theme.colors.primary[ 50 ],
     position:   'relative',
-    fontSize:   theme.fonts.size.third,
+    fontSize:   fontSize === 'sm' ? theme.fonts.size.third : theme.fonts.size.eighth,
     fontFamily: 'Nunito',
     fontWeight: 700,
     whiteSpace: 'nowrap',
@@ -60,12 +69,13 @@ const ContainerBox = styled('div', {})(({ theme }) => ({
     },
 }));
 
-export const MenuLink: FC<TypeProps> = ({ children, push, to }) => {
+export const MenuLink: FC<TypeProps> = ({ children, push, to, fontSize }) => {
     return (
         <ContainerBox>
             <Container
                 exact
                 activeClassName = 'isActiveNavLink'
+                fontSize = { fontSize }
                 to = { to }
                 onClick = { () => push(to) }>
                 {children}

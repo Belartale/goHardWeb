@@ -12,10 +12,12 @@ const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })(({ the
     fontSize:   '50px',
     fontFamily: 'Nunito',
     fontWeight: 700,
+    lineHeight: 'auto',
     textAlign:  'center',
 
     [ theme.breakpoints.up('sm') ]: {
-        fontSize: minusNumber({ theme, number: 25 }),
+        fontSize:   minusNumber({ theme, number: 25 }),
+        lineHeight: theme.fonts.lineHeight[ 900 ],
     },
     [ theme.breakpoints.up('md') ]: {
         fontSize:  minusNumber({ theme, number: 10 }),

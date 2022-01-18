@@ -54,6 +54,8 @@ export const CardTitle = styled(Box, {})<PropTypes>`
 `;
 export const CardSubtitle = styled(Box, {})<PropTypes>`
     font-family: 'Nunito';
+    font-weight: 700;
+    line-height: ${({ theme }) => theme.fonts.lineHeight[ 550 ]} ,
 
     ${({ theme, variantCard }) => variantCard === 'grey' ? {
         fontSize: theme.fonts.size.fourth,
@@ -62,14 +64,19 @@ export const CardSubtitle = styled(Box, {})<PropTypes>`
         marginTop: '30px',
     }}
 `;
-export const CardText = styled(Box, {})<PropTypes>(({ theme, variantCard }) => ({
-    display:        'flex',
-    alignItems:     'center',
-    justifyContent: 'center',
-    textAlign:      'center',
+export const CardText = styled(Box, {})<PropTypes>`
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    text-align:      center;
 
-    fontFamily: 'Nunito',
-    color:      theme.colors.grey[ 50 ],
+    font-family: "Nunito";
+    font-weight: 300;
+    line-height: ${ ({ theme, variantCard }) => variantCard === 'grey' ? theme.fonts.lineHeight[ 550 ] : theme.fonts.lineHeight[ 600 ]} ,
 
-    fontSize: variantCard === 'grey' ? theme.fonts.size.fourth : theme.fonts.size.fifth,
-}));
+    ${({ theme, variantCard }) => ({
+        fontSize: variantCard === 'grey' ? theme.fonts.size.fourth : theme.fonts.size.fifth,
+        color:    theme.colors.grey[ 50 ],
+    })}
+
+`;

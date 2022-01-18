@@ -9,7 +9,7 @@ import design from '../../assets/images/design.gif';
 import legacyCode from '../../assets/images/legacyCode.gif';
 import consulting from '../../assets/images/consulting.gif';
 import codeReview from '../../assets/images/codeReview.gif';
-import sofware from '../../assets/images/sofware.gif';
+import sofWare from '../../assets/images/sofware.gif';
 import productDev from '../../assets/images/productDev.gif';
 
 interface TypeProps {
@@ -95,7 +95,7 @@ export const ImagesServices: FC<TypeProps> = ({ type, size }) => {
             <Img
                 alt = 'image software maintenance'
                 size = { size }
-                src = { sofware }
+                src = { sofWare }
             />
         );
     }

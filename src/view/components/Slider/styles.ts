@@ -25,7 +25,7 @@ export const MyWrapper = styled(Box, {})`
             display: flex;
             justify-content: center;
             opacity: 0.5;
-            visibility: hidden;
+            /* visibility: hidden; */
         }
         .swiper-slide-active{
             transform: scale(1);
@@ -37,7 +37,7 @@ export const MyWrapper = styled(Box, {})`
         }
     
         .swiper-slide-prev, .swiper-slide-active, .swiper-slide-next {
-            visibility: visible;
+            /* visibility: visible; */
         }
 
         .swiper-button-prev, .swiper-button-next {

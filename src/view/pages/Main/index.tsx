@@ -37,7 +37,7 @@ const Main: FC = () => {
                                 onMouseOver = { () => setTitleHover(true) }>development
                             </TextStroke> services
                         </Title>
-                        <Title sx = {{ opacity: '0.5', transform: 'scaleY(-100%) translate(0%, -100%)', position: 'absolute', filter: 'blur(3px)' }}>
+                        <Title sx = {{ opacity: '0.3', transform: 'scaleY(-100%) translate(0%, -100%)', position: 'absolute', filter: 'blur(3px)' }}>
                             Software<br />
                             <TextStroke
                                 className = { `${titleHover && 'devActive'}` }>development
@@ -67,9 +67,8 @@ const Main: FC = () => {
                             <Subtitle
                                 paragraph
                                 sx = {{
-                                    mt:         '50px',
-                                    mb:         '60px',
-                                    fontFamily: 'Nunito',
+                                    mt: '50px',
+                                    mb: '60px',
                                 }}>We are a fast-growing software development
                                 agency with a strong expertise in the most
                                 relevant and innovative programming

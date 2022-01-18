@@ -1,6 +1,10 @@
 // Core
-import { Box, styled, Typography } from '@mui/material';
+import { Box, styled, Typography, TypographyProps } from '@mui/material';
 
+// Types
+interface PropsTypes extends TypographyProps {
+    fontSize?: string
+}
 
 export const CardBox = styled(Box, {})(({ theme }) => ({
     padding:          '15px',
@@ -8,7 +12,6 @@ export const CardBox = styled(Box, {})(({ theme }) => ({
     backgroundFilter: 'blur(100px)',
     border:           `1px solid ${theme.colors.primary[ 50 ]}`,
     borderRadius:     '5px',
-    //todo with / height
     width:            '130px',
     minHeight:        '130px',
 
@@ -36,10 +39,11 @@ export const Title = styled(Box, {})(({ theme }) => ({
     color:      theme.colors.primary[ 50 ],
 }));
 
-export const Text = styled(Typography, {})(({ theme }) => ({
+export const Text = styled(Typography, {})<PropsTypes>(({ theme, fontSize }) => ({
     textAlign:  'center',
-    fontSize:   theme.fonts.size.second,
+    fontSize:   fontSize ? fontSize : theme.fonts.size.second,
     fontFamily: 'Nunito',
     fontWeight: 700,
+    lineHeight: fontSize ? theme.fonts.lineHeight[ 55 ] : theme.fonts.lineHeight[ 200 ],
     color:      theme.colors.primary[ 50 ],
 }));

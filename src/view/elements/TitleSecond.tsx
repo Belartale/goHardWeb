@@ -9,7 +9,7 @@ const Container = styled(Typography, {})(({ theme }) => ({
     color:      theme.colors.primary[ 50 ],
 }));
 
-export const TitleSecond : FC<TypographyProps> = ({ children, ...props }) => {
+export const TitleSecond: FC<TypographyProps> = ({ children, ...props }) => {
     return (
         <Container
             variant = 'h2'

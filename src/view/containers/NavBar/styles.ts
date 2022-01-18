@@ -8,6 +8,8 @@ export const MySlide = styled(Slide, {})(({ theme }) => ({
 
 export const MyDrawer = styled(Drawer, {})(({ theme }) => ({
     '.MuiDrawer-paper': {
+        padding: '30px 0px',
+
         backgroundColor: theme.colors.secondary[ 100 ],
     },
 }));

@@ -90,7 +90,10 @@ export const NavBar: FC<PropTypes> = () => {
 
                         <Box>
                             <Box sx = {{ display: { xs: 'none', md: 'block' }}}>
-                                <Nav sx = {{ display: 'flex', flexDirection: 'row' }} />
+                                <Nav
+                                    fontSize = 'sm'
+                                    sx = {{ display: 'flex' }}
+                                />
                             </Box>
 
                             <IconButton
@@ -115,7 +118,10 @@ export const NavBar: FC<PropTypes> = () => {
                                     sx = {{ '& button': { margin: '0 auto' }}}
                                     onClick = { toggleDrawer(false) }
                                     onKeyDown = { toggleDrawer(false) }>
-                                    <Nav sx = {{ display: 'flex', flexDirection: 'column' }} />
+                                    <Nav
+                                        fontSize = 'lg'
+                                        sx = {{ display: 'flex', flexDirection: 'column' }}
+                                    />
                                 </Box>
                             </MyDrawer>
                         </Box>

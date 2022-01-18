@@ -6,9 +6,9 @@ const Container = styled(Typography, { name: 'SubtitleStyled' })(({ theme }) => 
     fontSize:   theme.fonts.size.sixth,
     fontFamily: 'Nunito',
     fontWeight: 300,
+    lineHeight: theme.fonts.lineHeight[ 700 ],
     color:      theme.colors.grey[ 50 ],
 }));
-
 
 export const Subtitle: FC<TypographyProps> = ({ children, ...props }) => {
     return (

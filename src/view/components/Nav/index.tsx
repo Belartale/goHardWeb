@@ -1,24 +1,30 @@
 // Core
 import React, { FC } from 'react';
-import { List, ListItem, ListProps } from '@mui/material';
+import { ListItem, ListProps } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 
 // Elements
 import { MenuLink } from '../../elements';
 
+// Styles
+import { MyList } from './styled';
+
 // Types
-interface PropTypes extends ListProps {
+export interface PropTypesNav extends ListProps {
+    fontSize: 'sm' | 'lg'
 }
 
-export const Nav: FC<PropTypes> = ({ ...props }) => {
+export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
     const { push } = useHistory();
 
     return (
-        <List
+        <MyList
+            fontSize = { fontSize }
             { ...props }
             disablePadding>
             <ListItem>
                 <MenuLink
+                    fontSize = { fontSize }
                     push = { push }
                     to = '/'>
                     Company
@@ -26,6 +32,7 @@ export const Nav: FC<PropTypes> = ({ ...props }) => {
             </ListItem>
             <ListItem>
                 <MenuLink
+                    fontSize = { fontSize }
                     push = { push }
                     to = '/about-us'>
                     About us
@@ -33,6 +40,7 @@ export const Nav: FC<PropTypes> = ({ ...props }) => {
             </ListItem>
             <ListItem>
                 <MenuLink
+                    fontSize = { fontSize }
                     push = { push }
                     to = '/our-services'>
                     Our services
@@ -40,6 +48,7 @@ export const Nav: FC<PropTypes> = ({ ...props }) => {
             </ListItem>
             <ListItem>
                 <MenuLink
+                    fontSize = { fontSize }
                     push = { push }
                     to = '/technologies'>
                     Technologies
@@ -47,6 +56,7 @@ export const Nav: FC<PropTypes> = ({ ...props }) => {
             </ListItem>
             <ListItem>
                 <MenuLink
+                    fontSize = { fontSize }
                     push = { push }
                     to = '/portfolio'>
                     Portfolio
@@ -54,11 +64,12 @@ export const Nav: FC<PropTypes> = ({ ...props }) => {
             </ListItem>
             <ListItem>
                 <MenuLink
+                    fontSize = { fontSize }
                     push = { push }
                     to = '/vacancies'>
                     Vacancies
                 </MenuLink>
             </ListItem>
-        </List>
+        </MyList>
     );
 };

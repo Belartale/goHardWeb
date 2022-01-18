@@ -24,7 +24,7 @@ export const MyCardWithBlurBackground: FC<TypesProps> = ({ title, text, textSize
                     </Title>
                 </Grid>
                 <Grid item>
-                    <Text sx = {{ fontSize: textSize }}>
+                    <Text fontSize = { textSize }>
                         {text}
                     </Text>
                 </Grid>

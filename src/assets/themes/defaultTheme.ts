@@ -29,7 +29,18 @@ export const defaultTheme = {
             twelfth:    '96px',
             thirteenth: '100px',
         },
-        // todo line height
-        lineHeight: {},
+        lineHeight: {
+            50:  '13.15px',
+            55:  '13.64px',
+            100: '16.57px',
+            200: '19.1px',
+            300: '20.46px',
+            400: '23.19px',
+            550: '24.55px',
+            600: '27.28px',
+            700: '31.37px',
+            800: '32.74px',
+            900: '86px',
+        },
     },
 };

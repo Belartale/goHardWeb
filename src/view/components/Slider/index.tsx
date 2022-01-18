@@ -42,13 +42,16 @@ export const Slider: FC = () => {
                     600: {
                         slidesPerView: 2.77,
                     },
+                    900: {
+                        spaceBetween: -70,
+                    },
                 }}
                 pagination = {{
                     el:        '.swiper-pagination',
                     clickable: true,
                 }}
                 slidesPerView = { 1 }
-                spaceBetween = { -70 }>
+                spaceBetween = { -40 }>
 
                 <Box position = { 'relative' }>
                     {arrImages.map((element, index) => (
