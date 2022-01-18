@@ -1,6 +1,6 @@
 // Core
 import React, { FC } from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 // Images
 import webDev from '../../assets/images/webDev.gif';
@@ -17,13 +17,27 @@ interface TypeProps {
     | 'UI/UX design' | 'Legacy Code'
     | 'Consulting/Estimation' | 'Code Review'
     | 'Software Maintenance' | 'Product development'
+    size: 'sm' | 'lg'
 }
 
-export const ImagesServices: FC<TypeProps> = ({ type }) => {
+const Img = styled.img<any>`
+    ${({ size }) => size === 'sm' ? {
+        width:  '100px',
+        height: 'auto',
+    } : null }
+    
+    ${({ size }) => size === 'lg' ? {
+        width:  '160px',
+        height: 'auto',
+    } : null }
+`;
+
+export const ImagesServices: FC<TypeProps> = ({ type, size }) => {
     if (type === 'Web development') {
         return (
-            <img
+            <Img
                 alt = 'image web development'
+                size = { size }
                 src = { webDev }
             />
         );
@@ -31,8 +45,9 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
 
     if (type === 'Mobile development') {
         return (
-            <img
+            <Img
                 alt = 'image mobile development'
+                size = { size }
                 src = { mobDev }
             />
         );
@@ -40,8 +55,9 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
 
     if (type === 'UI/UX design') {
         return (
-            <img
+            <Img
                 alt = 'image UI/UX design'
+                size = { size }
                 src = { design }
             />
         );
@@ -49,40 +65,45 @@ export const ImagesServices: FC<TypeProps> = ({ type }) => {
 
     if (type === 'Legacy Code') {
         return (
-            <img
+            <Img
                 alt = 'image legacy code'
+                size = { size }
                 src = { legacyCode }
             />
         );
     }
     if (type === 'Consulting/Estimation') {
         return (
-            <img
+            <Img
                 alt = 'image consulting and estimation'
+                size = { size }
                 src = { consulting }
             />
         );
     }
     if (type === 'Code Review') {
         return (
-            <img
+            <Img
                 alt = 'image code review'
+                size = { size }
                 src = { codeReview }
             />
         );
     }
     if (type === 'Software Maintenance') {
         return (
-            <img
+            <Img
                 alt = 'image software maintenance'
+                size = { size }
                 src = { sofware }
             />
         );
     }
     if (type === 'Product development') {
         return (
-            <img
+            <Img
                 alt = 'image product development'
+                size = { size }
                 src = { productDev }
             />
         );

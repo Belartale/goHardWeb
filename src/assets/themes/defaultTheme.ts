@@ -29,6 +29,7 @@ export const defaultTheme = {
             twelfth:    '96px',
             thirteenth: '100px',
         },
+        // todo line height
         lineHeight: {},
     },
 };

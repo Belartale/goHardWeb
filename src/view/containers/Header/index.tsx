@@ -1,4 +1,5 @@
 // Core
+import { Box } from '@mui/material';
 import React, { FC } from 'react';
 
 // Bus
@@ -11,6 +12,8 @@ import * as S from './styles';
 export interface PropTypesHeader {
     //todo any
     image: any
+    backgroundsize?: string
+    opacity?: boolean
 }
 
 export const Header: FC<PropTypesHeader> = ({ children, ...props }) => {

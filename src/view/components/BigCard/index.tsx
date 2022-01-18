@@ -1,6 +1,6 @@
 // Core
-import { GridProps, Box, Grid } from '@mui/material';
-import React, { FC, ReactElement, ReactNode } from 'react';
+import React, { FC, ReactElement } from 'react';
+import { GridProps } from '@mui/material';
 
 // Styles
 import { Container, Card, CardTitle, CardSubtitle, CardText } from './styles';
@@ -20,7 +20,9 @@ export const BigCard: FC<PropTypesBigCard> = ({ firstTitle, secondTitle, variant
             variantCard = { variantCard }>
             <Card
                 variantCard = { variantCard }>
-                <CardTitle variantCard = { variantCard }>{firstTitle}</CardTitle>
+                {variantCard === 'grey' ? (<CardTitle variantCard = { variantCard }>{firstTitle}</CardTitle>)
+                    : firstTitle
+                }
                 <CardSubtitle variantCard = { variantCard }>{secondTitle}</CardSubtitle>
             </Card>
             <CardText

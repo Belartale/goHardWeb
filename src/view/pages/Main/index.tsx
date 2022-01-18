@@ -2,9 +2,6 @@
 import React, { FC, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 
-// Tools
-// import { useOnScreen } from '../../../tools/hooks';
-
 // Container
 import { ContainerCenter, Footer, GreenText, Header, MyContainer, Section, UnderlineText } from '../../containers';
 
@@ -16,7 +13,6 @@ import { ArrowsBottom, ImagesServices, MyButton, Subtitle, Title, TitleSecond } 
 
 // Styles
 import { TextStroke } from './styles';
-
 
 // Images
 import laptop from '../../../assets/images/laptop.png';
@@ -158,7 +154,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'Web development'>
-                                    <ImagesServices type = 'Web development'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'Web development'
+                                    />
                                 </SmallCard>
                             </Grid>
                             <Grid
@@ -166,7 +165,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'Mobile development'>
-                                    <ImagesServices type = 'Mobile development'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'Mobile development'
+                                    />
                                 </SmallCard>
                             </Grid>
                             <Grid
@@ -174,7 +176,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'UI/Ux design'>
-                                    <ImagesServices type = 'UI/UX design'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'UI/UX design'
+                                    />
                                 </SmallCard>
                             </Grid>
                             <Grid
@@ -182,7 +187,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'Legacy Code Redevelopment'>
-                                    <ImagesServices type = 'Legacy Code'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'Legacy Code'
+                                    />
                                 </SmallCard>
                             </Grid>
                             <Grid
@@ -190,7 +198,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'Consulting/Estimation'>
-                                    <ImagesServices type = 'Consulting/Estimation'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'Consulting/Estimation'
+                                    />
                                 </SmallCard>
                             </Grid>
                             <Grid
@@ -198,7 +209,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'Code Review'>
-                                    <ImagesServices type = 'Code Review'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'Code Review'
+                                    />
                                 </SmallCard>
                             </Grid>
                             <Grid
@@ -206,7 +220,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'Software Maintenance'>
-                                    <ImagesServices type = 'Software Maintenance'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'Software Maintenance'
+                                    />
                                 </SmallCard>
                             </Grid>
                             <Grid
@@ -214,7 +231,10 @@ const Main: FC = () => {
                                 md = { 3 }
                                 xs = { 6 }>
                                 <SmallCard text = 'Product develop and support'>
-                                    <ImagesServices type = 'Product development'/>
+                                    <ImagesServices
+                                        size = 'sm'
+                                        type = 'Product development'
+                                    />
                                 </SmallCard>
                             </Grid>
                         </Grid>

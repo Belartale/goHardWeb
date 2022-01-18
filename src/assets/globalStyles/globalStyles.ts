@@ -25,7 +25,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /* Fonts */
-     @font-face {
+    @font-face {
         font-family: 'Nunito';
         src: url(${Nunito}) format('truetype');
     }

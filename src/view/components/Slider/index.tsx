@@ -40,10 +40,7 @@ export const Slider: FC = () => {
                 roundLengths
                 breakpoints = {{
                     600: {
-                        slidesPerView: 2,
-                    },
-                    900: {
-                        slidesPerView: 3,
+                        slidesPerView: 2.77,
                     },
                 }}
                 pagination = {{
