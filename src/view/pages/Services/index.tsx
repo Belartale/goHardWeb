@@ -3,13 +3,23 @@ import { Box } from '@mui/material';
 import React, { FC } from 'react';
 
 // Containers
-import { ContainerCenter, GreenText, Header, MyContainer, Section } from '../../containers';
+import { ContainerCenter,
+    Footer,
+    GreenText,
+    Header,
+    MyContainer,
+    Section,
+} from '../../containers';
 
 // Components
 import { BigCard, ErrorBoundary } from '../../components';
 
 // Elements
-import { ArrowsBottom, Subtitle, Title, ImagesServices } from '../../elements';
+import { ArrowsBottom,
+    Subtitle,
+    Title,
+    ImagesServices,
+} from '../../elements';
 
 // Styles
 import { ColumnSpaceBetweenAndSpace } from './styles';
@@ -17,12 +27,7 @@ import { ColumnSpaceBetweenAndSpace } from './styles';
 // Images
 import programmerScanning from '../../../assets/images/programmerScanning.png';
 
-// Types
-type PropTypes = {
-    /* type props here */
-}
-
-const Services: FC<PropTypes> = () => {
+const Services: FC = () => {
     return (
         <Box>
             <Header
@@ -156,6 +161,7 @@ const Services: FC<PropTypes> = () => {
                     </ColumnSpaceBetweenAndSpace>
                 </MyContainer>
             </Section>
+            <Footer />
         </Box>
     );
 };

@@ -8,12 +8,13 @@ const minusNumber = ({ theme, number }: {
     number: number
 }): string => `${Number(theme.fonts.size.thirteenth.slice(0, -2)) - number}px`;
 
-const TypographyStyled = styled(Typography, { name: 'TypographyStyled' })(({ theme }) => ({
+const TypographyStyled = styled(Typography, {})(({ theme }) => ({
     fontSize:   '50px',
     fontFamily: 'Nunito',
     fontWeight: 700,
     lineHeight: 'auto',
     textAlign:  'center',
+    color:      theme.colors.primary[ 50 ],
 
     [ theme.breakpoints.up('sm') ]: {
         fontSize:   minusNumber({ theme, number: 25 }),
@@ -37,6 +38,3 @@ export const Title: FC<TypographyProps> = ({ children, ...props }) => {
         </TypographyStyled>
     );
 };
-
-
-// Nunito 800 700 400 300

@@ -3,13 +3,31 @@ import React, { FC, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Container
-import { ContainerCenter, Footer, GreenText, Header, MyContainer, Section, UnderlineText } from '../../containers';
+import { ContainerCenter,
+    Footer,
+    GreenText,
+    Header,
+    MyContainer,
+    Section,
+    UnderlineText,
+} from '../../containers';
 
 // Components
-import { ErrorBoundary, MyCardWithBlurBackground, SmallCard, Slider } from '../../components';
+import { ErrorBoundary,
+    MyCardWithBlurBackground,
+    SmallCard,
+    Slider,
+} from '../../components';
 
 // Elements
-import { ArrowsBottom, ImagesServices, MyButton, Subtitle, Title, TitleSecond } from '../../elements';
+import { ArrowsBottom,
+    ImagesServices,
+    Link,
+    MyButton,
+    Subtitle,
+    Title,
+    TitleSecond,
+} from '../../elements';
 
 // Styles
 import { TextStroke } from './styles';
@@ -19,6 +37,9 @@ import laptop from '../../../assets/images/laptop.png';
 import laptopOnTable from '../../../assets/images/laptopOnTable.png';
 import keyboard from '../../../assets/images/keyboard.png';
 import laptopWithTechnologies from '../../../assets/images/laptopWithTechnologies.png';
+
+// Navigation
+import { book } from '../../routes';
 
 const Main: FC = () => {
     const [ titleHover, setTitleHover ] = useState(false);
@@ -62,7 +83,9 @@ const Main: FC = () => {
                             xl = { 6 }
                             xs = { 12 }>
                             <TitleSecond>
-                                <UnderlineText>About</UnderlineText> us
+                                <Link to = { book.pageTwo } >
+                                    <UnderlineText>About</UnderlineText> us
+                                </Link>
                             </TitleSecond>
                             <Subtitle
                                 paragraph
@@ -76,7 +99,7 @@ const Main: FC = () => {
                                 and tools.
                             </Subtitle>
                             <MyButton
-                                href = '/about-us'
+                                href = { book.pageTwo }
                                 typeButton = 'lg blur'>
                                 More
                             </MyButton>
@@ -140,7 +163,9 @@ const Main: FC = () => {
                         <Grid
                             item>
                             <TitleSecond>
-                                Our <UnderlineText>services</UnderlineText>
+                                <Link to = { book.pageThree } >
+                                    Our <UnderlineText>services</UnderlineText>
+                                </Link>
                             </TitleSecond>
                         </Grid>
                         <Grid
@@ -249,7 +274,7 @@ const Main: FC = () => {
                         </Grid>
                         <Grid item>
                             <MyButton
-                                href = '/our-services'
+                                href = { book.pageThree }
                                 typeButton = 'lg grey'>
                                 More details
                             </MyButton>
@@ -266,7 +291,6 @@ const Main: FC = () => {
                         rowSpacing = { '30px' }>
                         <Grid
                             item
-                            // justifyContent = { 'center' }
                             md = { 6 }
                             sx = {{ display: 'flex', justifyContent: 'center' }}
                             xs = { 12 }>
@@ -282,9 +306,11 @@ const Main: FC = () => {
                             sx = {{ display: 'flex', flexDirection: 'column', alignItems: { xs: 'center', md: 'flex-end' }}}
                             xs = { 12 }>
                             <TitleSecond>
-                                <UnderlineText>
-                                    Technologies
-                                </UnderlineText>
+                                <Link to = { book.pageFour } >
+                                    <UnderlineText>
+                                        Technologies
+                                    </UnderlineText>
+                                </Link>
                             </TitleSecond>
                             <Subtitle
                                 paragraph
@@ -293,7 +319,7 @@ const Main: FC = () => {
                                 innovative and relevant programming languages, frameworks and libraries.
                             </Subtitle>
                             <MyButton
-                                href = '/technologies'
+                                href = { book.pageFour }
                                 typeButton = 'lg clear'>
                                 Watch list
                             </MyButton>
@@ -309,9 +335,11 @@ const Main: FC = () => {
                         direction = 'column'>
                         <Grid item >
                             <TitleSecond>
-                                <UnderlineText>
-                                    Portfolio
-                                </UnderlineText>
+                                <Link to = { book.pageFive } >
+                                    <UnderlineText>
+                                        Portfolio
+                                    </UnderlineText>
+                                </Link>
                             </TitleSecond>
                         </Grid>
                         <Grid
@@ -329,7 +357,7 @@ const Main: FC = () => {
                             item
                             sx = {{ mb: '60px' }}>
                             <MyButton
-                                href = '/portfolio'
+                                href = { book.pageFive }
                                 typeButton = 'lg clear'>
                                 <GreenText>
                                     Our works

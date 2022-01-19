@@ -3,13 +3,23 @@ import React, { FC } from 'react';
 import { Box } from '@mui/material';
 
 // Containers
-import { ContainerCenter, Footer, GreenText, Header, MyContainer, Section } from '../../containers';
+import { ContainerCenter,
+    Footer,
+    GreenText,
+    Header,
+    MyContainer,
+    Section,
+} from '../../containers';
 
 // Components
 import { BigCard, ErrorBoundary } from '../../components';
 
 // Elements
-import { ArrowsBottom, Subtitle, Title } from '../../elements';
+import {
+    ArrowsBottom,
+    Subtitle,
+    Title,
+} from '../../elements';
 
 // images
 import aboutUsBg from '../../../assets/images/aboutUsBg.gif';
@@ -17,12 +27,7 @@ import aboutUsBg from '../../../assets/images/aboutUsBg.gif';
 // Styles
 import { ColumnSpaceBetweenAndSpace } from './styles';
 
-// Types
-type PropTypes = {
-    /* type props here */
-};
-
-const About: FC<PropTypes> = () => {
+const About: FC = () => {
     return (
         <Box>
             <Header

@@ -1,9 +1,6 @@
 // Core
 import React, { FC } from 'react';
-import { Grid, Box } from '@mui/material';
-
-// Images
-import imageLogo from '../../../assets/images/logo.png';
+import { Grid, Box, Link } from '@mui/material';
 
 // Container
 import { MyContainer } from '..';
@@ -12,11 +9,14 @@ import { MyContainer } from '..';
 import { MyButton } from '../../elements';
 
 // Styles
-import { Container, BoxWithTopBorder, MyTypographyContact, Form, MyTextField, BoxContainer } from './styles';
+import * as S from './styles';
+
+// Images
+import imageLogo from '../../../assets/images/logo.png';
 
 export const Footer: FC = () => {
     return (
-        <Container id = 'footer'>
+        <S.Container id = 'footer'>
             <MyContainer>
                 <Grid
                     container
@@ -31,8 +31,8 @@ export const Footer: FC = () => {
                                 src = { imageLogo }
                             />
                         </Box>
-                        <BoxWithTopBorder>
-                            <BoxContainer>
+                        <S.BoxWithTopBorder>
+                            <S.BoxContainer>
                                 <Box sx = {{ display: 'flex', alignItems: 'center' }}>
                                     <svg
                                         fill = 'none'
@@ -45,22 +45,29 @@ export const Footer: FC = () => {
                                             fill = 'white'
                                         />
                                     </svg>
-                                    <MyTypographyContact>+38 (063) 1740191</MyTypographyContact>
+                                    <S.MyTypographyContact>+38 (063) 1740191</S.MyTypographyContact>
                                 </Box>
                                 <Box sx = {{ display: 'flex', alignItems: 'center' }}>
-                                    <svg
-                                        fill = 'none'
-                                        height = '20'
-                                        viewBox = '0 0 26 20'
-                                        width = '26'
-                                        xmlns = 'http://www.w3.org/2000/svg'>
-                                        <path
-                                            d = 'M19.4061 11.3589C18.2585 11.3589 17.1804 10.8124 16.2039 9.91757L16.4398 8.65518L16.4476 8.60493C16.6633 7.26407 17.3304 5.00992 19.4054 5.00992C20.152 5.01015 20.868 5.34496 21.396 5.94074C21.924 6.53652 22.2207 7.34451 22.2209 8.18707C22.2196 9.02886 21.9225 9.83572 21.3946 10.4305C20.8668 11.0254 20.1513 11.3596 19.4054 11.3598L19.4061 11.3589ZM19.4061 1.79486C16.7617 1.79486 14.7063 3.73253 13.8727 6.92379C12.6032 4.77013 11.6345 2.18098 11.0736 0H8.22523V8.36073C8.22379 9.15423 7.94381 9.91477 7.44658 10.4759C6.94935 11.0369 6.27538 11.3529 5.57219 11.3545C4.86919 11.3522 4.19558 11.036 3.69848 10.4751C3.20139 9.91415 2.92121 9.15402 2.91915 8.36073V0H0.0708008V8.36073C0.0708008 11.7856 2.54025 14.5916 5.57219 14.5916C8.60725 14.5916 11.0736 11.7865 11.0736 8.36073V6.95993C11.6267 8.25936 12.3064 9.5817 13.1321 10.748L11.3869 20H14.3L15.5656 13.2869C16.6726 14.0856 17.946 14.5907 19.4069 14.5907C22.5318 14.5907 25.0708 11.7071 25.0708 8.1853C25.0708 4.65906 22.5318 1.79398 19.4069 1.79398L19.4061 1.79486Z'
-                                            fill = 'white'
-                                        />
-                                    </svg>
+                                    <Link
+                                        display = { 'flex' }
+                                        href = 'https://www.upwork.com/ag/gohard/'
+                                        underline = 'none'>
+                                        <svg
+                                            fill = 'none'
+                                            height = '20'
+                                            viewBox = '0 0 26 20'
+                                            width = '26'
+                                            xmlns = 'http://www.w3.org/2000/svg'>
+                                            <path
+                                                d = 'M19.4061 11.3589C18.2585 11.3589 17.1804 10.8124 16.2039 9.91757L16.4398 8.65518L16.4476 8.60493C16.6633 7.26407 17.3304 5.00992 19.4054 5.00992C20.152 5.01015 20.868 5.34496 21.396 5.94074C21.924 6.53652 22.2207 7.34451 22.2209 8.18707C22.2196 9.02886 21.9225 9.83572 21.3946 10.4305C20.8668 11.0254 20.1513 11.3596 19.4054 11.3598L19.4061 11.3589ZM19.4061 1.79486C16.7617 1.79486 14.7063 3.73253 13.8727 6.92379C12.6032 4.77013 11.6345 2.18098 11.0736 0H8.22523V8.36073C8.22379 9.15423 7.94381 9.91477 7.44658 10.4759C6.94935 11.0369 6.27538 11.3529 5.57219 11.3545C4.86919 11.3522 4.19558 11.036 3.69848 10.4751C3.20139 9.91415 2.92121 9.15402 2.91915 8.36073V0H0.0708008V8.36073C0.0708008 11.7856 2.54025 14.5916 5.57219 14.5916C8.60725 14.5916 11.0736 11.7865 11.0736 8.36073V6.95993C11.6267 8.25936 12.3064 9.5817 13.1321 10.748L11.3869 20H14.3L15.5656 13.2869C16.6726 14.0856 17.946 14.5907 19.4069 14.5907C22.5318 14.5907 25.0708 11.7071 25.0708 8.1853C25.0708 4.65906 22.5318 1.79398 19.4069 1.79398L19.4061 1.79486Z'
+                                                fill = 'white'
+                                            />
+                                        </svg>
 
-                                    <MyTypographyContact>UpWork</MyTypographyContact>
+                                        <S.MyTypographyContact>
+                                            UpWork
+                                        </S.MyTypographyContact>
+                                    </Link>
                                 </Box>
                                 <Box sx = {{ display: 'flex', alignItems: 'center' }}>
                                     <svg
@@ -75,11 +82,11 @@ export const Footer: FC = () => {
                                         />
                                     </svg>
 
-                                    <MyTypographyContact>busdev@gohard.tech</MyTypographyContact>
+                                    <S.MyTypographyContact>busdev@gohard.tech</S.MyTypographyContact>
                                 </Box>
 
-                            </BoxContainer>
-                        </BoxWithTopBorder>
+                            </S.BoxContainer>
+                        </S.BoxWithTopBorder>
                         {/* todo Евгений и остальные сказали убрать */}
                         {/* <MyTypographyParagraph paragraph>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -96,7 +103,7 @@ export const Footer: FC = () => {
                         item
                         md = { 6 }
                         xs = { 12 }>
-                        <Form
+                        <S.Form
                             component = 'form'>
                             <Grid
                                 container
@@ -111,7 +118,7 @@ export const Footer: FC = () => {
                                         item
                                         md = { 6 }
                                         xs = { 12 }>
-                                        <MyTextField
+                                        <S.MyTextField
                                             fullWidth
                                             label = 'First Name'
                                             variant = 'outlined'
@@ -121,7 +128,7 @@ export const Footer: FC = () => {
                                         item
                                         md = { 6 }
                                         xs = { 12 }>
-                                        <MyTextField
+                                        <S.MyTextField
                                             fullWidth
                                             label = 'Last Name'
                                             variant = 'outlined'
@@ -132,7 +139,7 @@ export const Footer: FC = () => {
                                 <Grid
                                     item
                                     xs = { 12 }>
-                                    <MyTextField
+                                    <S.MyTextField
                                         fullWidth
                                         label = 'E-mail adress'
                                         variant = 'outlined'
@@ -142,7 +149,7 @@ export const Footer: FC = () => {
                                 <Grid
                                     item
                                     xs = { 12 }>
-                                    <MyTextField
+                                    <S.MyTextField
                                         fullWidth
                                         multiline
                                         label = 'How can we help?'
@@ -158,10 +165,10 @@ export const Footer: FC = () => {
                                 </Grid>
 
                             </Grid>
-                        </Form>
+                        </S.Form>
                     </Grid>
                 </Grid>
             </MyContainer>
-        </Container>
+        </S.Container>
     );
 };

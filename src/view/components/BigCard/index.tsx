@@ -3,7 +3,13 @@ import React, { FC, ReactElement } from 'react';
 import { GridProps } from '@mui/material';
 
 // Styles
-import { Container, Card, CardTitle, CardSubtitle, CardText } from './styles';
+import {
+    Container,
+    Card,
+    FirstTitle,
+    SecondTitle,
+    CardText,
+} from './styles';
 
 // Types
 export interface PropTypesBigCard extends GridProps {
@@ -20,10 +26,16 @@ export const BigCard: FC<PropTypesBigCard> = ({ firstTitle, secondTitle, variant
             variantCard = { variantCard }>
             <Card
                 variantCard = { variantCard }>
-                {variantCard === 'grey' ? (<CardTitle variantCard = { variantCard }>{firstTitle}</CardTitle>)
+                {variantCard === 'grey'
+                    ? (
+                        <FirstTitle
+                            variantCard = { variantCard }>
+                            {firstTitle}
+                        </FirstTitle>
+                    )
                     : firstTitle
                 }
-                <CardSubtitle variantCard = { variantCard }>{secondTitle}</CardSubtitle>
+                <SecondTitle variantCard = { variantCard }>{secondTitle}</SecondTitle>
             </Card>
             <CardText
                 variantCard = { variantCard }>

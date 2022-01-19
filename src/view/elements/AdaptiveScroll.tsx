@@ -33,14 +33,14 @@ const ScrollContainer = styled.section<{ heightDiff: number; disableOnMobile?: t
 
 type Ref = RefObject<HTMLElement | HTMLHeadingElement>;
 
-type Proptypes = {
+type PropTypes = {
     refs: Array<Ref>;
     backgroundColor?: string;
     minHeight?: true;
     disableOnMobile?: true;
 }
 
-export const AdaptiveScroll: FC<Proptypes> = ({
+export const AdaptiveScroll: FC<PropTypes> = ({
     children, refs, minHeight, backgroundColor, disableOnMobile,
 }) => {
     const [ heightDiff, setHeightDiff ] = useState(0);

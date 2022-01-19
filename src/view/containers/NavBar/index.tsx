@@ -65,9 +65,9 @@ export const NavBar: FC<PropTypes> = () => {
             }
 
             //todo нужно ка-то скрыть <Drawer></Drawer> когда > 900
-            // if (window.innerWidth > 900) {
-            //     toggleDrawer(false);
-            // }
+            if (window.innerWidth > 900) {
+                toggleDrawer(false);
+            }
             setIsOpenDrawer(isOpen);
         };
 

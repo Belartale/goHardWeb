@@ -1,7 +1,7 @@
 // Core
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 
-export const ColumnSpaceBetweenAndSpace = styled.div`
+export const ColumnSpaceBetweenAndSpace = styled('div', {})`
     & > div:nth-child(2n) {
         margin-left: auto;
     }
@@ -9,4 +9,8 @@ export const ColumnSpaceBetweenAndSpace = styled.div`
     & > div:not(:last-child) {
         margin-bottom: 30px;
     }
+`;
+
+export const MyTypography = styled('span', {})`
+    margin-bottom: 5px;
 `;

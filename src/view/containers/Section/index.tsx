@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { Box, BoxProps, styled } from '@mui/material';
 
 // Styles
-export const Container = styled(Box, {})<PropTypes['image']>`
+export const Container = styled(Box, {})<PropTypes>`
 padding-top: 90px;
     padding-bottom: 60px;
 
@@ -16,8 +16,7 @@ padding-top: 90px;
 
 // Types
 interface PropTypes extends BoxProps {
-    //todo any
-    image?: any;
+    image?: string;
 }
 
 export const Section: FC<PropTypes> = ({ children, image, ...props }) => {

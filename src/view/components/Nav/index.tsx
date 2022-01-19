@@ -3,6 +3,9 @@ import React, { FC } from 'react';
 import { ListItem, ListProps } from '@mui/material';
 import { useHistory } from 'react-router-dom';
 
+// Navigation
+import { book } from '../../routes';
+
 // Elements
 import { MenuLink } from '../../elements';
 
@@ -26,7 +29,7 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
                 <MenuLink
                     fontSize = { fontSize }
                     push = { push }
-                    to = '/'>
+                    to = { book.pageOne }>
                     Company
                 </MenuLink>
             </ListItem>
@@ -34,7 +37,7 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
                 <MenuLink
                     fontSize = { fontSize }
                     push = { push }
-                    to = '/about-us'>
+                    to = { book.pageTwo }>
                     About us
                 </MenuLink>
             </ListItem>
@@ -42,7 +45,7 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
                 <MenuLink
                     fontSize = { fontSize }
                     push = { push }
-                    to = '/our-services'>
+                    to = { book.pageThree }>
                     Our services
                 </MenuLink>
             </ListItem>
@@ -50,7 +53,7 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
                 <MenuLink
                     fontSize = { fontSize }
                     push = { push }
-                    to = '/technologies'>
+                    to = { book.pageFour }>
                     Technologies
                 </MenuLink>
             </ListItem>
@@ -58,7 +61,7 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
                 <MenuLink
                     fontSize = { fontSize }
                     push = { push }
-                    to = '/portfolio'>
+                    to = { book.pageFive }>
                     Portfolio
                 </MenuLink>
             </ListItem>
@@ -66,7 +69,7 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
                 <MenuLink
                     fontSize = { fontSize }
                     push = { push }
-                    to = '/vacancies'>
+                    to = { book.pageSix }>
                     Vacancies
                 </MenuLink>
             </ListItem>

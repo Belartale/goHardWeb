@@ -7,7 +7,6 @@ interface PropTypes extends BoxProps {
     variantCard: PropTypesBigCard['variantCard']
 }
 
-
 export const Container = styled(Box, {})<PropTypes>`
     max-width:       750px;
     padding:         20px 30px;
@@ -44,7 +43,7 @@ export const Card = styled(Box, {})<PropTypes>`
     },
 `;
 
-export const CardTitle = styled(Box, {})<PropTypes>`
+export const FirstTitle = styled(Box, {})<PropTypes>`
     font-family: 'Nunito';
 
     ${({ theme, variantCard }) => variantCard === 'grey' ? {
@@ -52,16 +51,21 @@ export const CardTitle = styled(Box, {})<PropTypes>`
         color:    theme.colors.success[ 50 ],
     } : {}}
 `;
-export const CardSubtitle = styled(Box, {})<PropTypes>`
+export const SecondTitle = styled(Box, {})<PropTypes>`
     font-family: 'Nunito';
     font-weight: 700;
-    line-height: ${({ theme }) => theme.fonts.lineHeight[ 550 ]} ,
+    margin-top:  15px;
 
+    @media (min-width: 800px) {
+        margin-top:  30px;
+    }
+    
     ${({ theme, variantCard }) => variantCard === 'grey' ? {
-        fontSize: theme.fonts.size.fourth,
+        lineHeight: theme.fonts.lineHeight[ 550 ],
+        fontSize:   theme.fonts.size.fourth,
     } : {
-        fontSize:  theme.fonts.size.seventh,
-        marginTop: '30px',
+        fontSize:   theme.fonts.size.seventh,
+        lineHeight: theme.fonts.lineHeight[ 800 ],
     }}
 `;
 export const CardText = styled(Box, {})<PropTypes>`
@@ -72,11 +76,15 @@ export const CardText = styled(Box, {})<PropTypes>`
 
     font-family: "Nunito";
     font-weight: 300;
-    line-height: ${ ({ theme, variantCard }) => variantCard === 'grey' ? theme.fonts.lineHeight[ 550 ] : theme.fonts.lineHeight[ 600 ]} ,
+    color:      ${({ theme }) => theme.colors.grey[ 50 ]};
 
-    ${({ theme, variantCard }) => ({
-        fontSize: variantCard === 'grey' ? theme.fonts.size.fourth : theme.fonts.size.fifth,
-        color:    theme.colors.grey[ 50 ],
-    })}
+    ${({ theme, variantCard }) => variantCard === 'grey' ? {
+        fontSize:   theme.fonts.size.fourth,
+        lineHeight: theme.fonts.lineHeight[ 550 ],
+    } : {
+        fontSize:   theme.fonts.size.fifth,
+        lineHeight: theme.fonts.lineHeight[ 600 ],
+    }}
+
 
 `;

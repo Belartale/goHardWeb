@@ -1,9 +1,5 @@
 // Core
-import { Box } from '@mui/material';
 import React, { FC } from 'react';
-
-// Bus
-// import {} from '../../../bus/'
 
 // Styles
 import * as S from './styles';

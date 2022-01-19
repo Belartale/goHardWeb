@@ -9,4 +9,5 @@ export * from './MenuLink';
 export * from './ArrowsBottom';
 export * from './Subtitle';
 export * from './ImagesServices';
+export * from './Link';
 

@@ -1,5 +1,10 @@
 // Core
-import { Box, styled, Typography, TypographyProps } from '@mui/material';
+import {
+    Box,
+    styled,
+    Typography,
+    TypographyProps,
+} from '@mui/material';
 
 // Types
 interface PropsTypes extends TypographyProps {

@@ -43,9 +43,11 @@ export const Slider: FC = () => {
                         slidesPerView: 2.77,
                     },
                     900: {
-                        spaceBetween: -70,
+                        slidesPerView: 2.77,
+                        spaceBetween:  -70,
                     },
                 }}
+                loopedSlides = { 6 }
                 pagination = {{
                     el:        '.swiper-pagination',
                     clickable: true,

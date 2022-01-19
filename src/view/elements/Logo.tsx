@@ -1,12 +1,9 @@
 // Core
 import React, { FC } from 'react';
-// import styled from 'styled-components';
 
 interface TypeProps {
     style?: object;
 }
-
-// const Container = styled.div``;
 
 export const Logo: FC<TypeProps> = ({ style }) => {
     return (

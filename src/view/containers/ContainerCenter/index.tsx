@@ -5,12 +5,7 @@ import { BoxProps } from '@mui/material';
 // Styles
 import { Container } from './styles';
 
-// Types
-interface PropTypes extends BoxProps {
-    /* type props here */
-}
-
-export const ContainerCenter: FC<PropTypes> = ({ children, ...props }) => {
+export const ContainerCenter: FC<BoxProps> = ({ children, ...props }) => {
     return (
         <Container { ...props }>
             {children}
