@@ -55,6 +55,7 @@ export const SecondTitle = styled(Box, {})<PropTypes>`
     font-family: 'Nunito';
     font-weight: 700;
     margin-top:  15px;
+    color: ${({ theme }) => theme.colors.primary[ 50 ]};
 
     @media (min-width: 800px) {
         margin-top:  30px;

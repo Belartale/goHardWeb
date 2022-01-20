@@ -16,7 +16,7 @@ import { ContainerCenter,
 import { ErrorBoundary,
     MyCardWithBlurBackground,
     SmallCard,
-    Slider,
+    SliderMainPage,
 } from '../../components';
 
 // Elements
@@ -365,7 +365,7 @@ const Main: FC = () => {
                             </MyButton>
                         </Grid>
                         <Grid item>
-                            <Slider/>
+                            <SliderMainPage/>
                         </Grid>
                     </Grid>
                 </MyContainer>

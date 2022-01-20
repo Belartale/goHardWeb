@@ -23,6 +23,7 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
     }
     &:active {
         background-color: ${({ theme }) => theme.colors.success[ 50 ]};
+        color: ${({ theme }) => theme.colors.primary[ 50 ]};
     }
 
     ${({ typeButton }) => (typeButton === 'lg blur'

@@ -35,7 +35,9 @@ export const BigCard: FC<PropTypesBigCard> = ({ firstTitle, secondTitle, variant
                     )
                     : firstTitle
                 }
-                <SecondTitle variantCard = { variantCard }>{secondTitle}</SecondTitle>
+                <SecondTitle variantCard = { variantCard }>
+                    {secondTitle}
+                </SecondTitle>
             </Card>
             <CardText
                 variantCard = { variantCard }>

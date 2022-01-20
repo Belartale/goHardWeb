@@ -21,7 +21,7 @@ import { Box } from '@mui/material';
 SwiperCore.use([ Navigation ]);
 SwiperCore.use([ Pagination ]);
 
-export const Slider: FC = () => {
+export const SliderMainPage: FC = () => {
     const arrImages = [
         { src: imagesFirstSlider, alt: 'img' },
         { src: imagesFirstSliderNext, alt: 'img' },

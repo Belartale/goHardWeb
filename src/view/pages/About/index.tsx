@@ -81,14 +81,6 @@ const About: FC = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui
                             eget sit vel dolor mauris. Aliquet mauris pellentesque euismod sagittis,
                             condimentum nec. Sit et quisque porttitor consectetur nisl. Sed etiam amet,
-                            vel sed pretium, egestas turpis sed. Sociis quisque rhoncus lectus vitae vel,
-                            mattis. Neque blandit arcu amet nulla in metus, urna orci varius. Nibh
-                            pharetra risus quis massa Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Dui eget sit vel dolor mauris. Aliquet mauris pellentesque euismod
-                            sagittis, condimentum nec. Sit et quisque porttitor consectetur nisl. Sed etiam
-                            amet, vel sed pretium, egestas turpis sed. Sociis quisque rhoncus lectus vitae
-                            vel, mattis. Neque blandit arcu amet nulla in metus, urna orci varius. Nibh
-                            pharetra risus quis massa
                         </BigCard>
                         <BigCard
                             firstTitle = { 3 }
@@ -100,11 +92,7 @@ const About: FC = () => {
                             vel sed pretium, egestas turpis sed. Sociis quisque rhoncus lectus vitae vel,
                             mattis. Neque blandit arcu amet nulla in metus, urna orci varius. Nibh
                             pharetra risus quis massa Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Dui eget sit vel dolor mauris. Aliquet mauris pellentesque euismod
-                            sagittis, condimentum nec. Sit et quisque porttitor consectetur nisl. Sed etiam
-                            amet, vel sed pretium, egestas turpis sed. Sociis quisque rhoncus lectus vitae
-                            vel, mattis. Neque blandit arcu amet nulla in metus, urna orci varius. Nibh
-                            pharetra risus quis massa
+                            elit.
                         </BigCard>
                         <BigCard
                             firstTitle = { 1 }

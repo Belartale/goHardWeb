@@ -1,6 +1,6 @@
 // Core
-import { Box } from '@mui/material';
 import React, { FC } from 'react';
+import { Box } from '@mui/material';
 
 // Containers
 import { ContainerCenter,
@@ -15,7 +15,7 @@ import { ContainerCenter,
 import { BigCard, ErrorBoundary } from '../../components';
 
 // Elements
-import { ArrowsBottom,
+import {
     Subtitle,
     Title,
     ImagesServices,
@@ -39,7 +39,6 @@ const Services: FC = () => {
                             Our <GreenText>Services</GreenText>
                         </Title>
                     </ContainerCenter>
-                    <ArrowsBottom />
                 </MyContainer>
             </Header>
             <Section sx = {{ position: 'relative' }}>
