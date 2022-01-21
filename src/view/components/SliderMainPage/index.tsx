@@ -21,12 +21,14 @@ import {
 export const SliderMainPage: FC = () => {
     const images = [
         { src: imagesFirstSlider, alt: 'img' },
-        { src: imagesFirstSliderNext, alt: 'img' },
+        { src: imagesFirstSlider, alt: 'img' },
         { src: imagesFirstSlider, alt: 'img' },
         { src: imagesFirstSliderNext, alt: 'img' },
         { src: imagesFirstSliderNext, alt: 'img' },
         { src: imagesFirstSlider, alt: 'img' },
     ];
+
+    //todo сделать слайдер, может из-за разной высоты крашиться autoHeight: true
 
     return (
         <Wrapper>
@@ -36,12 +38,17 @@ export const SliderMainPage: FC = () => {
                 navigation
                 roundLengths
                 breakpoints = {{
+                    10: {
+                        slidesPerView: 1,
+                        spaceBetween:  20,
+                    },
                     600: {
+                        spaceBetween:  -40,
                         slidesPerView: 2.77,
                     },
                     900: {
-                        slidesPerView: 2.77,
                         spaceBetween:  -70,
+                        slidesPerView: 2.77,
                     },
                 }}
                 loopedSlides = { images.length }
@@ -49,11 +56,9 @@ export const SliderMainPage: FC = () => {
                 pagination = {{
                     el:        '.swiper-pagination',
                     clickable: true,
-                }}
-                slidesPerView = { 1 }
-                spaceBetween = { -40 }>
+                }}>
 
-                <Box position = { 'relative' }>
+                <Box>
                     {images.map((element, index) => (
                         <SwiperSlide key = { index }>
                             <img

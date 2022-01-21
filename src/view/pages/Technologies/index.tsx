@@ -42,55 +42,55 @@ const arrImages = [
     {
         src:   html,
         title: 'Html',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'HTML is the standard markup language for Web pages.',
         alt:   'Image Html',
     },
     {
         src:   css,
         title: 'Css',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'CSS describes how HTML elements are to be displayed. Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem   Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem ',
         alt:   'Image Css',
     },
     {
         src:   js,
         title: 'JavaScript',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'JavaScript is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.',
         alt:   'Image JavaScript',
     },
     {
         src:   bootstrap,
         title: 'Bootstrap',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'Quickly design and customize responsive mobile-first sites with Bootstrap.',
         alt:   'Image Bootstrap',
     },
     {
         src:   react,
         title: 'React',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'React makes it painless to create interactive UIs.',
         alt:   'Image React',
     },
     {
         src:   vue,
         title: 'Vue',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable.',
         alt:   'Image Vue',
     },
     {
         src:   material,
         title: 'MaterialUI',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'React component for faster and easier web development.',
         alt:   'Image MaterialUI',
     },
     {
         src:   next,
         title: 'Next',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering.',
         alt:   'Image Next',
     },
     {
         src:   nuxt,
         title: 'Nuxt',
-        text:  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, nisl, lectus nisl sed quis non. Eget porta elit sit tempor eu sit.',
+        text:  'An open source framework making web development simple and powerful.',
         alt:   'Image Nuxt',
     },
 ];
@@ -119,7 +119,6 @@ const Technologies: FC = () => {
                         <GreenText>Front-end</GreenText> development
                     </TitleTechnologies>
                     <Subtitle
-                        mb = { '20px' }
                         textAlign = { 'center' }>
                         Front-end is the brightest showcase how your website can
                         look and felt by users. User friendly design and functionality
@@ -132,7 +131,6 @@ const Technologies: FC = () => {
                         <GreenText>Back-end</GreenText> development
                     </TitleTechnologies>
                     <Subtitle
-                        mb = { '20px' }
                         textAlign = { 'center' }>
                         Quality of back-end on your project is a direct characteristic of
                         the quality of the project. That is why the right choice of
@@ -144,7 +142,6 @@ const Technologies: FC = () => {
                         <GreenText>Mobile</GreenText> development
                     </TitleTechnologies>
                     <Subtitle
-                        mb = { '20px' }
                         textAlign = { 'center' }>
                         Depending on the requirements, business idea and final expectations,
                         we can choose technologies and implement requests in the most reasonable way.

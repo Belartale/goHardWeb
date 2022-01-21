@@ -1,14 +1,13 @@
 // Core
 import React, { FC } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 // Styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Wrapper } from './styles';
-
-import { Navigation } from 'swiper';
+import { TextSlide, TitleSlide, Wrapper } from './styles';
 
 // Types
 type Image = {
@@ -26,42 +25,44 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
     return (
         <Wrapper>
             <Swiper
-                centeredSlides
+                autoHeight
                 loop
                 navigation
                 roundLengths
                 breakpoints = {{
-                    600: {
-                        slidesPerView: 2.77,
+                    10: {
                     },
-                    900: {
-                        slidesPerView: 2.77,
-                        // spaceBetween:  -70,
+                    700: {
+                        slidesPerView: 3,
+                        spaceBetween:  -10,
                     },
                 }}
                 loopedSlides = { images.length }
-                modules = { [ Navigation ] }
-                slidesPerView = { 1 }
-                spaceBetween = { -40 }>
-
-                <Box position = { 'relative' }>
-                    {images.map((element: Image, index: number) => (
-                        <SwiperSlide key = { index }>
-                            <Box maxWidth = { '320px' }>
-                                <img
-                                    alt = { element.alt }
-                                    src = { element.src }
-                                />
-                                <Typography
+                modules = { [ Navigation ] }>
+                <Box>
+                    {images.map((element: Image) => (
+                        <SwiperSlide key = { element.alt }>
+                            <Box>
+                                <Box
+                                    sx = {{
+                                        display:        'flex',
+                                        justifyContent: 'center',
+                                    }}>
+                                    <img
+                                        alt = { element.alt }
+                                        src = { element.src }
+                                    />
+                                </Box>
+                                <TitleSlide
                                     textAlign = { 'center' }
                                     variant = 'h3'>
                                     {element.title}
-                                </Typography>
-                                <Typography
+                                </TitleSlide>
+                                <TextSlide
                                     textAlign = { 'center' }
                                     variant = 'caption'>
                                     {element.text}
-                                </Typography>
+                                </TextSlide>
                             </Box>
                         </SwiperSlide>
                     ))}

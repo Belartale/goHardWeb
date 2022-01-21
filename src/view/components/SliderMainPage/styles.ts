@@ -20,18 +20,27 @@ export const Wrapper = styled(Box, {})`
             justify-content: center;
             opacity: 0.5;
         }
-        .swiper-slide-active{
-            transform: scale(1);
-            z-index: 2;
-            opacity: 1;
+        @media (max-width: 700px) {
+            .swiper-slide-active {
+                transform: scale(1);
+                z-index: 2;
+                opacity: 1;
+            }
         }
-        .swiper-slide-next {
-            z-index: 1;
+
+        @media (min-width: 700px) {
+            .swiper-slide-active {
+                transform: scale(1);
+                z-index: 2;
+                opacity: 1;
+            }
         }
+    
         .swiper-button-prev, .swiper-button-next {
             color: ${({ theme }) => theme.colors.success[ 50 ]};
             top: calc(50% - 16px);
         }
+    
         .swiper-pagination {
             position: static;
 
