@@ -38,7 +38,7 @@ export const CardBox = styled(Box, {})(({ theme }) => ({
 
 export const Title = styled(Box, {})(({ theme }) => ({
     textAlign:  'center',
-    fontSize:   theme.fonts.size.eleventh,
+    fontSize:   theme.fonts.size.A300,
     fontFamily: 'Nunito',
     fontWeight: 400,
     color:      theme.colors.primary[ 50 ],
@@ -46,7 +46,7 @@ export const Title = styled(Box, {})(({ theme }) => ({
 
 export const Text = styled(Typography, {})<PropsTypes>(({ theme, fontSize }) => ({
     textAlign:  'center',
-    fontSize:   fontSize ? fontSize : theme.fonts.size.second,
+    fontSize:   fontSize ? fontSize : theme.fonts.size[100],
     fontFamily: 'Nunito',
     fontWeight: 700,
     lineHeight: fontSize ? theme.fonts.lineHeight[ 55 ] : theme.fonts.lineHeight[ 200 ],

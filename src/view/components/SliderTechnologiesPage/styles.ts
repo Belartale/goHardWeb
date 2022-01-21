@@ -39,14 +39,14 @@ export const Wrapper = styled(Box, {})`
 export const TitleSlide = styled(Typography, {})`
     
     font-family: 'Nunito';
-    font-size: ${({ theme }) => theme.fonts.size.tenth};
+    font-size: ${({ theme }) => theme.fonts.size.A200};
     color: ${({ theme }) => theme.colors.primary[ 50 ]};
 `;
 
 export const TextSlide = styled(Typography, {})`
     
     font-family: 'Nunito';
-    font-size: ${({ theme }) => theme.fonts.size.tenth};
+    font-size: ${({ theme }) => theme.fonts.size.A200};
     line-height:  ${({ theme }) => theme.fonts.lineHeight[ 400 ]};
     color: ${({ theme }) => theme.colors.primary[ 50 ]};
 `;

@@ -17,7 +17,7 @@ export const BoxWithTopBorder = styled(Box, {})(({ theme }) => ({
 export const MyTypographyContact  = styled(Typography, {})(({ theme }) => ({
     marginLeft:                      '15px',
     color:                           theme.colors.primary[ 50 ],
-    fontSize:                        theme.fonts.size.third,
+    fontSize:                        theme.fonts.size[200],
     fontFamily:                      'Nunito',
     fontWeight:                      700,
     [ '@media (min-width: 900px)' ]: {
@@ -31,7 +31,7 @@ export const MyTypographyContact  = styled(Typography, {})(({ theme }) => ({
 export const MyTypographyParagraph  = styled(Typography, {})(({ theme }) => ({
     padding:    '15px 0px',
     width:      '100%',
-    fontSize:   theme.fonts.size.third,
+    fontSize:   theme.fonts.size[200],
     fontFamily: 'Nunito',
     fontWeight: 300,
     color:      theme.colors.grey[ 50 ],

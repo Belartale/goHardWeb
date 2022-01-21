@@ -6,7 +6,7 @@ import { TypesColors, TypesFonts } from '../../assets';
 const minusNumber = ({ theme, number }: {
     theme: {colors: TypesColors, fonts: TypesFonts},
     number: number
-}): string => `${Number(theme.fonts.size.thirteenth.slice(0, -2)) - number}px`;
+}): string => `${Number(theme.fonts.size.A500.slice(0, -2)) - number}px`;
 
 const TypographyStyled = styled(Typography, {})(({ theme }) => ({
     fontSize:   '50px',
@@ -25,7 +25,7 @@ const TypographyStyled = styled(Typography, {})(({ theme }) => ({
         textAlign: 'left',
     },
     [ theme.breakpoints.up('lg') ]: {
-        fontSize: theme.fonts.size.thirteenth,
+        fontSize: theme.fonts.size.A500,
     },
 }));
 

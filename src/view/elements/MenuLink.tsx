@@ -23,7 +23,7 @@ export const Container = styled(NavLink, { name: 'ListItemButton' })<TypePropsCo
 
     color:      theme.colors.primary[ 50 ],
     position:   'relative',
-    fontSize:   fontSize === 'sm' ? theme.fonts.size.third : theme.fonts.size.eighth,
+    fontSize:   fontSize === 'sm' ? theme.fonts.size[200] : theme.fonts.size[800],
     fontFamily: 'Nunito',
     fontWeight: 700,
     whiteSpace: 'nowrap',

@@ -47,7 +47,7 @@ export const FirstTitle = styled(Box, {})<PropTypes>`
     font-family: 'Nunito';
 
     ${({ theme, variantCard }) => variantCard === 'grey' ? {
-        fontSize: theme.fonts.size.twelfth,
+        fontSize: theme.fonts.size.A400,
         color:    theme.colors.success[ 50 ],
     } : {}}
 `;
@@ -63,9 +63,9 @@ export const SecondTitle = styled(Box, {})<PropTypes>`
     
     ${({ theme, variantCard }) => variantCard === 'grey' ? {
         lineHeight: theme.fonts.lineHeight[ 550 ],
-        fontSize:   theme.fonts.size.fourth,
+        fontSize:   theme.fonts.size[400],
     } : {
-        fontSize:   theme.fonts.size.seventh,
+        fontSize:   theme.fonts.size[700],
         lineHeight: theme.fonts.lineHeight[ 800 ],
     }}
 `;
@@ -80,10 +80,10 @@ export const CardText = styled(Box, {})<PropTypes>`
     color:      ${({ theme }) => theme.colors.grey[ 50 ]};
 
     ${({ theme, variantCard }) => variantCard === 'grey' ? {
-        fontSize:   theme.fonts.size.fourth,
+        fontSize:   theme.fonts.size[400],
         lineHeight: theme.fonts.lineHeight[ 550 ],
     } : {
-        fontSize:   theme.fonts.size.fifth,
+        fontSize:   theme.fonts.size[500],
         lineHeight: theme.fonts.lineHeight[ 600 ],
     }}
 

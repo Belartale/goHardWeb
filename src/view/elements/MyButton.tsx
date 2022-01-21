@@ -36,17 +36,17 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
         }
 }
 
-    ${({ theme, typeButton }) => (typeButton === 'sm') && { fontSize: theme.fonts.size.fourth, borderRadius: '2px' }}
+    ${({ theme, typeButton }) => (typeButton === 'sm') && { fontSize: theme.fonts.size[400], borderRadius: '2px' }}
     ${({ theme, typeButton }) => (typeButton === 'lg grey')
     && {
-        fontSize:   theme.fonts.size.fourth,
+        fontSize:   theme.fonts.size[400],
         fontWeight: 800,
     }}
 
     ${({ theme, typeButton }) => typeButton === 'lg blur'
         && {
             backdropFilter: 'blur(10px)',
-            fontSize:       theme.fonts.size.fifth,
+            fontSize:       theme.fonts.size[500],
             fontWeight:     700,
         }
 }
@@ -61,7 +61,7 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
     ${({ theme, typeButton }) => (typeButton === 'lg clear')
         && {
             color:      theme.colors.success[ 50 ],
-            fontSize:   theme.fonts.size.eighth,
+            fontSize:   theme.fonts.size[800],
             fontWeight: 700,
         }
 }

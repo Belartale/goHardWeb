@@ -7,7 +7,7 @@ interface PropTypesTypography extends TypographyProps {
 }
 
 export const MyTypography = styled(Typography, {})<PropTypesTypography>(({ theme, variantText }) => ({
-    fontSize:   theme.fonts.size.fourth,
+    fontSize:   theme.fonts.size[400],
     fontWeight: 700,
     lineHeight: theme.fonts.lineHeight[ 550 ],
     fontFamily: 'Nunito',

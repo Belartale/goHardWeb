@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { styled, Typography, TypographyProps } from '@mui/material';
 
 const Container = styled(Typography, {})(({ theme }) => ({
-    fontSize:   theme.fonts.size.ninth,
+    fontSize:   theme.fonts.size[900],
     fontFamily: 'Nunito',
     fontWeight: 400,
     color:      theme.colors.primary[ 50 ],
