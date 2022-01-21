@@ -72,3 +72,4 @@ export const TextSlide = styled(Typography, {})`
     line-height:  ${({ theme }) => theme.fonts.lineHeight[ 400 ]};
     color: ${({ theme }) => theme.colors.grey[ 50 ]};
 `;
+

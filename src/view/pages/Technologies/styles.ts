@@ -1,5 +1,5 @@
 // Core
-import { styled, Typography } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 
 export const TitleTechnologies = styled(Typography, {})(({ theme }) => ({
     marginBottom: '25px',
@@ -13,3 +13,6 @@ export const TitleTechnologies = styled(Typography, {})(({ theme }) => ({
         fontWeight: 700,
     },
 }));
+export const Wrapper = styled(Box, {})`
+    margin: 40px 0px;
+`;

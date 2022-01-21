@@ -5,10 +5,10 @@ import { Box } from '@mui/material';
 // Containers
 import {
     ContainerCenter,
+    Footer,
     GreenText,
     Header,
     MyContainer,
-    Section,
 } from '../../containers';
 
 // Components
@@ -19,6 +19,7 @@ import { Subtitle, Title } from '../../elements';
 
 // Images
 import technologiesBg from '../../../assets/images/technologiesBg.gif';
+
 import html from '../../../assets/images/html.png';
 import css from '../../../assets/images/css.png';
 import js from '../../../assets/images/js.png';
@@ -29,7 +30,13 @@ import material from '../../../assets/images/material.png';
 import next from '../../../assets/images/next.png';
 import nuxt from '../../../assets/images/nuxt.png';
 
-// import technologiesBg from '../../../assets/images';
+import express from '../../../assets/images/express.png';
+import php from '../../../assets/images/php.png';
+import laravel from '../../../assets/images/laravel.png';
+import syphony from '../../../assets/images/syphony.png';
+import python from '../../../assets/images/python.png';
+import flack from '../../../assets/images/flack.png';
+
 // import technologiesBg from '../../../assets/images';
 // import technologiesBg from '../../../assets/images';
 // import technologiesBg from '../../../assets/images';
@@ -38,7 +45,9 @@ import nuxt from '../../../assets/images/nuxt.png';
 // import technologiesBg from '../../../assets/images';
 // import technologiesBg from '../../../assets/images';
 
-const arrImages = [
+import mongodb from '../../../assets/images/mongodb.png';
+
+const arrImagesFrontEnd = [
     {
         src:   html,
         title: 'Html',
@@ -95,8 +104,69 @@ const arrImages = [
     },
 ];
 
+const arrImagesBackEnd = [
+    {
+        src:   js,
+        title: 'JavaScript',
+        text:  'Loremmmmm',
+        alt:   'Image JavaScript',
+    },
+    {
+        src:   express,
+        title: 'Express',
+        text:  'Loremmmmm',
+        alt:   'Image Express',
+    },
+    {
+        src:   php,
+        title: 'Php',
+        text:  'Loremmmmm',
+        alt:   'Image Php',
+    },
+    {
+        src:   laravel,
+        title: 'Laravel',
+        text:  'Loremmmmm',
+        alt:   'Image Laravel',
+    },
+    {
+        src:   syphony,
+        title: 'Syphony',
+        text:  'Loremmmmm',
+        alt:   'Image Syphony',
+    },
+    {
+        src:   python,
+        title: 'Python',
+        text:  'Loremmmmm',
+        alt:   'Image Python',
+    },
+    {
+        src:   flack,
+        title: 'Flack',
+        text:  'Loremmmmm',
+        alt:   'Image Flack',
+    },
+    {
+        src:   mongodb,
+        title: 'MongoDB',
+        text:  'Loremmmmm',
+        alt:   'Image MongoDB',
+    },
+];
+
+const arrImagesMobile = [
+    {
+        src:   mongodb,
+        title: 'MongoDB',
+        text:  'Loremmmmm',
+        alt:   'Image MongoDB',
+    },
+];
+
+
 // Styles
-import { TitleTechnologies } from './styles';
+import { TitleTechnologies, Wrapper } from './styles';
 
 const Technologies: FC = () => {
     return (
@@ -114,7 +184,7 @@ const Technologies: FC = () => {
                 </MyContainer>
             </Header>
             <MyContainer>
-                <Section>
+                <Wrapper>
                     <TitleTechnologies variant = 'h3'>
                         <GreenText>Front-end</GreenText> development
                     </TitleTechnologies>
@@ -124,9 +194,9 @@ const Technologies: FC = () => {
                         look and felt by users. User friendly design and functionality
                         makes the difference in the way how users perceive the information.
                     </Subtitle>
-                    <SliderTechnologiesPage images = { arrImages } />
-                </Section>
-                <Section>
+                    <SliderTechnologiesPage images = { arrImagesFrontEnd } />
+                </Wrapper>
+                <Wrapper>
                     <TitleTechnologies variant = 'h3'>
                         <GreenText>Back-end</GreenText> development
                     </TitleTechnologies>
@@ -136,8 +206,9 @@ const Technologies: FC = () => {
                         the quality of the project. That is why the right choice of
                         technologies used, is so important.
                     </Subtitle>
-                </Section>
-                <Section>
+                    <SliderTechnologiesPage images = { arrImagesBackEnd } />
+                </Wrapper>
+                <Wrapper>
                     <TitleTechnologies variant = 'h3'>
                         <GreenText>Mobile</GreenText> development
                     </TitleTechnologies>
@@ -146,8 +217,10 @@ const Technologies: FC = () => {
                         Depending on the requirements, business idea and final expectations,
                         we can choose technologies and implement requests in the most reasonable way.
                     </Subtitle>
-                </Section>
+                    <SliderTechnologiesPage images = { arrImagesMobile } />
+                </Wrapper>
             </MyContainer>
+            <Footer/>
         </Box>
     );
 };
