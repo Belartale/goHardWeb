@@ -1,28 +1,25 @@
 // Core
 import React, { FC } from 'react';
+import { Box } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { MyWrapper } from './styles';
+import { Wrapper } from './styles';
 
 // Images
 import imagesFirstSlider from '../../../assets/images/firstSlider.png';
 import imagesFirstSliderNext from '../../../assets/images/firstSliderNext.png';
 
-import SwiperCore, {
+import {
     Navigation,
     Pagination,
 } from 'swiper';
-import { Box } from '@mui/material';
-
-SwiperCore.use([ Navigation ]);
-SwiperCore.use([ Pagination ]);
 
 export const SliderMainPage: FC = () => {
-    const arrImages = [
+    const images = [
         { src: imagesFirstSlider, alt: 'img' },
         { src: imagesFirstSliderNext, alt: 'img' },
         { src: imagesFirstSlider, alt: 'img' },
@@ -32,7 +29,7 @@ export const SliderMainPage: FC = () => {
     ];
 
     return (
-        <MyWrapper>
+        <Wrapper>
             <Swiper
                 centeredSlides
                 loop
@@ -47,7 +44,8 @@ export const SliderMainPage: FC = () => {
                         spaceBetween:  -70,
                     },
                 }}
-                loopedSlides = { 6 }
+                loopedSlides = { images.length }
+                modules = { [ Navigation, Pagination ] }
                 pagination = {{
                     el:        '.swiper-pagination',
                     clickable: true,
@@ -56,7 +54,7 @@ export const SliderMainPage: FC = () => {
                 spaceBetween = { -40 }>
 
                 <Box position = { 'relative' }>
-                    {arrImages.map((element, index) => (
+                    {images.map((element, index) => (
                         <SwiperSlide key = { index }>
                             <img
                                 alt = { element.alt }
@@ -70,6 +68,6 @@ export const SliderMainPage: FC = () => {
                     mt = { '20px' }>
                 </Box>
             </Swiper>
-        </MyWrapper>
+        </Wrapper>
     );
 };

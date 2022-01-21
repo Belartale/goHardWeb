@@ -1,5 +1,5 @@
 // Core
-import { Box, styled } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 
 export const Wrapper = styled(Box, {})`
     .swiper {
@@ -10,8 +10,8 @@ export const Wrapper = styled(Box, {})`
             }
         }
         & img {
-            width: 100%;
-            border-radius: 8px;
+            height: 100px;
+            width: auto;
         }
         .swiper-slide {
             transition: all 400ms linear;
@@ -28,21 +28,25 @@ export const Wrapper = styled(Box, {})`
         .swiper-slide-next {
             z-index: 1;
         }
+
         .swiper-button-prev, .swiper-button-next {
             color: ${({ theme }) => theme.colors.success[ 50 ]};
-            top: calc(50% - 16px);
-        }
-        .swiper-pagination {
-            position: static;
-
-            & .swiper-pagination-bullet {
-                width: 12px;
-                height: 12px;
-                background-color: ${({ theme }) => theme.colors.success[ 100 ]}
-            }
-            & .swiper-pagination-bullet-active {
-                background-color: ${({ theme }) => theme.colors.success[ 50 ]}
-            }
+            /* top: calc(50% - 16px); */
         }
     }
+`;
+
+export const TitleSlide = styled(Typography, {})`
+    
+    font-family: 'Nunito';
+    font-size: ${({ theme }) => theme.fonts.size.tenth};
+    color: ${({ theme }) => theme.colors.primary[ 50 ]};
+`;
+
+export const TextSlide = styled(Typography, {})`
+    
+    font-family: 'Nunito';
+    font-size: ${({ theme }) => theme.fonts.size.tenth};
+    line-height:  ${({ theme }) => theme.fonts.lineHeight[ 400 ]};
+    color: ${({ theme }) => theme.colors.primary[ 50 ]};
 `;

@@ -6,8 +6,7 @@ import * as S from './styles';
 
 // Types
 export interface PropTypesHeader {
-    //todo any
-    image: any
+    image: string
     backgroundsize?: string
     opacity?: boolean
 }
