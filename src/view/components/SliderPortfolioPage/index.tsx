@@ -1,24 +1,20 @@
 // Core
 import React, { FC } from 'react';
-import { Box } from '@mui/material';
+import { Box, Card, CardContent, CardMedia } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
 
 // Styles
+import { Wrapper } from './styles';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Wrapper } from './styles';
 
 // Images
 import imagesFirstSlider from '../../../assets/images/firstSlider.png';
 import imagesFirstSliderNext from '../../../assets/images/firstSliderNext.png';
 
-import {
-    Navigation,
-    Pagination,
-} from 'swiper';
 
-export const SliderMainPage: FC = () => {
+export const SliderPortfolioPage: FC = () => {
     const images = [
         { src: imagesFirstSlider, alt: 'img' },
         { src: imagesFirstSlider, alt: 'img' },
@@ -31,7 +27,7 @@ export const SliderMainPage: FC = () => {
     return (
         <Wrapper>
             <Swiper
-                centeredSlides
+                autoHeight
                 loop
                 navigation
                 roundLengths
@@ -42,35 +38,33 @@ export const SliderMainPage: FC = () => {
                         initialSlide:  0,
                     },
                     600: {
-                        spaceBetween:  -40,
-                        slidesPerView: 2.77,
+                        spaceBetween:  0,
+                        slidesPerView: 2.5,
                         initialSlide:  images.length - 1,
                     },
-                    900: {
+                    1000: {
                         spaceBetween:  -70,
-                        slidesPerView: 2.77,
+                        slidesPerView: 3,
                     },
                 }}
                 loopedSlides = { images.length }
-                modules = { [ Navigation, Pagination ] }
-                pagination = {{
-                    el:        '.swiper-pagination',
-                    clickable: true,
-                }}>
+                modules = { [ Navigation ] }>
 
                 <Box>
                     {images.map((element, index) => (
                         <SwiperSlide key = { index }>
-                            <img
-                                alt = { element.alt }
-                                src = { element.src }
-                            />
+                            <Card sx = {{ backgroundColor: 'transparent' }}>
+                                <CardMedia
+                                    alt = { element.alt }
+                                    component = 'img'
+                                    image = { element.src }
+                                />
+                                <CardContent>
+                                    text
+                                </CardContent>
+                            </Card>
                         </SwiperSlide>
                     ))}
-                </Box>
-                <Box
-                    className = 'swiper-pagination'
-                    mt = { '20px' }>
                 </Box>
             </Swiper>
         </Wrapper>

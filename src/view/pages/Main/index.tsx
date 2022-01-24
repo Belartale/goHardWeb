@@ -359,9 +359,7 @@ const Main: FC = () => {
                             <MyButton
                                 href = { book.pageFive }
                                 typebutton = 'lg clear'>
-                                <GreenText>
-                                    Our works
-                                </GreenText>
+                                Our works
                             </MyButton>
                         </Grid>
                         <Grid item>

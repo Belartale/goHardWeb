@@ -1,5 +1,11 @@
 // Core
-import styled from 'styled-components';
+import { Box, styled } from '@mui/material';
 
-export const Container = styled.section`
+export const TitlePortfolio = styled(Box, {})`
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: ${({ theme }) => theme.fonts.size.A100};
+    font-family: 'Nunito';
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.success[ 50 ]};
 `;

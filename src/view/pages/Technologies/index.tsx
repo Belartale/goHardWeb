@@ -35,7 +35,7 @@ const Technologies: FC = () => {
                 backgroundsize = 'cover'
                 image = { technologiesBg }
                 opacity = 'true'>
-                <MyContainer  sx = {{ height: '100%' }}>
+                <MyContainer sx = {{ height: '100%' }}>
                     <ContainerCenter>
                         <Title>
                             <GreenText>Technologies</GreenText>
