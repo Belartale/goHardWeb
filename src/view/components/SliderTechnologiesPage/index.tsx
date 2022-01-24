@@ -32,12 +32,14 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
+                        initialSlide:  0,
                     },
-                    800: {
+                    900: {
                         slidesPerView: 3,
+                        initialSlide:  images.length - 1,
                     },
                 }}
-                initialSlide = { images.length - 1 }
+
                 loopedSlides = { images.length }
                 modules = { [ Navigation ] }>
                 <Box>

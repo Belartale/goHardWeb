@@ -38,7 +38,12 @@ export const Wrapper = styled(Box, {})`
     
         .swiper-button-prev, .swiper-button-next {
             color: ${({ theme }) => theme.colors.success[ 50 ]};
+            opacity: 0;
+            transition: all 200ms linear;
             top: calc(50% - 16px);
+        }
+        &:hover .swiper-button-prev, &:hover .swiper-button-next {
+            opacity: 1;
         }
     
         .swiper-pagination {

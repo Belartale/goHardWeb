@@ -14,6 +14,9 @@ export const TitleTechnologies = styled(Typography, {})(({ theme }) => ({
     },
 }));
 export const Wrapper = styled(Box, {})`
-    margin: 40px 0px;
+    margin: 0px 0px;
+    @media (min-width: 900px) {
+        margin: 40px 0px;
+    }
 `;
 

@@ -45,7 +45,7 @@ export const Footer: FC = () => {
                                             fill = 'white'
                                         />
                                     </svg>
-                                    <S.MyTypographyContact>+38 (063) 1740191</S.MyTypographyContact>
+                                    <S.MyTypographyContact>+38 (063) 174 01 91</S.MyTypographyContact>
                                 </Box>
                                 <Box sx = {{ display: 'flex', alignItems: 'center' }}>
                                     <Link

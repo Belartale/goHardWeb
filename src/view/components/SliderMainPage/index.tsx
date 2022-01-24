@@ -41,17 +41,18 @@ export const SliderMainPage: FC = () => {
                     10: {
                         slidesPerView: 1,
                         spaceBetween:  20,
+                        initialSlide:  0,
                     },
                     600: {
                         spaceBetween:  -40,
                         slidesPerView: 2.77,
+                        initialSlide:  images.length - 1,
                     },
                     900: {
                         spaceBetween:  -70,
                         slidesPerView: 2.77,
                     },
                 }}
-                initialSlide = { images.length - 1 }
                 loopedSlides = { images.length }
                 modules = { [ Navigation, Pagination ] }
                 pagination = {{
