@@ -31,9 +31,9 @@ const About: FC = () => {
     return (
         <Box>
             <Header
-                opacity
                 backgroundsize = 'cover'
-                image = { aboutUsBg } >
+                image = { aboutUsBg }
+                opacity = 'true' >
                 <MyContainer  sx = {{ height: '100%' }}>
                     <ContainerCenter>
                         <Title>

@@ -8,7 +8,7 @@ import * as S from './styles';
 export interface PropTypesHeader {
     image: string
     backgroundsize?: string
-    opacity?: boolean
+    opacity?: 'true'
 }
 
 export const Header: FC<PropTypesHeader> = ({ children, ...props }) => {

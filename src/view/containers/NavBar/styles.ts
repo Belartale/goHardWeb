@@ -27,15 +27,15 @@ export const IconDrawer  = styled(Box, {})(({ theme }) => ({
         backgroundColor: theme.colors.primary[ 50 ],
     },
 
-    '& span:nth-child(1)': {
+    '& span:nth-of-type(1)': {
         width:  '100%',
         height: '4px',
     },
-    '& span:nth-child(2)': {
+    '& span:nth-of-type(2)': {
         width:  '60%',
         height: '4px',
     },
-    '& span:nth-child(3)': {
+    '& span:nth-of-type(3)': {
         width:  '30%',
         height: '4px',
     },

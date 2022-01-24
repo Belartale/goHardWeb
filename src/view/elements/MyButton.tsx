@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 // Types
 interface PropTypes extends ButtonUnstyledProps {
-    typeButton: 'sm' | 'lg blur' | 'lg clear' | 'lg grey'
+    typebutton: 'sm' | 'lg blur' | 'lg clear' | 'lg grey'
     href?: string
 }
 
@@ -26,9 +26,9 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
         color: ${({ theme }) => theme.colors.primary[ 50 ]};
     }
 
-    ${({ typeButton }) => (typeButton === 'lg blur'
-        || typeButton === 'lg clear'
-        || typeButton === 'lg grey')
+    ${({ typebutton }) => (typebutton === 'lg blur'
+        || typebutton === 'lg clear'
+        || typebutton === 'lg grey')
         && {
             minWidth:     '220px',
             padding:      '10px',
@@ -36,14 +36,14 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
         }
 }
 
-    ${({ theme, typeButton }) => (typeButton === 'sm') && { fontSize: theme.fonts.size[400], borderRadius: '2px' }}
-    ${({ theme, typeButton }) => (typeButton === 'lg grey')
+    ${({ theme, typebutton }) => (typebutton === 'sm') && { fontSize: theme.fonts.size[400], borderRadius: '2px' }}
+    ${({ theme, typebutton }) => (typebutton === 'lg grey')
     && {
         fontSize:   theme.fonts.size[400],
         fontWeight: 800,
     }}
 
-    ${({ theme, typeButton }) => typeButton === 'lg blur'
+    ${({ theme, typebutton }) => typebutton === 'lg blur'
         && {
             backdropFilter: 'blur(10px)',
             fontSize:       theme.fonts.size[500],
@@ -51,14 +51,14 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
         }
 }
 
-    ${({ typeButton }) => (typeButton === 'sm' || typeButton === 'lg clear' || typeButton === 'lg grey' || typeButton === 'lg blur')
+    ${({ typebutton }) => (typebutton === 'sm' || typebutton === 'lg clear' || typebutton === 'lg grey' || typebutton === 'lg blur')
         && { background: 'transparent' }
 }
-    ${({ theme, typeButton }) => (typeButton === 'sm' || typeButton === 'lg blur' || typeButton === 'lg grey')
+    ${({ theme, typebutton }) => (typebutton === 'sm' || typebutton === 'lg blur' || typebutton === 'lg grey')
         && { color: theme.colors.primary[ 50 ] }
 }
 
-    ${({ theme, typeButton }) => (typeButton === 'lg clear')
+    ${({ theme, typebutton }) => (typebutton === 'lg clear')
         && {
             color:      theme.colors.success[ 50 ],
             fontSize:   theme.fonts.size[800],
@@ -66,7 +66,7 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
         }
 }
 
-    ${({ typeButton }) => (typeButton === 'sm')
+    ${({ typebutton }) => (typebutton === 'sm')
             && {
                 padding:    '10px 30px',
                 fontWeight: 800,
@@ -75,12 +75,12 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
 `;
 
 
-export const MyButton: FC<PropTypes> = ({ children, typeButton, href, ...props }) => {
+export const MyButton: FC<PropTypes> = ({ children, typebutton, href, ...props }) => {
     const { push } = useHistory();
 
     return (
         <ButtonStyled
-            typeButton = { typeButton }
+            typebutton = { typebutton }
             onClick = { () => href && push(href) }
             { ...props }>
             {children}

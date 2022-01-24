@@ -100,7 +100,7 @@ const Main: FC = () => {
                             </Subtitle>
                             <MyButton
                                 href = { book.pageTwo }
-                                typeButton = 'lg blur'>
+                                typebutton = 'lg blur'>
                                 More
                             </MyButton>
                         </Grid>
@@ -275,7 +275,7 @@ const Main: FC = () => {
                         <Grid item>
                             <MyButton
                                 href = { book.pageThree }
-                                typeButton = 'lg grey'>
+                                typebutton = 'lg grey'>
                                 More details
                             </MyButton>
                         </Grid>
@@ -320,7 +320,7 @@ const Main: FC = () => {
                             </Subtitle>
                             <MyButton
                                 href = { book.pageFour }
-                                typeButton = 'lg clear'>
+                                typebutton = 'lg clear'>
                                 Watch list
                             </MyButton>
                         </Grid>
@@ -358,7 +358,7 @@ const Main: FC = () => {
                             sx = {{ mb: '60px' }}>
                             <MyButton
                                 href = { book.pageFive }
-                                typeButton = 'lg clear'>
+                                typebutton = 'lg clear'>
                                 <GreenText>
                                     Our works
                                 </GreenText>

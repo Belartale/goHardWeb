@@ -36,16 +36,12 @@ import laravel from '../../../assets/images/laravel.png';
 import syphony from '../../../assets/images/syphony.png';
 import python from '../../../assets/images/python.png';
 import flack from '../../../assets/images/flack.png';
-
-// import technologiesBg from '../../../assets/images';
-// import technologiesBg from '../../../assets/images';
-// import technologiesBg from '../../../assets/images';
-// import technologiesBg from '../../../assets/images';
-// import technologiesBg from '../../../assets/images';
-// import technologiesBg from '../../../assets/images';
-// import technologiesBg from '../../../assets/images';
-
 import mongodb from '../../../assets/images/mongodb.png';
+
+import java from '../../../assets/images/java.png';
+import kotlin from '../../../assets/images/kotlin.png';
+import flutter from '../../../assets/images/crossFlutter.png';
+
 
 const arrImagesFrontEnd = [
     {
@@ -157,10 +153,28 @@ const arrImagesBackEnd = [
 
 const arrImagesMobile = [
     {
-        src:   mongodb,
-        title: 'MongoDB',
+        src:   react,
+        title: 'React Native',
         text:  'Loremmmmm',
-        alt:   'Image MongoDB',
+        alt:   'Image React Native',
+    },
+    {
+        src:   java,
+        title: 'Java',
+        text:  'Loremmmmm',
+        alt:   'Image Java',
+    },
+    {
+        src:   kotlin,
+        title: 'Kotlin',
+        text:  'Loremmmmm',
+        alt:   'Image Kotlin',
+    },
+    {
+        src:   flutter,
+        title: 'Flutter',
+        text:  'Loremmmmm',
+        alt:   'Image Flutter',
     },
 ];
 
@@ -172,9 +186,9 @@ const Technologies: FC = () => {
     return (
         <Box>
             <Header
-                opacity
                 backgroundsize = 'cover'
-                image = { technologiesBg }>
+                image = { technologiesBg }
+                opacity = 'true'>
                 <MyContainer  sx = {{ height: '100%' }}>
                     <ContainerCenter>
                         <Title>

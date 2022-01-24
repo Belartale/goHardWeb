@@ -161,7 +161,7 @@ export const Footer: FC = () => {
                                 <Grid
                                     item
                                     xs = { 12 }>
-                                    <MyButton typeButton = 'sm'>Send</MyButton>
+                                    <MyButton typebutton = 'sm'>Send</MyButton>
                                 </Grid>
 
                             </Grid>
