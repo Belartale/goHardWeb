@@ -31,17 +31,20 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                 roundLengths
                 breakpoints = {{
                     10: {
+                        slidesPerView: 1,
                     },
-                    700: {
+                    800: {
                         slidesPerView: 3,
-                        spaceBetween:  -10,
                     },
                 }}
+                initialSlide = { images.length - 1 }
                 loopedSlides = { images.length }
                 modules = { [ Navigation ] }>
                 <Box>
                     {images.map((element: Image) => (
-                        <SwiperSlide key = { element.alt }>
+                        <SwiperSlide
+                            key = { element.alt }
+                            style = {{ display: 'flex', justifyContent: 'center' }}>
                             <Box>
                                 <Box
                                     sx = {{

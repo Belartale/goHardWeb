@@ -51,6 +51,7 @@ export const SliderMainPage: FC = () => {
                         slidesPerView: 2.77,
                     },
                 }}
+                initialSlide = { images.length - 1 }
                 loopedSlides = { images.length }
                 modules = { [ Navigation, Pagination ] }
                 pagination = {{

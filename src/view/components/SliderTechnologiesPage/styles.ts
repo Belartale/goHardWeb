@@ -33,7 +33,7 @@ export const Wrapper = styled(Box, {})`
                 }
             }
         }
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
             .swiper-slide-active {
                 transform: scale(1);
                 opacity: 1;

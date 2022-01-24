@@ -20,13 +20,13 @@ interface TypeProps {
     size: 'sm' | 'lg'
 }
 
-const Img = styled.img<any>`
-    ${({ size }) => size === 'sm' ? {
+const Img = styled.img`
+    ${({ size }: {size: TypeProps['size']}) => size === 'sm' ? {
         width:  '100px',
         height: 'auto',
     } : null }
     
-    ${({ size }) => size === 'lg' ? {
+    ${({ size }: {size: TypeProps['size']}) => size === 'lg' ? {
         width:  '160px',
         height: 'auto',
     } : null }

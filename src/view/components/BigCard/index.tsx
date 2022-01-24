@@ -13,8 +13,7 @@ import {
 
 // Types
 export interface PropTypesBigCard extends GridProps {
-    //todo any > src images
-    firstTitle: number | any
+    firstTitle: number | React.ReactNode
     secondTitle: ReactElement
     variantCard: 'grey' | 'transparent'
 }
