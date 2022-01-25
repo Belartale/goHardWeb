@@ -1,7 +1,7 @@
 // Core
 import React, { FC } from 'react';
 import { styled, ButtonUnstyled, ButtonUnstyledProps } from '@mui/material';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Types
 interface PropTypes extends ButtonUnstyledProps {
@@ -36,17 +36,17 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
         }
 }
 
-    ${({ theme, typebutton }) => (typebutton === 'sm') && { fontSize: theme.fonts.size[400], borderRadius: '2px' }}
+    ${({ theme, typebutton }) => (typebutton === 'sm') && { fontSize: theme.fonts.size[ 400 ], borderRadius: '2px' }}
     ${({ theme, typebutton }) => (typebutton === 'lg grey')
     && {
-        fontSize:   theme.fonts.size[400],
+        fontSize:   theme.fonts.size[ 400 ],
         fontWeight: 800,
     }}
 
     ${({ theme, typebutton }) => typebutton === 'lg blur'
         && {
             backdropFilter: 'blur(10px)',
-            fontSize:       theme.fonts.size[500],
+            fontSize:       theme.fonts.size[ 500 ],
             fontWeight:     700,
         }
 }
@@ -61,7 +61,7 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
     ${({ theme, typebutton }) => (typebutton === 'lg clear')
         && {
             color:      theme.colors.success[ 50 ],
-            fontSize:   theme.fonts.size[800],
+            fontSize:   theme.fonts.size[ 800 ],
             fontWeight: 700,
         }
 }
@@ -76,12 +76,12 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
 
 
 export const MyButton: FC<PropTypes> = ({ children, typebutton, href, ...props }) => {
-    const { push } = useHistory();
+    const navigate = useNavigate();
 
     return (
         <ButtonStyled
             typebutton = { typebutton }
-            onClick = { () => href && push(href) }
+            onClick = { () => href && navigate(href) }
             { ...props }>
             {children}
         </ButtonStyled>

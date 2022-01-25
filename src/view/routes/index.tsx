@@ -1,7 +1,7 @@
 // Core
 import React, { FC, Suspense } from 'react';
 
-// Exports
+// Navigation
 export * from './navigation';
 
 // Routes

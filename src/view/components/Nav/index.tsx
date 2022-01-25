@@ -1,7 +1,6 @@
 // Core
 import React, { FC } from 'react';
 import { ListItem, ListProps } from '@mui/material';
-import { useHistory } from 'react-router-dom';
 
 // Navigation
 import { book } from '../../routes';
@@ -18,8 +17,6 @@ export interface PropTypesNav extends ListProps {
 }
 
 export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
-    const { push } = useHistory();
-
     return (
         <MyList
             fontSize = { fontSize }
@@ -28,7 +25,6 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
             <ListItem>
                 <MenuLink
                     fontSize = { fontSize }
-                    push = { push }
                     to = { book.pageOne }>
                     Company
                 </MenuLink>
@@ -36,7 +32,6 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
             <ListItem>
                 <MenuLink
                     fontSize = { fontSize }
-                    push = { push }
                     to = { book.pageTwo }>
                     About us
                 </MenuLink>
@@ -44,7 +39,6 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
             <ListItem>
                 <MenuLink
                     fontSize = { fontSize }
-                    push = { push }
                     to = { book.pageThree }>
                     Our services
                 </MenuLink>
@@ -52,7 +46,6 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
             <ListItem>
                 <MenuLink
                     fontSize = { fontSize }
-                    push = { push }
                     to = { book.pageFour }>
                     Technologies
                 </MenuLink>
@@ -60,7 +53,6 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
             <ListItem>
                 <MenuLink
                     fontSize = { fontSize }
-                    push = { push }
                     to = { book.pageFive }>
                     Portfolio
                 </MenuLink>
@@ -68,7 +60,6 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
             <ListItem>
                 <MenuLink
                     fontSize = { fontSize }
-                    push = { push }
                     to = { book.pageSix }>
                     Vacancies
                 </MenuLink>

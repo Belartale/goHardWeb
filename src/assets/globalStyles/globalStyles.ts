@@ -19,7 +19,6 @@ export const GlobalStyles = createGlobalStyle`
     input[type=number] {
         -moz-appearance: textfield;
     }
-
     * {
         scroll-behavior: smooth;
     }
@@ -30,4 +29,3 @@ export const GlobalStyles = createGlobalStyle`
         src: url(${Nunito}) format('truetype');
     }
 `;
-

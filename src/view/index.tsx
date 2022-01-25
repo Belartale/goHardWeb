@@ -2,15 +2,14 @@
 import React, { FC } from 'react';
 import { createTheme, styled, ThemeProvider } from '@mui/material';
 
-// Containers
+// Routers
 import { Routes } from './routes';
-
-
-// Assets
-import { GlobalStyles, defaultTheme } from '../assets';
 
 // Containers
 import { NavBar } from './containers';
+
+// Assets
+import { GlobalStyles, defaultTheme } from '../assets';
 
 // Styles
 export const AppContainer = styled(
@@ -38,12 +37,12 @@ declare module '@mui/material/styles' {
     }
 }
 
-export const App: FC = () => {
-    const customTheme = createTheme({
-        colors: defaultTheme.colors,
-        fonts:  defaultTheme.fonts,
-    });
+const customTheme = createTheme({
+    colors: defaultTheme.colors,
+    fonts:  defaultTheme.fonts,
+});
 
+export const App: FC = () => {
     return (
         <ThemeProvider theme = { customTheme } >
             <GlobalStyles />

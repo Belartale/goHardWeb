@@ -1,6 +1,6 @@
 // Core
 import React, { FC } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 interface TypeProps {
@@ -12,12 +12,12 @@ const Container = styled.a`
 `;
 
 export const Link: FC<TypeProps> = ({ to, children, ...props }) => {
-    const { push } = useHistory();
+    const navigate = useNavigate();
 
     return (
         <Container
             { ...props }
-            onClick = { () => push(to) }>
+            onClick = { () => navigate(to) }>
             {children}
         </Container>
     );

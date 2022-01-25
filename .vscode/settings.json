@@ -1,5 +1,6 @@
 {
     "better-comments.tags": [
+        
         {
             "tag": "todo",
             "color": "#ff7b00",
@@ -154,10 +155,5 @@
             "color": "#ffffff",
             "backgroundColor": "rgb(253,184,51, 0.2)",
         },
-    ],
-    "cSpell.words": [
-        "когда",
-        "нужно",
-        "скрыть"
     ],
 }
