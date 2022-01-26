@@ -9,3 +9,6 @@ export const TitlePortfolio = styled(Box, {})`
     font-weight: 700;
     color: ${({ theme }) => theme.colors.success[ 50 ]};
 `;
+export const FooterPortfolioPag = styled(Box, {})`
+    
+`;

@@ -37,6 +37,22 @@ generateTemplateFiles([
         },
     },
     {
+        option:      'Element: /view/elements/__elementName__',
+        defaultCase: CaseConverterEnum.CamelCase,
+        entry:       {
+            folderPath: resolve(PROJECT_ROOT, './scripts/generate/templates/element'),
+        },
+        stringReplacers: [ '__elementName__' ],
+        output:          {
+            path:                       resolve(PROJECT_ROOT, './src/view/elements/__elementName__(pascalCase)'),
+            pathAndFileNameDefaultCase: CaseConverterEnum.CamelCase,
+            overwrite:                  true,
+        },
+        onComplete: (results) => {
+            console.log('results', results);
+        },
+    },
+    {
         option:      'Component: /view/components/__componentName__',
         defaultCase: CaseConverterEnum.CamelCase,
         entry:       {

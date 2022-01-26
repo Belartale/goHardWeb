@@ -15,26 +15,34 @@ export const Wrapper = styled(Box, {})`
             display: flex;
             justify-content: center;
             opacity: 0.5;
-            .MuiCard-root {
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
-                img {
-                    /* object-fit: cover; */
+            .MuiBox-root {
+                padding: 0px 10px;
+                .MuiCard-root {
+                    border-radius: 10px;
+                    max-width: 100%;
+                    .MuiCardContent-root {
+                        color: red
+                    }
                 }
             }
         }
-        @media (max-width: 900px) {
+        @media (max-width: 600px) {
             .swiper-slide-active {
                 transform: scale(1);
-                z-index: 2;
                 opacity: 1;
+                .MuiCard-root {
+                    box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
+                }
             }
         }
-        @media (min-width: 900px) {
+        @media (min-width: 600px) {
             .swiper-slide-next {
                 transform: scale(1);
-                z-index: 2;
+                z-index: 1;
                 opacity: 1;
+                .MuiCard-root {
+                    box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
+                }
             }
         }
     

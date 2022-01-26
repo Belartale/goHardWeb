@@ -22,7 +22,7 @@ export const Wrapper = styled(Box, {})`
             transform: scale(0.8);
             opacity: 0.5;
 
-            & > div {
+            & > .MuiBox-root {
                 max-width: 320px;
                 padding: 20px 25px 40px;
             }
@@ -32,7 +32,7 @@ export const Wrapper = styled(Box, {})`
                 transform: scale(1);
                 opacity: 1;
 
-                & > div {
+                & > .MuiBox-root {
                     box-shadow: 0px 0px 44px ${({ theme }) => theme.colors.grey[ 100 ]};
                     border-radius: 10px;
                 }
@@ -43,7 +43,7 @@ export const Wrapper = styled(Box, {})`
                 transform: scale(1);
                 opacity: 1;
 
-                & > div {
+                & > .MuiBox-root {
                     box-shadow: 0px 0px 44px ${({ theme }) => theme.colors.grey[ 100 ]};
                     border-radius: 10px;
 

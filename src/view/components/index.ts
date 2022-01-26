@@ -6,3 +6,4 @@ export * from './SliderMainPage';
 export * from './BigCard';
 export * from './SliderTechnologiesPage';
 export * from './SliderPortfolioPage';
+export * from './ContactBar';

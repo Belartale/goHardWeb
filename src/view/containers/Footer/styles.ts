@@ -14,19 +14,6 @@ export const BoxWithTopBorder = styled(Box, {})(({ theme }) => ({
     width:     '100%',
 }));
 
-export const MyTypographyContact  = styled(Typography, {})(({ theme }) => ({
-    marginLeft:                      '15px',
-    color:                           theme.colors.primary[ 50 ],
-    fontSize:                        theme.fonts.size[ 200 ],
-    fontFamily:                      'Nunito',
-    fontWeight:                      700,
-    [ '@media (min-width: 900px)' ]: {
-        marginLeft: '10px',
-    },
-    [ '@media (min-width: 1000px)' ]: {
-        marginLeft: '15px',
-    },
-}));
 
 export const MyTypographyParagraph  = styled(Typography, {})(({ theme }) => ({
     padding:    '15px 0px',
@@ -87,32 +74,3 @@ export const MyTextField  = styled(TextField, {})<TextFieldProps>(({ theme }) =>
     },
 }));
 
-
-export const BoxContainer = styled(Box, {})`
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-
-    @media (max-width: 550px) {
-        justify-content: center;
-        flex-direction: column;
-        & div:not(:last-child) {
-            margin-bottom: 10px;
-        }
-    }
-    @media (min-width: 900px) {
-        justify-content: center;
-        flex-direction: column;
-        & div:not(:last-child) {
-            margin-bottom: 10px;
-        }
-    }
-    @media (min-width: 1100px) {
-        justify-content: space-between;
-        flex-direction: row;
-        & div:not(:last-child) {
-            margin-bottom: 0px;
-        }
-    }
-`;

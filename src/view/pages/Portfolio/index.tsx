@@ -3,8 +3,8 @@ import { Box } from '@mui/material';
 import React, { FC } from 'react';
 
 // Components
-import { ErrorBoundary, SliderPortfolioPage } from '../../components';
-import { ContainerCenter, Footer, GreenText, Header, MyContainer, Section } from '../../containers';
+import { ContactBar, ErrorBoundary, SliderPortfolioPage } from '../../components';
+import { ContainerCenter, GreenText, Header, MyContainer, Section } from '../../containers';
 import { Subtitle, Title } from '../../elements';
 
 // Images
@@ -13,12 +13,7 @@ import tableWithDevices from '../../../assets/images/tableWithDevices.jpg';
 // Styles
 import { TitlePortfolio } from './styles';
 
-// Types
-type PropTypes = {
-    /* type props here */
-}
-
-const Portfolio: FC<PropTypes> = () => {
+const Portfolio: FC = () => {
     return (
         <Box>
             <Header
@@ -27,7 +22,7 @@ const Portfolio: FC<PropTypes> = () => {
                 <MyContainer sx = {{ height: '100%' }}>
                     <ContainerCenter>
                         <Title>
-                            <GreenText>Technologies</GreenText>
+                            <GreenText>Portfolio</GreenText>
                         </Title>
                     </ContainerCenter>
                 </MyContainer>
@@ -49,7 +44,9 @@ const Portfolio: FC<PropTypes> = () => {
             <MyContainer sx = {{ marginTop: { xs: '0px', md: '60px' }, marginBottom: { xs: '0px', md: '100px' }}}>
                 <SliderPortfolioPage />
             </MyContainer>
-            <Footer />
+            <MyContainer sx = {{ paddingTop: '20px', paddingBottom: '20px'  }}>
+                <ContactBar size = 'lg' />
+            </MyContainer>
         </Box>
     );
 };
