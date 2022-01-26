@@ -134,7 +134,7 @@ export const imagesMobile = [
     {
         src:   react,
         title: 'React Native',
-        text:  'Loremmmmm',
+        text:  'Loremmmmm  Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem',
         alt:   'Image React Native',
     },
     {

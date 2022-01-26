@@ -29,7 +29,7 @@ export const Wrapper = styled(Box, {})`
         }
 
         @media (min-width: 700px) {
-            .swiper-slide-active {
+            .swiper-slide-next {
                 transform: scale(1);
                 z-index: 2;
                 opacity: 1;

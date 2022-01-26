@@ -4,10 +4,10 @@ import { Box, styled, Typography } from '@mui/material';
 export const Wrapper = styled(Box, {})`
     .swiper {
         padding: 20px 0px;
-        max-width: calc(1488px / 1.5);
-
-        @media (max-width: 1550px) {
-            width: calc(100vw - 48px);
+        width: calc(100vw - 48px);
+        
+        @media (min-width: 1550px) {
+            max-width: calc(1488px / 1.5);
         }
         @media (min-width: 500px) {
             padding: 50px 0px;

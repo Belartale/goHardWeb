@@ -177,7 +177,9 @@ const Main: FC = () => {
                                 item
                                 md = { 3 }
                                 xs = { 6 }>
-                                <SmallCard text = 'Web development'>
+                                <SmallCard
+                                    secondText = 'development'
+                                    text = 'Web'>
                                     <ImagesServices
                                         size = 'sm'
                                         type = 'Web development'
@@ -188,7 +190,9 @@ const Main: FC = () => {
                                 item
                                 md = { 3 }
                                 xs = { 6 }>
-                                <SmallCard text = 'Mobile development'>
+                                <SmallCard
+                                    secondText = 'development'
+                                    text = 'Mobile'>
                                     <ImagesServices
                                         size = 'sm'
                                         type = 'Mobile development'
@@ -210,7 +214,9 @@ const Main: FC = () => {
                                 item
                                 md = { 3 }
                                 xs = { 6 }>
-                                <SmallCard text = 'Legacy Code Redevelopment'>
+                                <SmallCard
+                                    secondText = 'Redevelopment'
+                                    text = 'Legacy Code'>
                                     <ImagesServices
                                         size = 'sm'
                                         type = 'Legacy Code'
@@ -221,7 +227,9 @@ const Main: FC = () => {
                                 item
                                 md = { 3 }
                                 xs = { 6 }>
-                                <SmallCard text = 'Consulting/Estimation'>
+                                <SmallCard
+                                    secondText = 'Estimation'
+                                    text = 'Consulting/'>
                                     <ImagesServices
                                         size = 'sm'
                                         type = 'Consulting/Estimation'
@@ -243,7 +251,9 @@ const Main: FC = () => {
                                 item
                                 md = { 3 }
                                 xs = { 6 }>
-                                <SmallCard text = 'Software Maintenance'>
+                                <SmallCard
+                                    secondText = 'Maintenance'
+                                    text = 'Software'>
                                     <ImagesServices
                                         size = 'sm'
                                         type = 'Software Maintenance'
@@ -254,7 +264,9 @@ const Main: FC = () => {
                                 item
                                 md = { 3 }
                                 xs = { 6 }>
-                                <SmallCard text = 'Product develop and support'>
+                                <SmallCard
+                                    secondText = 'and support'
+                                    text = 'Product develop'>
                                     <ImagesServices
                                         size = 'sm'
                                         type = 'Product development'

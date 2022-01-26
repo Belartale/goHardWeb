@@ -32,24 +32,20 @@ export const SliderMainPage: FC = () => {
     return (
         <Wrapper>
             <Swiper
-                centeredSlides
+                // autoHeight
                 loop
                 navigation
                 roundLengths
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
-                        spaceBetween:  20,
                         initialSlide:  0,
                     },
                     600: {
-                        spaceBetween:  -40,
-                        slidesPerView: 2.77,
-                        initialSlide:  images.length - 1,
+                        slidesPerView: 3,
                     },
                     900: {
-                        spaceBetween:  -70,
-                        slidesPerView: 2.77,
+                        slidesPerView: 3,
                     },
                 }}
                 loopedSlides = { images.length }
@@ -57,7 +53,8 @@ export const SliderMainPage: FC = () => {
                 pagination = {{
                     el:        '.swiper-pagination',
                     clickable: true,
-                }}>
+                }}
+                spaceBetween = { 0 }>
 
                 <Box>
                     {images.map((element, index) => (

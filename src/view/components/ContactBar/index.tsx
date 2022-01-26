@@ -1,6 +1,6 @@
 // Core
 import React, { FC } from 'react';
-import { Box, BoxProps, Link } from '@mui/material';
+import { BoxProps, Link } from '@mui/material';
 
 // Bus
 // import {} from '../../../bus/'

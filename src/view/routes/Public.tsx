@@ -4,7 +4,7 @@ import { useRoutes, Navigate } from 'react-router-dom';
 import { book } from '.';
 
 // Pages
-import { About, Main, Portfolio, Services, Technologies } from '../pages';
+import { About, Main, Portfolio, Services, Technologies, Vacancies } from '../pages';
 
 export const Public: FC = () => {
     const routes = useRoutes([
@@ -28,11 +28,10 @@ export const Public: FC = () => {
             path:    book.pageFive,
             element: <Portfolio />,
         },
-        //todo
-        // {
-        //     path:    book.pageSix,
-        //     element: <Vacancies />,
-        // },
+        {
+            path:    book.pageSix,
+            element: <Vacancies />,
+        },
         { path: '*', element: <Navigate to = { book.pageOne } /> },
     ]);
 

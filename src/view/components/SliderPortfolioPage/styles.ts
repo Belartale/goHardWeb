@@ -1,9 +1,10 @@
 // Core
-import { Box, styled } from '@mui/material';
+import { Box, styled, Card, Typography } from '@mui/material';
 
 export const Wrapper = styled(Box, {})`
     .swiper {
         padding: 10px 0px;
+        
         @media (max-width: 1550px) {
             & {
                 width: calc(100vw - 48px);
@@ -12,21 +13,9 @@ export const Wrapper = styled(Box, {})`
         .swiper-slide {
             transition: all 400ms linear;
             transform: scale(0.8);
-            display: flex;
-            justify-content: center;
             opacity: 0.5;
-            .MuiBox-root {
-                padding: 0px 10px;
-                .MuiCard-root {
-                    border-radius: 10px;
-                    max-width: 100%;
-                    .MuiCardContent-root {
-                        color: red
-                    }
-                }
-            }
         }
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             .swiper-slide-active {
                 transform: scale(1);
                 opacity: 1;
@@ -35,7 +24,7 @@ export const Wrapper = styled(Box, {})`
                 }
             }
         }
-        @media (min-width: 600px) {
+        @media (min-width: 900px) {
             .swiper-slide-next {
                 transform: scale(1);
                 z-index: 1;
@@ -45,7 +34,7 @@ export const Wrapper = styled(Box, {})`
                 }
             }
         }
-    
+        
         .swiper-button-prev, .swiper-button-next {
             color: ${({ theme }) => theme.colors.success[ 50 ]};
             opacity: 0;
@@ -58,5 +47,31 @@ export const Wrapper = styled(Box, {})`
     }
 `;
 
-export const Card = styled(Box, {})`
+export const MyCard = styled(Card, {})`
+    background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
+    margin: 0px 10px;
+
+    .MuiCard-root {
+        padding: 0px 10px 30px;
+        border-radius: 10px;
+        max-width: 100%;
+        .MuiCardContent-root {
+            background-color: white;
+        }
+    }
 `;
+
+export const TitleSliderPortfolioPage = styled(Typography, {})`
+    font-size: ${({ theme }) => theme.fonts.size[ 800 ]};
+    font-weight: 400;
+    color: ${({ theme }) => theme.colors.primary[ 50 ]};
+`;
+
+export const TextSliderPortfolioPage = styled(Typography, {})`
+    font-size: ${({ theme }) => theme.fonts.size[ 50 ]};
+    font-weight: 300;
+    color: ${({ theme }) => theme.colors.grey[ 50 ]};
+`;
+
+// export const Card = styled(Box, {})`
+// `;

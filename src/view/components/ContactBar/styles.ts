@@ -5,7 +5,7 @@ import { Box, styled, Typography } from '@mui/material';
 import { PropTypesContactBar } from '.';
 
 export const Container = styled(Box, {})<PropTypesContactBar>`
-    ${({ theme, size }) => (size === 'sm' && {
+    ${({ size }) => (size === 'sm' && {
         display:        'flex',
         justifyContent: 'space-between',
         flexWrap:       'wrap',
@@ -34,10 +34,11 @@ export const Container = styled(Box, {})<PropTypesContactBar>`
         },
     }) || (size === 'lg' && {
         display:        'flex',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
 
         '@media (min-width: 600px)': {
-            svg: {
+            justifyContent: 'space-evenly',
+            svg:            {
                 height: '36px',
             },
         },
@@ -90,6 +91,9 @@ export const MyTypographyContact  = styled(Typography, {})<PropTypesContactBar>`
     }) || (size === 'lg' && {
         fontSize: '10px',
 
+        '@media (min-width: 400px)': {
+            fontSize: '12px',
+        },
         '@media (min-width: 600px)': {
             fontSize: theme.fonts.size[ 200 ],
         },

@@ -8,10 +8,11 @@ import { MyTypography } from './styles';
 // Types
 export type PropTypes = {
     text: string
+    secondText?: string
     varianttext?: 'green'
 }
 
-export const SmallCard: FC<PropTypes> = ({ children, text, varianttext }) => {
+export const SmallCard: FC<PropTypes> = ({ children, text, secondText, varianttext }) => {
     return (
         <Grid
             container
@@ -28,6 +29,15 @@ export const SmallCard: FC<PropTypes> = ({ children, text, varianttext }) => {
                     varianttext = { varianttext }>
                     {text}
                 </MyTypography>
+                {secondText
+                && (
+                    <MyTypography
+                        textAlign = { 'center' }
+                        variant = 'h3'
+                        varianttext = { varianttext }>
+                        {secondText}
+                    </MyTypography>
+                )}
             </Grid>
         </Grid>
     );

@@ -5,9 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 // Styles
+import { TextSlide, TitleSlide, Wrapper } from './styles';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { TextSlide, TitleSlide, Wrapper } from './styles';
 
 // Types
 type Image = {
