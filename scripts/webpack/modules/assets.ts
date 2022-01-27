@@ -102,12 +102,12 @@ export const loadFontsProd = (): Configuration => ({
             },
         ],
     },
-    plugins: [
-        new FontminPlugin({
-            autodetect:        true,
-            glyphs:            [],
-            allowedFilesRegex: null,
-            skippedFilesRegex: null,
-        }),
-    ],
+    // plugins: [
+    //     new FontminPlugin({
+    //         autodetect:        true,
+    //         glyphs:            [],
+    //         allowedFilesRegex: null,
+    //         skippedFilesRegex: null,
+    //     }),
+    // ],
 });

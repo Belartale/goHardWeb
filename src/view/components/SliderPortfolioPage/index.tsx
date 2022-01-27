@@ -1,11 +1,11 @@
 // Core
 import React, { FC } from 'react';
-import { Box, CardContent, CardMedia } from '@mui/material';
+import { Box, CardContent, CardMedia, Grid } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 // Styles
-import { MyCard, TextSliderPortfolioPage, TitleSliderPortfolioPage, Wrapper } from './styles';
+import { CellSliderPortfolioPage, ImgSliderPortfolioPage, MyCard, RowSliderPortfolioPage, TextSliderPortfolioPage, TitleSliderPortfolioPage, Wrapper } from './styles';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -16,6 +16,16 @@ import { Link } from '../../elements';
 import imagesFirstSlider from '../../../assets/images/firstSlider.png';
 import imagesFirstSliderNext from '../../../assets/images/firstSliderNext.png';
 
+import html from '../../../assets/images/html.png';
+import css from '../../../assets/images/css.png';
+import js from '../../../assets/images/js.png';
+import bootstrap from '../../../assets/images/bootstrap.png';
+import react from '../../../assets/images/react.png';
+import vue from '../../../assets/images/vue.png';
+import mui from '../../../assets/images/material.png';
+import next from '../../../assets/images/next.png';
+import nuxt from '../../../assets/images/nuxt.png';
+
 // Types
 type Image = {
     src: string
@@ -23,50 +33,58 @@ type Image = {
     title: string
     text: string
     link: string
+    technologies: string[]
 }
 
 const images: Array<Image> = [
+    // [ 'html', 'css', 'js', 'bootstrap', 'react', 'vue', 'mui', 'next', 'nuxt' ]
     {
-        src:   'https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=',
-        alt:   'img',
-        title: 'Medical equipment website',
-        text:  'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
-        link:  '/',
+        src:          'https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=',
+        alt:          'img',
+        title:        'Medical equipment website',
+        text:         'Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
+        link:         '/',
+        technologies: [ html, css, js, react, mui, next, nuxt ],
     },
     {
-        src:   imagesFirstSlider,
-        alt:   'img',
-        title: 'Medical equipment website',
-        text:  'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
-        link:  '/',
+        src:          imagesFirstSlider,
+        alt:          'img',
+        title:        'Medical equipment website',
+        text:         'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
+        link:         '/',
+        technologies: [ html, css, js, react, mui, next, nuxt ],
     },
     {
-        src:   'https://img.bfmtv.com/c/630/420/871/7b9f41477da5f240b24bd67216dd7.jpg',
-        alt:   'img',
-        title: 'Medical equipment website',
-        text:  'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
-        link:  '/',
+        src:          'https://img.bfmtv.com/c/630/420/871/7b9f41477da5f240b24bd67216dd7.jpg',
+        alt:          'img',
+        title:        'Medical equipment website',
+        text:         'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
+        link:         '/',
+        technologies: [ html, css, js, react, mui, next, nuxt ],
     },
     {
-        src:   imagesFirstSliderNext,
-        alt:   'img',
-        title: 'Medical equipment website',
-        text:  'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
-        link:  '/',
+        src:          imagesFirstSliderNext,
+        alt:          'img',
+        title:        'Medical equipment website',
+        text:         'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
+        link:         '/',
+        technologies: [ html, css, js, react, mui, next, nuxt ],
     },
     {
-        src:   'https://www.researchgate.net/profile/Georg-Waltner-2/publication/329620436/figure/fig1/AS:759099822206979@1557994909846/Image-sequence-and-views-of-the-reconstructed-point-cloud-a-j-images-from-the.ppm',
-        alt:   'img',
-        title: 'Medical equipment website',
-        text:  'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
-        link:  '/',
+        src:          'https://www.researchgate.net/profile/Georg-Waltner-2/publication/329620436/figure/fig1/AS:759099822206979@1557994909846/Image-sequence-and-views-of-the-reconstructed-point-cloud-a-j-images-from-the.ppm',
+        alt:          'img',
+        title:        'Medical equipment website',
+        text:         'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
+        link:         '/',
+        technologies: [ html, css, js, react, mui, next, nuxt ],
     },
     {
-        src:   imagesFirstSlider,
-        alt:   'img',
-        title: 'Medical equipment website',
-        text:  'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
-        link:  '/',
+        src:          imagesFirstSlider,
+        alt:          'img',
+        title:        'Medical equipment website',
+        text:         'The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
+        link:         '/',
+        technologies: [ html, css, js, react, mui, next, nuxt ],
     },
 ];
 
@@ -78,10 +96,10 @@ export const SliderPortfolioPage: FC = () => {
                 loop
                 navigation
                 roundLengths
+                watchSlidesProgress
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
-                        spaceBetween:  0,
                     },
                     900: {
                         slidesPerView: 3,
@@ -94,27 +112,50 @@ export const SliderPortfolioPage: FC = () => {
                 <Box>
                     {images.map((element, index) => (
                         <SwiperSlide
-                            key = { index }
-                            style = {{ display: 'flex', justifyContent: 'center' }}>
-                            <Link to = { element.link }>
-                                <Box>
-                                    <MyCard>
-                                        <CardMedia
-                                            alt = { element.alt }
-                                            component = 'img'
-                                            image = { element.src }
-                                        />
-                                        <CardContent>
-                                            <TitleSliderPortfolioPage variant = 'h3'>
-                                                {element.title}
-                                            </TitleSliderPortfolioPage>
-                                            <TextSliderPortfolioPage variant = 'caption'>
-                                                {element.text}
-                                            </TextSliderPortfolioPage>
-                                        </CardContent>
-                                    </MyCard>
-                                </Box>
-                            </Link>
+                            key = { index }>
+                            <Box>
+                                <MyCard>
+                                    <CardMedia
+                                        alt = { element.alt }
+                                        component = 'img'
+                                        image = { element.src }
+                                    />
+                                    <CardContent>
+                                        <Grid
+                                            container
+                                            spacing = { '10px' }>
+                                            <Grid
+                                                item
+                                                xs = { 8 }>
+                                                <TitleSliderPortfolioPage variant = 'h3'>
+                                                    {element.title}
+                                                </TitleSliderPortfolioPage>
+                                                <TextSliderPortfolioPage variant = 'caption'>
+                                                    {element.text}
+                                                </TextSliderPortfolioPage>
+                                            </Grid>
+                                            <Grid
+                                                item
+                                                sx = {{ '@media (min-width: 1550px)': { xs: 12 }}}
+                                                xs = { 4 }>
+
+                                                <RowSliderPortfolioPage>
+                                                    {element.technologies.map((img) => (
+                                                        <CellSliderPortfolioPage
+                                                            key = { img }>
+                                                            <ImgSliderPortfolioPage
+                                                                alt = { img }
+                                                                src = { img }
+
+                                                            />
+                                                        </CellSliderPortfolioPage>
+                                                    ))}
+                                                </RowSliderPortfolioPage>
+                                            </Grid>
+                                        </Grid>
+                                    </CardContent>
+                                </MyCard>
+                            </Box>
                         </SwiperSlide>
                     ))}
                 </Box>
