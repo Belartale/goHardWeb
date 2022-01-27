@@ -5,7 +5,6 @@ import { Box, Grid } from '@mui/material';
 // Container
 import { ContainerCenter,
     Footer,
-    GreenText,
     Header,
     MyContainer,
     Section,
@@ -43,7 +42,6 @@ import { book } from '../../routes';
 
 const Main: FC = () => {
     const [ titleHover, setTitleHover ] = useState(false);
-
 
     return (
         <Box>

@@ -35,16 +35,6 @@ export const Footer: FC = () => {
                         <S.BoxWithTopBorder>
                             <ContactBar size = 'sm' />
                         </S.BoxWithTopBorder>
-                        {/* todo Евгений и остальные сказали убрать */}
-                        {/* <MyTypographyParagraph paragraph>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Nisl tristique ullamcorper id fames amet
-                            consectetur dui nec. Enim sed aenean
-                            congue semper etiam ipsum Lorem
-                            ipsum dolor sit amet, consectetur
-                            adipiscing elit. Nisl tristique
-                        </MyTypographyParagraph> */}
-
                     </Grid>
 
                     <Grid

@@ -1,6 +1,6 @@
 // Core
-import { Grid } from '@mui/material';
 import React, { FC } from 'react';
+import { Grid } from '@mui/material';
 
 // Styles
 import { MyTypography } from './styles';

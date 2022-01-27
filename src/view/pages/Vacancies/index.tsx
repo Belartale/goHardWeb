@@ -1,9 +1,6 @@
 // Core
 import React, { FC } from 'react';
 
-// Bus
-// import {} from '../../../bus/'
-
 // Components
 import { ErrorBoundary } from '../../components';
 

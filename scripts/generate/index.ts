@@ -40,11 +40,11 @@ generateTemplateFiles([
         option:      'Element: /view/elements/__elementName__',
         defaultCase: CaseConverterEnum.CamelCase,
         entry:       {
-            folderPath: resolve(PROJECT_ROOT, './scripts/generate/templates/element'),
+            folderPath: resolve(PROJECT_ROOT, './scripts/generate/templates/element/index.tsx'),
         },
         stringReplacers: [ '__elementName__' ],
         output:          {
-            path:                       resolve(PROJECT_ROOT, './src/view/elements/__elementName__(pascalCase)'),
+            path:                       resolve(PROJECT_ROOT, './src/view/elements/__elementName__(pascalCase).tsx'),
             pathAndFileNameDefaultCase: CaseConverterEnum.CamelCase,
             overwrite:                  true,
         },

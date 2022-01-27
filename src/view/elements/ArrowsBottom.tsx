@@ -2,6 +2,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
+// Theme
 import { defaultTheme } from '../../assets/index';
 
 

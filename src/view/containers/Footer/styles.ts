@@ -10,7 +10,6 @@ export const BoxWithTopBorder = styled(Box, {})(({ theme }) => ({
     marginTop: '20px',
     padding:   '15px 0px',
     borderTop: `1px solid ${theme.colors.grey[ 100 ]}`,
-    // borderBottom: `1px solid ${theme.colors.grey[ 100 ]}`,
     width:     '100%',
 }));
 

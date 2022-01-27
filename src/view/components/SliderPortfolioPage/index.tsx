@@ -1,16 +1,25 @@
 // Core
 import React, { FC } from 'react';
-import { Box, CardContent, CardMedia, Grid } from '@mui/material';
+import { Box, CardContent, CardMedia } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 // Styles
-import { CellSliderPortfolioPage, ImgSliderPortfolioPage, MyCard, RowSliderPortfolioPage, TextSliderPortfolioPage, TitleSliderPortfolioPage, Wrapper } from './styles';
+import {
+    CaptionsSliderPortfolioPage,
+    CardBottomSliderPortfolioPage,
+    CellSliderPortfolioPage,
+    ImagesSliderPortfolioPage,
+    ImgSliderPortfolioPage,
+    MyCard,
+    TechnologiesSliderPortfolioPage,
+    TextSliderPortfolioPage,
+    TitleImagesSliderPortfolioPage,
+    TitleSliderPortfolioPage,
+    Wrapper,
+} from './styles';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-// Elements
-import { Link } from '../../elements';
 
 // Images
 import imagesFirstSlider from '../../../assets/images/firstSlider.png';
@@ -37,14 +46,13 @@ type Image = {
 }
 
 const images: Array<Image> = [
-    // [ 'html', 'css', 'js', 'bootstrap', 'react', 'vue', 'mui', 'next', 'nuxt' ]
     {
         src:          'https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=',
         alt:          'img',
         title:        'Medical equipment website',
         text:         'Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm Loerm The task was to create working website for current company with all of their equipment and warehouses. The client was fully satisfied.',
         link:         '/',
-        technologies: [ html, css, js, react, mui, next, nuxt ],
+        technologies: [ html, css, js, css, js, bootstrap, vue, react, mui, next, nuxt ],
     },
     {
         src:          imagesFirstSlider,
@@ -113,49 +121,41 @@ export const SliderPortfolioPage: FC = () => {
                     {images.map((element, index) => (
                         <SwiperSlide
                             key = { index }>
-                            <Box>
-                                <MyCard>
-                                    <CardMedia
-                                        alt = { element.alt }
-                                        component = 'img'
-                                        image = { element.src }
-                                    />
-                                    <CardContent>
-                                        <Grid
-                                            container
-                                            spacing = { '10px' }>
-                                            <Grid
-                                                item
-                                                xs = { 8 }>
-                                                <TitleSliderPortfolioPage variant = 'h3'>
-                                                    {element.title}
-                                                </TitleSliderPortfolioPage>
-                                                <TextSliderPortfolioPage variant = 'caption'>
-                                                    {element.text}
-                                                </TextSliderPortfolioPage>
-                                            </Grid>
-                                            <Grid
-                                                item
-                                                sx = {{ '@media (min-width: 1550px)': { xs: 12 }}}
-                                                xs = { 4 }>
-
-                                                <RowSliderPortfolioPage>
-                                                    {element.technologies.map((img) => (
-                                                        <CellSliderPortfolioPage
-                                                            key = { img }>
-                                                            <ImgSliderPortfolioPage
-                                                                alt = { img }
-                                                                src = { img }
-
-                                                            />
-                                                        </CellSliderPortfolioPage>
-                                                    ))}
-                                                </RowSliderPortfolioPage>
-                                            </Grid>
-                                        </Grid>
-                                    </CardContent>
-                                </MyCard>
-                            </Box>
+                            <MyCard>
+                                <CardMedia
+                                    alt = { element.alt }
+                                    component = 'img'
+                                    image = { element.src }
+                                />
+                                <CardContent>
+                                    <CardBottomSliderPortfolioPage>
+                                        <CaptionsSliderPortfolioPage>
+                                            <TitleSliderPortfolioPage variant = 'h3'>
+                                                {element.title}
+                                            </TitleSliderPortfolioPage>
+                                            <TextSliderPortfolioPage variant = 'caption'>
+                                                {element.text}
+                                            </TextSliderPortfolioPage>
+                                        </CaptionsSliderPortfolioPage>
+                                        <TechnologiesSliderPortfolioPage>
+                                            <TitleImagesSliderPortfolioPage variant = 'h4'>
+                                                Technologies:
+                                            </TitleImagesSliderPortfolioPage>
+                                            <ImagesSliderPortfolioPage>
+                                                {element.technologies.map((img) => (
+                                                    <CellSliderPortfolioPage
+                                                        key = { img }>
+                                                        <ImgSliderPortfolioPage
+                                                            alt = { img }
+                                                            src = { img }
+                                                        />
+                                                    </CellSliderPortfolioPage>
+                                                ))}
+                                            </ImagesSliderPortfolioPage>
+                                        </TechnologiesSliderPortfolioPage>
+                                    </CardBottomSliderPortfolioPage>
+                                </CardContent>
+                            </MyCard>
                         </SwiperSlide>
                     ))}
                 </Box>

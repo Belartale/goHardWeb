@@ -1,13 +1,13 @@
 // Core
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import { styled, Box, BoxProps } from '@mui/material';
 
-interface TypeProps {
+interface TypeProps extends BoxProps {
     to: string
 }
 
-const Container = styled.a`
+export const Container = styled(Box, {})`
     cursor: pointer;
 `;
 

@@ -1,14 +1,14 @@
 // Core
 import React, { FC } from 'react';
-import { BoxProps, Link } from '@mui/material';
 
-// Bus
-// import {} from '../../../bus/'
+// Elements
+import { Link } from '../../elements';
 
 // Styles
 import * as S from './styles';
 
 // Types
+import { BoxProps } from '@mui/material';
 export interface PropTypesContactBar extends BoxProps {
     size: 'sm' | 'lg'
 }
@@ -35,10 +35,8 @@ export const ContactBar: FC<PropTypesContactBar> = ({ size, ...props }) => {
             </S.BoxContainer>
             <S.BoxContainer size = { size }>
                 <Link
-
                     display = { 'flex' }
-                    href = 'https://www.upwork.com/ag/gohard/'
-                    underline = 'none'>
+                    to = 'https://www.upwork.com/ag/gohard/'>
                     <svg
                         fill = 'none'
                         height = { `${size === 'sm' ? '20px' : '20px'}` }
