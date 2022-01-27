@@ -25,14 +25,12 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
     return (
         <Wrapper>
             <Swiper
-                autoHeight
                 loop
                 navigation
                 roundLengths
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
-                        initialSlide:  0,
                     },
                     900: {
                         slidesPerView: 3,
@@ -45,8 +43,7 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                 <Box>
                     {images.map((element: Image) => (
                         <SwiperSlide
-                            key = { element.alt }
-                            style = {{ display: 'flex', justifyContent: 'center' }}>
+                            key = { element.alt }>
                             <Box>
                                 <Box
                                     sx = {{

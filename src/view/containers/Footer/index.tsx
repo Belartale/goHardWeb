@@ -6,7 +6,7 @@ import { Grid, Box } from '@mui/material';
 import { MyContainer } from '..';
 
 // Elements
-import { MyButton } from '../../elements';
+import { MyButton, Logo } from '../../elements';
 
 // Styles
 import * as S from './styles';
@@ -27,6 +27,8 @@ export const Footer: FC = () => {
                         md = { 6 }
                         xs = { 12 } >
                         <Box sx = {{ display: { xs: 'flex', md: 'block' }, justifyContent: 'center' }}>
+                            {/* todo */}
+                            {/* <Logo style = {{ display: 'block' }} /> */}
                             <img
                                 alt = 'logo'
                                 src = { imageLogo }
