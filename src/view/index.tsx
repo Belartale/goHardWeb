@@ -11,7 +11,11 @@ import { NavBar } from './containers';
 // Assets
 import { GlobalStyles, defaultTheme } from '../assets';
 
+
 // Styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 export const AppContainer = styled(
     'div',
     {},

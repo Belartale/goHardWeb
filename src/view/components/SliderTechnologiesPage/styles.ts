@@ -18,40 +18,41 @@ export const Wrapper = styled(Box, {})`
             width: auto;
         }
         .swiper-slide {
-            transition: all 400ms linear;
-            transform: scale(0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             opacity: 0.5;
 
-            & > .MuiBox-root {
-                max-width: 320px;
+            
+            & > * {
                 padding: 20px 25px 40px;
+                max-width: 320px;
+                transition: all 400ms linear;
+                transform: scale(0.8);
+                border-radius: 10px;
             }
         }
         @media (min-width: 900px) {
             .swiper-slide-next {
-                transform: scale(1);
                 opacity: 1;
 
-                & > .MuiBox-root {
+                & > * {
+                    transform: scale(1);
                     box-shadow: 0px 0px 44px ${({ theme }) => theme.colors.grey[ 100 ]};
-                    border-radius: 10px;
                 }
             }
         }
         @media (max-width: 900px) {
             .swiper-slide-active {
-                transform: scale(1);
                 opacity: 1;
-
-                & > .MuiBox-root {
+                
+                & > * {
+                    transform: scale(1);
                     box-shadow: 0px 0px 44px ${({ theme }) => theme.colors.grey[ 100 ]};
-                    border-radius: 10px;
 
                     @media (max-width: 500px) {
-                        & {
-                            margin: 20px;
-                            box-shadow: 0px 0px 20px ${({ theme }) => theme.colors.grey[ 100 ]};
-                        }
+                        margin: 20px;
+                        box-shadow: 0px 0px 20px ${({ theme }) => theme.colors.grey[ 100 ]};
                     }
                 }
             }
@@ -78,10 +79,11 @@ export const TitleSlide = styled(Typography, {})`
     }
 `;
 
-export const TextSlide = styled(Typography, {})`
+export const TextSlide = styled('p', {})`
     font-family: 'Nunito';
     font-size: ${({ theme }) => theme.fonts.size[ 300 ]};
     line-height:  ${({ theme }) => theme.fonts.lineHeight[ 400 ]};
     color: ${({ theme }) => theme.colors.grey[ 50 ]};
+    text-align: center;
 `;
 

@@ -4,9 +4,6 @@ import { Box } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import { Wrapper } from './styles';
 
 // Images
@@ -32,17 +29,13 @@ export const SliderMainPage: FC = () => {
     return (
         <Wrapper>
             <Swiper
-                // autoHeight
+                autoHeight
                 loop
                 navigation
                 roundLengths
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
-                        initialSlide:  0,
-                    },
-                    600: {
-                        slidesPerView: 3,
                     },
                     900: {
                         slidesPerView: 3,
@@ -53,12 +46,12 @@ export const SliderMainPage: FC = () => {
                 pagination = {{
                     el:        '.swiper-pagination',
                     clickable: true,
-                }}
-                spaceBetween = { 0 }>
+                }}>
 
                 <Box>
                     {images.map((element, index) => (
-                        <SwiperSlide key = { index }>
+                        <SwiperSlide
+                            key = { index }>
                             <img
                                 alt = { element.alt }
                                 src = { element.src }

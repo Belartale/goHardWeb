@@ -51,13 +51,10 @@ export const BoxContainer = styled(Box, {})<PropTypesContactBar>`
     ${({ size }) => (size === 'sm' && {
         alignItems: 'center',
     }) || (size === 'lg' && {
-        '&, .MuiBox-root': {
+        '&, & > .MuiBox-root': {
             display:       'flex',
             flexDirection: 'column',
             alignItems:    'center',
-        },
-        '.MuiTypography-root': {
-            margin: '0 auto',
         },
         svg: {
             marginBottom: '10px',

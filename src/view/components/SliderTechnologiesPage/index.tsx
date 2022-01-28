@@ -6,8 +6,6 @@ import { Navigation } from 'swiper';
 
 // Styles
 import { TextSlide, TitleSlide, Wrapper } from './styles';
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 // Types
 type Image = {
@@ -25,6 +23,7 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
     return (
         <Wrapper>
             <Swiper
+                autoHeight
                 loop
                 navigation
                 roundLengths
@@ -37,7 +36,6 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                         initialSlide:  images.length - 1,
                     },
                 }}
-
                 loopedSlides = { images.length }
                 modules = { [ Navigation ] }>
                 <Box>
@@ -60,9 +58,7 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                                     variant = 'h3'>
                                     {element.title}
                                 </TitleSlide>
-                                <TextSlide
-                                    textAlign = { 'center' }
-                                    variant = 'caption'>
+                                <TextSlide>
                                     {element.text}
                                 </TextSlide>
                             </Box>

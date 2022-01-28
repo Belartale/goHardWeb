@@ -1,46 +1,56 @@
 // Core
-import { Box, styled, Card, Typography } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 
 export const Wrapper = styled(Box, {})`
     .swiper {
         padding: 10px 0px;
-        width: calc(100vw - 48px);
-
-        @media (min-width: 1550px) {
-            & {
-                width: auto;
-            }
-        }
         .swiper-slide {
-            transition: all 400ms linear;
-            transform: scale(0.8);
+            display: flex;
+            justify-content: center;
+            align-content: center;
             opacity: 0.5;
 
-            & > .MuiCard-root {
+            & > * {
+                max-width: 500px;
                 margin: 0px 10px;
+                transition: all 400ms linear;
+                transform: scale(0.8);
+                border-radius: 10px;
+                background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
             }
         }
         @media (max-width: 900px) {
             .swiper-slide-active {
-                transform: scale(1);
                 opacity: 1;
-                
-                .MuiCard-root {
+
+                & > * {
+                    transform: scale(1);
                     box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }
             }
         }
         @media (min-width: 900px) {
             .swiper-slide-next {
-                transform: scale(1);
                 opacity: 1;
+                z-index: 1;
 
-                .MuiCard-root {
+                & > * {
+                    transform: scale(1);
                     box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }
+                & ~ .swiper-slide {
+                    & > * {
+                        transform: translate(-25%, 0%) scale(0.8);
+                    }
+                    & ~ .swiper-slide {
+                        transform: translate(0%, 0%) scale(0.8);
+                    }
+                }
+            }
+            .swiper-slide-active {
+                transform: translate(25%, 0%);
             }
         }
-        
         .swiper-button-prev, .swiper-button-next {
             opacity: 0;
             transition: all 200ms linear;
@@ -52,10 +62,10 @@ export const Wrapper = styled(Box, {})`
     }
 `;
 
-export const MyCard = styled(Card, {})`
-    background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
-    border-radius: 10px;
-`;
+// export const MyCard = styled(Card, {})`
+//     background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
+//     border-radius: 10px;
+// `;
 
 export const TitleSliderPortfolioPage = styled(Typography, {})`
     font-size: ${({ theme }) => theme.fonts.size[ 800 ]};
