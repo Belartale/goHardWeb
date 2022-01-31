@@ -3,17 +3,17 @@ import { Box, styled, Typography } from '@mui/material';
 
 export const Wrapper = styled(Box, {})`
     .swiper {
-        padding: 10px 0px;
         .swiper-slide {
+            padding-bottom: 10px;
             display: flex;
             justify-content: center;
             align-content: center;
             opacity: 0.5;
-
+            transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
             & > * {
+                margin: 10px 0px;
                 max-width: 500px;
-                margin: 0px 10px;
-                transition: all 400ms linear;
+                transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
                 transform: scale(0.8);
                 border-radius: 10px;
                 background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
@@ -39,11 +39,10 @@ export const Wrapper = styled(Box, {})`
                     box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }
                 & ~ .swiper-slide {
-                    & > * {
-                        transform: translate(-25%, 0%) scale(0.8);
-                    }
+                    transform: translate(-25%, 0%);
+
                     & ~ .swiper-slide {
-                        transform: translate(0%, 0%) scale(0.8);
+                        transform: translate(0%, 0%);
                     }
                 }
             }
@@ -61,11 +60,6 @@ export const Wrapper = styled(Box, {})`
         }
     }
 `;
-
-// export const MyCard = styled(Card, {})`
-//     background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
-//     border-radius: 10px;
-// `;
 
 export const TitleSliderPortfolioPage = styled(Typography, {})`
     font-size: ${({ theme }) => theme.fonts.size[ 800 ]};

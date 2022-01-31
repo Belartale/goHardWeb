@@ -15,11 +15,11 @@ export const Wrapper = styled(Box, {})`
             justify-content: center;
             align-content: center;
             opacity: 0.5;
+            transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
+            transform: scale(0.8);
             
             & > * {
                 max-width: 500px;
-                /* transition: all 400ms linear; */
-                transform: scale(0.8);
                 width: 100%;
                 border-radius: 8px;
             }
@@ -27,10 +27,7 @@ export const Wrapper = styled(Box, {})`
         @media (max-width: 900px) {
             .swiper-slide-active {
                 opacity: 1;
-
-                & > * {
-                    transform: scale(1);
-                }
+                transform: scale(1);
             }
         }
 
@@ -38,21 +35,18 @@ export const Wrapper = styled(Box, {})`
             .swiper-slide-next {
                 opacity: 1;
                 z-index: 1;
-                
-                & > * {
-                    transform: scale(1);
-                }
+                transform: scale(1);
+
                 & ~ .swiper-slide {
-                    & > * {
-                        transform: translate(-25%, 0%) scale(0.8);
-                    }
+                    transform: translate(-25%, 0%) scale(0.8);
+
                     & ~ .swiper-slide {
-                        transform: translate(5%, 0%) scale(0.8);
+                        transform: translate(0%, 0%) scale(0.8);
                     }
                 }
             }
             .swiper-slide-active {
-                transform: translate(25%, 0%);
+                transform: translate(25%, 0%) scale(0.8);
             }
         }
     
