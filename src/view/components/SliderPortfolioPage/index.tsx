@@ -154,10 +154,24 @@ export const SliderPortfolioPage: FC = () => {
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
+                        spaceBetween:  100,
                     },
                     900: {
                         slidesPerView: 3,
                         initialSlide:  images.length - 1,
+                        spaceBetween:  300,
+                    },
+                    1100: {
+                        slidesPerView: 3,
+                        spaceBetween:  350,
+                    },
+                    1300: {
+                        slidesPerView: 3,
+                        spaceBetween:  400,
+                    },
+                    1550: {
+                        slidesPerView: 3,
+                        spaceBetween:  500,
                     },
                 }}
                 loopedSlides = { images.length }
@@ -166,41 +180,43 @@ export const SliderPortfolioPage: FC = () => {
                 {images.map((element) => (
                     <SwiperSlide
                         key = { element.title }>
-                        <Card>
-                            <CardMedia
-                                alt = { element.alt }
-                                component = 'img'
-                                image = { element.src }
-                            />
-                            <CardContent>
-                                <CardBottomSliderPortfolioPage>
-                                    <CaptionsSliderPortfolioPage>
-                                        <TitleSliderPortfolioPage variant = 'h3'>
-                                            {element.title}
-                                        </TitleSliderPortfolioPage>
-                                        <TextSliderPortfolioPage variant = 'caption'>
-                                            {element.text}
-                                        </TextSliderPortfolioPage>
-                                    </CaptionsSliderPortfolioPage>
-                                    <TechnologiesSliderPortfolioPage>
-                                        <TitleImagesSliderPortfolioPage variant = 'h4'>
-                                            Technologies:
-                                        </TitleImagesSliderPortfolioPage>
-                                        <ImagesSliderPortfolioPage>
-                                            {element.technologies.map((img) => (
-                                                <CellSliderPortfolioPage
-                                                    key = { img.alt }>
-                                                    <ImgSliderPortfolioPage
-                                                        alt = { `Image ${img.alt}` }
-                                                        src = { img.src }
-                                                    />
-                                                </CellSliderPortfolioPage>
-                                            ))}
-                                        </ImagesSliderPortfolioPage>
-                                    </TechnologiesSliderPortfolioPage>
-                                </CardBottomSliderPortfolioPage>
-                            </CardContent>
-                        </Card>
+                        <div>
+                            <Card>
+                                <CardMedia
+                                    alt = { element.alt }
+                                    component = 'img'
+                                    image = { element.src }
+                                />
+                                <CardContent>
+                                    <CardBottomSliderPortfolioPage>
+                                        <CaptionsSliderPortfolioPage>
+                                            <TitleSliderPortfolioPage variant = 'h3'>
+                                                {element.title}
+                                            </TitleSliderPortfolioPage>
+                                            <TextSliderPortfolioPage variant = 'caption'>
+                                                {element.text}
+                                            </TextSliderPortfolioPage>
+                                        </CaptionsSliderPortfolioPage>
+                                        <TechnologiesSliderPortfolioPage>
+                                            <TitleImagesSliderPortfolioPage variant = 'h4'>
+                                                Technologies:
+                                            </TitleImagesSliderPortfolioPage>
+                                            <ImagesSliderPortfolioPage>
+                                                {element.technologies.map((img) => (
+                                                    <CellSliderPortfolioPage
+                                                        key = { img.alt }>
+                                                        <ImgSliderPortfolioPage
+                                                            alt = { `Image ${img.alt}` }
+                                                            src = { img.src }
+                                                        />
+                                                    </CellSliderPortfolioPage>
+                                                ))}
+                                            </ImagesSliderPortfolioPage>
+                                        </TechnologiesSliderPortfolioPage>
+                                    </CardBottomSliderPortfolioPage>
+                                </CardContent>
+                            </Card>
+                        </div>
                     </SwiperSlide>
                 ))}
             </Swiper>
