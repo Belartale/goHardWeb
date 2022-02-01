@@ -10,7 +10,7 @@ export const Wrapper = styled(Box, {})`
             padding: 50px 0px;
         }
         @media (min-width: 1550px) {
-            max-width: calc(1488px / 1.5);
+            max-width: calc(1536px / 1.5);
         }
 
         & img {
@@ -30,12 +30,13 @@ export const Wrapper = styled(Box, {})`
                 transition: all 400ms linear;
                 transform: scale(0.8);
                 border-radius: 10px;
+                background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
             }
         }
         @media (min-width: 900px) {
             .swiper-slide-next {
                 opacity: 1;
-
+                z-index: 1;
                 & > * {
                     transform: scale(1);
                     box-shadow: 0px 0px 44px ${({ theme }) => theme.colors.grey[ 100 ]};

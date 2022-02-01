@@ -36,6 +36,7 @@ import laptop from '../../../assets/images/laptop.png';
 import laptopOnTable from '../../../assets/images/laptopOnTable.png';
 import keyboard from '../../../assets/images/keyboard.png';
 import laptopWithTechnologies from '../../../assets/images/laptopWithTechnologies.png';
+import { images } from './images';
 
 // Navigation
 import { book } from '../../routes';
@@ -373,7 +374,7 @@ const Main: FC = () => {
                             </MyButton>
                         </Grid>
                         <Grid item>
-                            <SliderMainPage/>
+                            <SliderMainPage images = { images }/>
                         </Grid>
                     </Grid>
                 </MyContainer>

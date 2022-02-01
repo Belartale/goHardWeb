@@ -1,31 +1,27 @@
 // Core
 import React, { FC } from 'react';
-import { Box } from '@mui/material';
+import { Box, Card, CardActionArea, CardMedia } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Styles
-import { Wrapper } from './styles';
-
-// Images
-import imagesFirstSlider from '../../../assets/images/firstSlider.png';
-import imagesFirstSliderNext from '../../../assets/images/firstSliderNext.png';
-
 import {
     Navigation,
     Pagination,
 } from 'swiper';
 
-export const SliderMainPage: FC = () => {
-    const images = [
-        { src: imagesFirstSlider, alt: 'img' },
-        { src: 'https://media.istockphoto.com/photos/colorful-background-of-pastel-powder-explosionrainbow-color-dust-on-picture-id1180542165?k=20&m=1180542165&s=612x612&w=0&h=43hlhk8qdGYP4V-u3AAxD3kPDRIzHjMNWpr-VdBQ2Js=', alt: 'img' },
-        { src: imagesFirstSliderNext, alt: 'img' },
-        { src: 'https://img.bfmtv.com/c/630/420/871/7b9f41477da5f240b24bd67216dd7.jpg', alt: 'img' },
-        { src: imagesFirstSliderNext, alt: 'img' },
-        { src: 'https://www.researchgate.net/profile/Georg-Waltner-2/publication/329620436/figure/fig1/AS:759099822206979@1557994909846/Image-sequence-and-views-of-the-reconstructed-point-cloud-a-j-images-from-the.ppm', alt: 'img' },
-        { src: imagesFirstSlider, alt: 'img' },
-    ];
+// Styles
+import { Wrapper } from './styles';
 
+// Types
+type ImageTypes = {
+    src: string
+    alt: string
+    link: string
+}
+export type ImagesSliderMainPageTypes = ImageTypes[];
+type PropTypes = {
+    images: ImagesSliderMainPageTypes
+}
+
+export const SliderMainPage: FC<PropTypes> = ({ images }) => {
     return (
         <Wrapper>
             <Swiper
@@ -36,9 +32,12 @@ export const SliderMainPage: FC = () => {
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
+                        spaceBetween:  100,
                     },
                     900: {
                         slidesPerView: 3,
+                        initialSlide:  images.length - 1,
+                        spaceBetween:  100,
                     },
                 }}
                 loopedSlides = { images.length }
@@ -52,10 +51,17 @@ export const SliderMainPage: FC = () => {
                     {images.map((element, index) => (
                         <SwiperSlide
                             key = { index }>
-                            <img
-                                alt = { element.alt }
-                                src = { element.src }
-                            />
+                            <div>
+                                <Card sx = {{ backgroundColor: 'transparent' }}>
+                                    <CardActionArea href = { element.link }>
+                                        <CardMedia
+                                            alt = { element.alt }
+                                            component = 'img'
+                                            image = { element.src }
+                                        />
+                                    </CardActionArea>
+                                </Card>
+                            </div>
                         </SwiperSlide>
                     ))}
                 </Box>

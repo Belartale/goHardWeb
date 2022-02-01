@@ -21,8 +21,11 @@ import java from '../../../assets/images/java.png';
 import kotlin from '../../../assets/images/kotlin.png';
 import flutter from '../../../assets/images/crossFlutter.png';
 
+// Types
+import { ImagesSliderTechnologiesPageTypes } from '../../components';
 
-export const imagesFrontEnd = [
+
+export const imagesFrontEnd: ImagesSliderTechnologiesPageTypes  = [
     {
         src:   html,
         title: 'Html',

@@ -3,7 +3,7 @@ import { Box, styled } from '@mui/material';
 
 export const Wrapper = styled(Box, {})`
     .swiper {
-        max-width: 1488px;
+        max-width: 1536px;
         
         @media (max-width: 1550px) {
             & {
@@ -18,10 +18,20 @@ export const Wrapper = styled(Box, {})`
             transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
             transform: scale(0.8);
             
-            & > * {
-                max-width: 500px;
-                width: 100%;
+            & > * > * {
+                width: 500px;
                 border-radius: 8px;
+                @media (min-width: 900px) {
+                    width: 40vw;
+                }
+                @media (min-width: 1550px) {
+                    width: 620px;
+                }
+                & img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                }
             }
         }
         @media (max-width: 900px) {
@@ -38,7 +48,7 @@ export const Wrapper = styled(Box, {})`
                 transform: scale(1);
 
                 & ~ .swiper-slide {
-                    transform: translate(-25%, 0%) scale(0.8);
+                    transform: translate(-35px, 0%) scale(0.8);
 
                     & ~ .swiper-slide {
                         transform: translate(0%, 0%) scale(0.8);
@@ -46,7 +56,7 @@ export const Wrapper = styled(Box, {})`
                 }
             }
             .swiper-slide-active {
-                transform: translate(25%, 0%) scale(0.8);
+                transform: translate(35px, 0%) scale(0.8);
             }
         }
     

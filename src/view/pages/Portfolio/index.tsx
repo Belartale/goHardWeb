@@ -9,6 +9,7 @@ import { Subtitle, Title } from '../../elements';
 
 // Images
 import tableWithDevices from '../../../assets/images/tableWithDevices.jpg';
+import { images } from './images';
 
 // Styles
 import { TitlePortfolio } from './styles';
@@ -42,7 +43,7 @@ const Portfolio: FC = () => {
                 </MyContainer>
             </Section>
             <MyContainer sx = {{ marginTop: { xs: '0px', md: '60px' }, marginBottom: { xs: '0px', md: '100px' }}}>
-                <SliderPortfolioPage />
+                <SliderPortfolioPage images = { images }/>
             </MyContainer>
             <MyContainer sx = {{ paddingTop: '20px', paddingBottom: '20px'  }}>
                 <ContactBar size = 'lg' />

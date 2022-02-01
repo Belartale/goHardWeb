@@ -4,26 +4,37 @@ import { Box, styled, Typography } from '@mui/material';
 export const Wrapper = styled(Box, {})`
     .swiper {
         .swiper-slide {
-            padding-bottom: 10px;
             display: flex;
             justify-content: center;
             align-content: center;
             opacity: 0.5;
             transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
             & > * {
-                margin: 10px 0px;
-                max-width: 500px;
+                margin: 10px 10px 10px;
+            }
+            & > * > * {
                 transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
                 transform: scale(0.8);
                 border-radius: 10px;
                 background-color: ${({ theme }) => theme.colors.secondary[ 50 ]};
+                
+                @media (max-width: 900px) {
+                    max-width: 500px;
+                }
+                
+                @media (min-width: 900px) {
+                    width: 40vw;
+                }
+                @media (min-width: 1550px) {
+                    width: 620px;
+                }
             }
         }
         @media (max-width: 900px) {
             .swiper-slide-active {
                 opacity: 1;
 
-                & > * {
+                & > * > * {
                     transform: scale(1);
                     box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }
@@ -34,20 +45,23 @@ export const Wrapper = styled(Box, {})`
                 opacity: 1;
                 z-index: 1;
 
-                & > * {
+                & > * > * {
                     transform: scale(1);
                     box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }
                 & ~ .swiper-slide {
-                    transform: translate(-25%, 0%);
-
+                    @media (min-width: 900px) {
+                        transform: translate(-35px, 0%);
+                    }
                     & ~ .swiper-slide {
                         transform: translate(0%, 0%);
                     }
                 }
             }
             .swiper-slide-active {
-                transform: translate(25%, 0%);
+                @media (min-width: 900px) {
+                    transform: translate(35px, 0%);
+                }
             }
         }
         .swiper-button-prev, .swiper-button-next {
@@ -92,7 +106,7 @@ export const CardBottomSliderPortfolioPage  = styled(Box, {})`
     }
 `;
 export const CaptionsSliderPortfolioPage  = styled(Box, {})`
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     text-align: center;
 
     @media (min-width: 1200px) {
