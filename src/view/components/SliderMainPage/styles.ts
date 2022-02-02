@@ -3,12 +3,10 @@ import { Box, styled } from '@mui/material';
 
 export const Wrapper = styled(Box, {})`
     .swiper {
-        max-width: 1536px;
+        width: calc(100vw - 48px);
         
-        @media (max-width: 1550px) {
-            & {
-                width: calc(100vw - 48px);
-            }
+        @media (min-width: 1550px) {
+            max-width: calc(1536px - 48px);
         }
         .swiper-slide {
             display: flex;
@@ -18,9 +16,11 @@ export const Wrapper = styled(Box, {})`
             transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
             transform: scale(0.8);
             
-            & > * > * {
-                width: 500px;
+            & > .MuiBox-root > .MuiCard-root {
                 border-radius: 8px;
+                @media (max-width: 900px) {
+                    max-width: 500px;
+                }
                 @media (min-width: 900px) {
                     width: 40vw;
                 }

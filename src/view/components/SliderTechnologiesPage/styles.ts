@@ -24,7 +24,7 @@ export const Wrapper = styled(Box, {})`
             opacity: 0.5;
 
             
-            & > * {
+            & > .MuiCard-root {
                 padding: 20px 25px 40px;
                 max-width: 320px;
                 transition: all 400ms linear;
@@ -37,7 +37,7 @@ export const Wrapper = styled(Box, {})`
             .swiper-slide-next {
                 opacity: 1;
                 z-index: 1;
-                & > * {
+                & > .MuiCard-root {
                     transform: scale(1);
                     box-shadow: 0px 0px 44px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }
@@ -47,7 +47,7 @@ export const Wrapper = styled(Box, {})`
             .swiper-slide-active {
                 opacity: 1;
                 
-                & > * {
+                & > .MuiCard-root {
                     transform: scale(1);
                     box-shadow: 0px 0px 44px ${({ theme }) => theme.colors.grey[ 100 ]};
 

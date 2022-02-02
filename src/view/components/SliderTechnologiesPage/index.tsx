@@ -1,11 +1,19 @@
 // Core
 import React, { FC } from 'react';
-import { Box, Card, CardActionArea } from '@mui/material';
+import {
+    Box,
+    Card,
+    CardActionArea,
+} from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 // Styles
-import { TextSlide, TitleSlide, Wrapper } from './styles';
+import {
+    TextSlide,
+    TitleSlide,
+    Wrapper,
+} from './styles';
 
 // Types
 type ImageTypes = {

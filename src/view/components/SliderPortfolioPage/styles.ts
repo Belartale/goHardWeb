@@ -9,10 +9,10 @@ export const Wrapper = styled(Box, {})`
             align-content: center;
             opacity: 0.5;
             transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
-            & > * {
+            & > .MuiBox-root {
                 margin: 10px 10px 10px;
             }
-            & > * > * {
+            & > .MuiBox-root > .MuiCard-root {
                 transition: all 400ms cubic-bezier(0, 0.5, 0, 0.5);
                 transform: scale(0.8);
                 border-radius: 10px;
@@ -34,7 +34,7 @@ export const Wrapper = styled(Box, {})`
             .swiper-slide-active {
                 opacity: 1;
 
-                & > * > * {
+                & > .MuiBox-root > .MuiCard-root {
                     transform: scale(1);
                     box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }
@@ -45,7 +45,7 @@ export const Wrapper = styled(Box, {})`
                 opacity: 1;
                 z-index: 1;
 
-                & > * > * {
+                & > .MuiBox-root > .MuiCard-root {
                     transform: scale(1);
                     box-shadow: 0px 0px 10px ${({ theme }) => theme.colors.grey[ 100 ]};
                 }

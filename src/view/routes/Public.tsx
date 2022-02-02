@@ -4,7 +4,14 @@ import { useRoutes, Navigate } from 'react-router-dom';
 import { book } from '.';
 
 // Pages
-import { About, Main, Portfolio, Services, Technologies, Vacancies } from '../pages';
+import {
+    About,
+    Main,
+    Portfolio,
+    Services,
+    Technologies,
+    Vacancies,
+} from '../pages';
 
 export const Public: FC = () => {
     const routes = useRoutes([

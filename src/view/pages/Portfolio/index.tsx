@@ -3,8 +3,18 @@ import { Box } from '@mui/material';
 import React, { FC } from 'react';
 
 // Components
-import { ContactBar, ErrorBoundary, SliderPortfolioPage } from '../../components';
-import { ContainerCenter, GreenText, Header, MyContainer, Section } from '../../containers';
+import {
+    ContactBar,
+    ErrorBoundary,
+    SliderPortfolioPage,
+} from '../../components';
+import {
+    ContainerCenter,
+    GreenText,
+    Header,
+    MyContainer,
+    Section,
+} from '../../containers';
 import { Subtitle, Title } from '../../elements';
 
 // Images

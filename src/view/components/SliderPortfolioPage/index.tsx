@@ -1,6 +1,12 @@
 // Core
 import React, { FC } from 'react';
-import { Card, CardActionArea, CardContent, CardMedia } from '@mui/material';
+import {
+    Box,
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+} from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
@@ -57,7 +63,7 @@ export const SliderPortfolioPage: FC<TypeProps> = ({ images }) => {
                 {images.map((element) => (
                     <SwiperSlide
                         key = { element.title }>
-                        <div>
+                        <Box>
                             <Card>
                                 <CardActionArea href = { element.link }>
                                     <CardMedia
@@ -95,7 +101,7 @@ export const SliderPortfolioPage: FC<TypeProps> = ({ images }) => {
                                     </CardContent>
                                 </CardActionArea>
                             </Card>
-                        </div>
+                        </Box>
                     </SwiperSlide>
                 ))}
             </Swiper>

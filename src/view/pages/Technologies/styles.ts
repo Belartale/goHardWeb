@@ -1,5 +1,9 @@
 // Core
-import { Box, styled, Typography } from '@mui/material';
+import {
+    Box,
+    styled,
+    Typography,
+} from '@mui/material';
 
 export const TitleTechnologies = styled(Typography, {})(({ theme }) => ({
     marginBottom: '25px',
