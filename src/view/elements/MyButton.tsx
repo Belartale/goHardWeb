@@ -13,6 +13,10 @@ const ButtonStyled = styled(ButtonUnstyled, {})<PropTypes>`
 
     border: 1px solid ${({ theme }) => theme.colors.success[ 50 ]};
     font-family: 'Nunito';
+
+    &:disabled {
+        opacity: 0.5;
+    }
     
     &:hover {
         cursor: pointer;

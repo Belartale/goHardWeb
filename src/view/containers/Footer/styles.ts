@@ -1,6 +1,11 @@
 // Core
 import { styled, Box, Typography, BoxProps, TextField, TextFieldProps } from '@mui/material';
 
+// Types
+interface FormTypes extends BoxProps {
+    isValidateForm: boolean
+}
+
 export const Container = styled(Box, {})(({ theme }) => ({
     padding:   '25px 0px',
     borderTop: `1px solid ${theme.colors.grey[ 100 ]}`,
@@ -29,24 +34,38 @@ export const MyTypographyParagraph  = styled(Typography, {})(({ theme }) => ({
     },
 }));
 
-export const Form  = styled(Box, {})<BoxProps>(({ theme }) => ({
-    padding:      '15px 30px',
-    border:       `1px solid ${theme.colors.primary[ 50 ]}`,
-    borderRadius: '5px',
+// export const Form  = styled(Box, {})<FormTypes>(({ theme, isValidateForm }) => ({
+//     padding:      '15px 30px',
+//     border:       `1px solid ${isValidateForm === true ? theme.colors.primary[ 50 ] : 'red'}`,
+//     borderRadius: '5px',
 
-    width:                          'auto',
-    [ theme.breakpoints.up('sm') ]: {
-        '&': {
-            width:  '60vw',
-            margin: '0 auto',
-        },
-    },
-    [ theme.breakpoints.up('md') ]: {
-        '&': {
-            width: 'auto',
-        },
-    },
-}));
+//     width:                          'auto',
+//     [ theme.breakpoints.up('sm') ]: {
+//         '&': {
+//             width:  '60vw',
+//             margin: '0 auto',
+//         },
+//     },
+//     [ theme.breakpoints.up('md') ]: {
+//         '&': {
+//             width: 'auto',
+//         },
+//     },
+// }));
+export const Form  = styled(Box, {})<FormTypes>`
+    padding: 15px 30px;
+    border: 1px solid ${({ theme, isValidateForm }) => isValidateForm === true ? theme.colors.primary[ 50 ] : 'red'};
+    border-radius: 5px;
+
+    width: auto;
+    @media (min-width: 600px) {
+        width:  60vw;
+        margin: 0 auto;
+    }
+    @media (min-width: 900px) {
+        width: auto;
+    }
+`;
 
 export const MyTextField  = styled(TextField, {})<TextFieldProps>(({ theme }) => ({
     '.MuiInputLabel-root': {
