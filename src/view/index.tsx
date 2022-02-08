@@ -25,22 +25,6 @@ export const AppContainer = styled(
     background:    theme.colors.secondary[ 50 ],
 }));
 
-// Types
-type TypesColors = typeof defaultTheme.colors;
-type TypesFonts = typeof defaultTheme.fonts;
-
-declare module '@mui/material/styles' {
-    interface Theme {
-        colors: TypesColors;
-        fonts: TypesFonts;
-    }
-
-    interface ThemeOptions {
-        colors?: TypesColors;
-        fonts?: TypesFonts;
-    }
-}
-
 const customTheme = createTheme({
     colors: defaultTheme.colors,
     fonts:  defaultTheme.fonts,

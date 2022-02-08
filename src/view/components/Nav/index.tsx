@@ -9,7 +9,7 @@ import { book } from '../../routes';
 import { MenuLink } from '../../elements';
 
 // Styles
-import { MyList } from './styled';
+import { MyList } from './styles';
 
 // Types
 export interface PropTypesNav extends ListProps {
