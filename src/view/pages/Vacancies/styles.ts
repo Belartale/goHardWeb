@@ -1,5 +1,6 @@
 // Core
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 
-export const Container = styled.section`
+export const FormStyled = styled('div', {})<any>`
+    
 `;

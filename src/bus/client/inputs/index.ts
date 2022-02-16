@@ -6,19 +6,40 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from '../../../tools/hooks';
 
 const initialState = {
-    firstName: {
+    firstNameFeedback: {
         value:      '',
         isValidate: true,
     },
-    lastName: {
+    lastNameFeedback: {
         value:      '',
         isValidate: true,
     },
-    email: {
+    emailFeedback: {
         value:      '',
         isValidate: true,
     },
-    text: {
+    textFeedback: {
+        value:      '',
+        isValidate: true,
+    },
+
+    firstNameVacancy: {
+        value:      '',
+        isValidate: true,
+    },
+    lastNameVacancy: {
+        value:      '',
+        isValidate: true,
+    },
+    emailVacancy: {
+        value:      '',
+        isValidate: true,
+    },
+    textVacancy: {
+        value:      '',
+        isValidate: true,
+    },
+    selectVacancy: {
         value:      '',
         isValidate: true,
     },
@@ -49,18 +70,26 @@ export const useInputsRedux = () => {
     const dispatch = useDispatch();
     const inputs = useSelector(({ inputs }) => inputs);
 
-    const checkValidationFormFun = (): boolean => [
-        inputs.firstName.isValidate,
-        inputs.lastName.isValidate,
-        inputs.email.isValidate,
-        inputs.text.isValidate,
+    const checkValidationFeedbackFormFun = (): boolean => [
+        inputs.firstNameFeedback,
+        inputs.lastNameFeedback,
+        inputs.emailFeedback,
+        inputs.textFeedback,
+    ].every((element) => element.isValidate === true && element.value.length > 0);
+
+    const checkValidationVacanciesFormFun = (): boolean => [
+        inputs.firstNameVacancy.isValidate,
+        inputs.lastNameVacancy.isValidate,
+        inputs.emailVacancy.isValidate,
+        inputs.textVacancy.isValidate,
     ].every((element) => element === true);
 
     return {
-        inputsRedux:          inputs,
-        setInputAction:       (options: Options) => void dispatch(inputsActions.inputCreatorAction(options)),
-        checkValidationForm:  (): boolean => checkValidationFormFun(),
-        resetInputsToInitial: () => void dispatch(inputsActions.resetInputsToInitialAction()),
+        inputsRedux:                  inputs,
+        setInputAction:               (options: Options) => void dispatch(inputsActions.inputCreatorAction(options)),
+        checkValidationFeedbackForm:  (): boolean => checkValidationFeedbackFormFun(),
+        checkValidationVacanciesForm: (): boolean => checkValidationVacanciesFormFun(),
+        resetInputsToInitial:         () => void dispatch(inputsActions.resetInputsToInitialAction()),
     };
 };
 

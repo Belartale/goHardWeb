@@ -1,10 +1,5 @@
 // Core
-import { styled, Box, Typography, BoxProps, TextField, TextFieldProps } from '@mui/material';
-
-// Types
-interface FormTypes extends BoxProps {
-    isValidateForm: boolean
-}
+import { styled, Box, Typography } from '@mui/material';
 
 export const Container = styled(Box, {})(({ theme }) => ({
     padding:   '25px 0px',
@@ -30,64 +25,6 @@ export const MyTypographyParagraph  = styled(Typography, {})(({ theme }) => ({
     [ theme.breakpoints.down('md') ]: {
         '&': {
             textAlign: 'center',
-        },
-    },
-}));
-
-// export const Form  = styled(Box, {})<FormTypes>(({ theme, isValidateForm }) => ({
-//     padding:      '15px 30px',
-//     border:       `1px solid ${isValidateForm === true ? theme.colors.primary[ 50 ] : 'red'}`,
-//     borderRadius: '5px',
-
-//     width:                          'auto',
-//     [ theme.breakpoints.up('sm') ]: {
-//         '&': {
-//             width:  '60vw',
-//             margin: '0 auto',
-//         },
-//     },
-//     [ theme.breakpoints.up('md') ]: {
-//         '&': {
-//             width: 'auto',
-//         },
-//     },
-// }));
-export const Form  = styled(Box, {})<FormTypes>`
-    padding: 15px 30px;
-    border: 1px solid ${({ theme, isValidateForm }) => isValidateForm === true ? theme.colors.primary[ 50 ] : 'red'};
-    border-radius: 5px;
-
-    width: auto;
-    @media (min-width: 600px) {
-        width:  60vw;
-        margin: 0 auto;
-    }
-    @media (min-width: 900px) {
-        width: auto;
-    }
-`;
-
-export const MyTextField  = styled(TextField, {})<TextFieldProps>(({ theme }) => ({
-    '.MuiInputLabel-root': {
-        color: theme.colors.grey[ 100 ],
-    },
-
-    '& label.Mui-focused': {
-        color: theme.colors.primary[ 50 ],
-    },
-    '& .MuiInput-underline:after': {
-        borderBottomColor: theme.colors.primary[ 50 ],
-    },
-    '& .MuiOutlinedInput-root': {
-        color:        theme.colors.primary[ 50 ],
-        '& fieldset': {
-            borderColor: theme.colors.grey[ 100 ],
-        },
-        '&:hover fieldset': {
-            borderColor: theme.colors.grey[ 50 ],
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: theme.colors.primary[ 50 ],
         },
     },
 }));
