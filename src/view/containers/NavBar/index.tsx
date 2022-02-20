@@ -36,8 +36,7 @@ export const NavBar: FC<PropTypes> = () => {
     function HideOnScroll(props: PropsTypesHideOnScroll) {
         const { children, window } = props;
         const trigger = useScrollTrigger({
-            // eslint-disable-next-line no-undefined
-            target: window ? window() : undefined,
+            target: window ? window() : void 0,
         });
 
         return (
@@ -51,25 +50,6 @@ export const NavBar: FC<PropTypes> = () => {
     }
 
     const [ isOpenDrawer, setIsOpenDrawer ] = useState(false);
-
-    const toggleDrawer
-        = (isOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-            if (
-                event.type === 'keydown'
-        // eslint-disable-next-line no-extra-parens
-        && ((event as React.KeyboardEvent).key === 'Tab'
-          // eslint-disable-next-line no-extra-parens
-          || (event as React.KeyboardEvent).key === 'Shift')
-            ) {
-                return;
-            }
-
-            //todo нужно ка-то скрыть <Drawer></Drawer> когда > 900
-            // if (window.innerWidth > 900) {
-            //     toggleDrawer(false);
-            // }
-            setIsOpenDrawer(isOpen);
-        };
 
     return (
         <HideOnScroll>
@@ -102,7 +82,7 @@ export const NavBar: FC<PropTypes> = () => {
                                 edge = 'start'
                                 size = 'large'
                                 sx = {{ mr: 2, display: { xs: 'block', md: 'none' }}}
-                                onClick = { toggleDrawer(true) }>
+                                onClick = { () => void setIsOpenDrawer(true) }>
                                 <IconDrawer>
                                     <span></span>
                                     <span></span>
@@ -112,12 +92,12 @@ export const NavBar: FC<PropTypes> = () => {
                             <MyDrawer
                                 anchor = { 'top' }
                                 open = { isOpenDrawer }
-                                onClose = { toggleDrawer(false) }>
+                                onClose = { () => void setIsOpenDrawer(false) }>
                                 <Box
                                     role = 'presentation'
                                     sx = {{ '& button': { margin: '0 auto' }}}
-                                    onClick = { toggleDrawer(false) }
-                                    onKeyDown = { toggleDrawer(false) }>
+                                    onClick = { () => void setIsOpenDrawer(false) }
+                                    onKeyDown = { () => void setIsOpenDrawer(false) }>
                                     <Nav
                                         fontSize = 'lg'
                                         sx = {{ display: 'flex', flexDirection: 'column' }}

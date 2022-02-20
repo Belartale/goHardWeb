@@ -3,51 +3,32 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
 // Tools
-import { useSelector } from '../../../tools/hooks';
+import { useSelector, useValidation } from '../../../tools/hooks';
 
 const initialState = {
-    firstNameFeedback: {
-        value:      '',
-        isValidate: true,
-    },
-    lastNameFeedback: {
-        value:      '',
-        isValidate: true,
-    },
-    emailFeedback: {
-        value:      '',
-        isValidate: true,
-    },
-    textFeedback: {
-        value:      '',
-        isValidate: true,
+    feedback: {
+        firstName: null,
+        lastName:  null,
+        email:     null,
+        text:      null,
     },
 
-    firstNameVacancy: {
-        value:      '',
-        isValidate: true,
-    },
-    lastNameVacancy: {
-        value:      '',
-        isValidate: true,
-    },
-    emailVacancy: {
-        value:      '',
-        isValidate: true,
-    },
-    textVacancy: {
-        value:      '',
-        isValidate: true,
-    },
-    selectVacancy: {
-        value:      '',
-        isValidate: true,
+    vacancy: {
+        firstName: null,
+        lastName:  null,
+        email:     null,
+        text:      null,
+        select:    null,
     },
 };
+// typeof initialState.feedback | typeof initialState.vacancy |
 
 // Types
 export type InputsKeys = keyof typeof initialState;
-type Options = { type: InputsKeys, value: { value: string, isValidate: boolean } };
+export type InputsKeysKeys =
+    Record<keyof typeof initialState.feedback, null | string> |
+    Record<keyof typeof initialState.vacancy, null | string>;
+type Options = { type: InputsKeys, value: InputsKeysKeys };
 
 // Slice
 export const inputsSlice = createSlice({
@@ -69,20 +50,22 @@ export default inputsSlice.reducer;
 export const useInputsRedux = () => {
     const dispatch = useDispatch();
     const inputs = useSelector(({ inputs }) => inputs);
+    const { validationInput } = useValidation();
 
     const checkValidationFeedbackFormFun = (): boolean => [
-        inputs.firstNameFeedback,
-        inputs.lastNameFeedback,
-        inputs.emailFeedback,
-        inputs.textFeedback,
-    ].every((element) => element.isValidate === true && element.value.length > 0);
+        validationInput({ type: 'text', value: inputs.feedback.firstName }),
+        validationInput({ type: 'text', value: inputs.feedback.lastName }),
+        validationInput({ type: 'email', value: inputs.feedback.email }),
+        validationInput({ type: 'text', value: inputs.feedback.text }),
+    ].every((element: boolean) => element === false);
 
     const checkValidationVacanciesFormFun = (): boolean => [
-        inputs.firstNameVacancy.isValidate,
-        inputs.lastNameVacancy.isValidate,
-        inputs.emailVacancy.isValidate,
-        inputs.textVacancy.isValidate,
-    ].every((element) => element === true);
+        validationInput({ type: 'text', value: inputs.vacancy.firstName }),
+        validationInput({ type: 'text', value: inputs.vacancy.lastName }),
+        validationInput({ type: 'email', value: inputs.vacancy.email }),
+        validationInput({ type: 'text', value: inputs.vacancy.text }),
+        validationInput({ type: 'text', value: inputs.vacancy.select }),
+    ].every((element: boolean) => element === false);
 
     return {
         inputsRedux:                  inputs,

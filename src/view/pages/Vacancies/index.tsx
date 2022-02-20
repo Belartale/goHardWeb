@@ -1,5 +1,5 @@
 // Core
-import React, { FC } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import { Box, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 
 // Hooks
@@ -39,19 +39,17 @@ const Vacancies: FC<PropTypes> = () => {
 
     const {
         inputsRedux,
+        setInputAction,
         checkValidationVacanciesForm,
         resetInputsToInitial,
     } = useInputsRedux();
 
-    const onSubmitButton = () => {
-        validationInput({ type: 'firstNameVacancy', value: inputsRedux.firstNameVacancy.value });
-        validationInput({ type: 'lastNameVacancy', value: inputsRedux.lastNameVacancy.value });
-        validationInput({ type: 'emailVacancy', value: inputsRedux.emailVacancy.value });
-        validationInput({ type: 'textVacancy', value: inputsRedux.textVacancy.value });
+    const onSubmitButton = () => !checkValidationVacanciesForm() && resetInputsToInitial();
 
-        !Object.values(inputsRedux)
-            .some((element) => element.isValidate === false
-            || element.value.length <= 0) && resetInputsToInitial();
+    const handleInput = (
+        event: ChangeEvent<HTMLInputElement>,
+    ) => {
+        setInputAction({ type: 'feedback', value: { ...inputsRedux.feedback, [ event.target.name ]: event.target.value }});
     };
 
     return (
@@ -79,7 +77,7 @@ const Vacancies: FC<PropTypes> = () => {
                     </Subtitle>
                     <Form
                         component = 'form'
-                        isValidateForm = { checkValidationVacanciesForm() }
+                        isValidateForm = { false }
                         sx = {{ margin: '0 auto', width: { sm: '60vw', md: 'auto' }}}>
                         <InputLabel id = 'demo-simple-select-label'>Age</InputLabel>
                         <Select

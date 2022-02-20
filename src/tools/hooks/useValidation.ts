@@ -1,34 +1,28 @@
-
-// Tools
-import { InputsKeys, useInputsRedux } from '../../bus/client/inputs';
-
-
 export const useValidation = () => {
-    const { setInputAction } = useInputsRedux();
-
     // type firstNameFeedback || lastNameFeedback || ...
-    const validationInput = ({ type, value }: { type: InputsKeys, value: string }) => {
-        if (value.length > 0) {
-            if (
-                (type === 'emailFeedback' && /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value))
-                || (type === 'emailVacancy' && /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value))
-            ) {
-                setInputAction({ type, value: { value, isValidate: true }});
+    const validationInput = ({ type, value }: { type: 'text' | 'email', value: string | null }) => {
+        if (typeof value === 'string') {
+            if (type === 'email') {
+                if (
+                    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value)
+                ) {
+                    return false;
+                }
 
-                return;
+                return true;
             }
 
-            if (type !== 'emailFeedback' && type !== 'emailVacancy') {
-                setInputAction({ type, value: { value, isValidate: true }});
 
-                return;
+            if (type === 'text') {
+                if (value.length > 0) {
+                    return false;
+                }
+
+                return true;
             }
-
-            setInputAction({ type, value: { value, isValidate: false }});
-
-            return;
         }
-        setInputAction({ type, value: { value, isValidate: false }});
+
+        return false;
     };
 
     return { validationInput };

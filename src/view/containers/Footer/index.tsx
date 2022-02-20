@@ -1,5 +1,5 @@
 // Core
-import React, { FC } from 'react';
+import React, { ChangeEvent, FC } from 'react';
 import { Grid, Box } from '@mui/material';
 
 // Container
@@ -33,21 +33,18 @@ export const Footer: FC = () => {
 
     const {
         inputsRedux,
+        setInputAction,
         checkValidationFeedbackForm,
         resetInputsToInitial,
     } = useInputsRedux();
 
-    const onSubmitButton = () => {
-        validationInput({ type: 'firstNameFeedback', value: inputsRedux.firstNameFeedback.value });
-        validationInput({ type: 'lastNameFeedback', value: inputsRedux.lastNameFeedback.value });
-        validationInput({ type: 'emailFeedback', value: inputsRedux.emailFeedback.value });
-        validationInput({ type: 'textFeedback', value: inputsRedux.textFeedback.value });
 
-        // !Object.values(inputsRedux)
-        //     .some((element) => element.isValidate === false
-        //     || element.value.length <= 0) && resetInputsToInitial();
+    const onSubmitButton = () => !checkValidationFeedbackForm() && resetInputsToInitial();
 
-        checkValidationFeedbackForm() && resetInputsToInitial();
+    const handleInput = (
+        event: ChangeEvent<HTMLInputElement>,
+    ) => {
+        setInputAction({ type: 'feedback', value: { ...inputsRedux.feedback, [ event.target.name ]: event.target.value }});
     };
 
     return (
@@ -94,14 +91,14 @@ export const Footer: FC = () => {
                                         xs = { 12 }>
                                         <MyTextField
                                             fullWidth
-                                            error = { !inputsRedux.firstNameFeedback.isValidate }
-                                            helperText = { !inputsRedux.firstNameFeedback.isValidate && 'Incorrect input' }
+                                            error = { validationInput({ type: 'text', value: inputsRedux.feedback.firstName }) }
+                                            helperText = { validationInput({ type: 'text', value: inputsRedux.feedback.firstName }) && 'Incorrect input' }
                                             label = 'First Name'
-                                            name = 'firstNameFeedback'
-                                            value = { inputsRedux.firstNameFeedback.value }
+                                            name = 'firstName'
+                                            value = { inputsRedux.feedback.firstName }
                                             variant = 'outlined'
                                             onChange = {
-                                                (event) => validationInput({ type: 'firstNameFeedback', value: event.target.value })
+                                                (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
                                             }
                                         />
                                     </Grid>
@@ -111,14 +108,14 @@ export const Footer: FC = () => {
                                         xs = { 12 }>
                                         <MyTextField
                                             fullWidth
-                                            error = { !inputsRedux.lastNameFeedback.isValidate }
-                                            helperText = { !inputsRedux.lastNameFeedback.isValidate && 'Incorrect input' }
+                                            error = { validationInput({ type: 'text', value: inputsRedux.feedback.lastName }) }
+                                            helperText = { validationInput({ type: 'text', value: inputsRedux.feedback.lastName }) && 'Incorrect input' }
                                             label = 'Last Name'
-                                            name = 'lastNameFeedback'
-                                            value = { inputsRedux.lastNameFeedback.value }
+                                            name = 'lastName'
+                                            value = { typeof inputsRedux.feedback.lastName !== 'string' ? '' : inputsRedux.feedback.lastName }
                                             variant = 'outlined'
                                             onChange = {
-                                                (event) => validationInput({ type: 'lastNameFeedback', value: event.target.value })
+                                                (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
                                             }
                                         />
                                     </Grid>
@@ -129,14 +126,14 @@ export const Footer: FC = () => {
                                     xs = { 12 }>
                                     <MyTextField
                                         fullWidth
-                                        error = { !inputsRedux.emailFeedback.isValidate }
-                                        helperText = { !inputsRedux.emailFeedback.isValidate && 'Incorrect input' }
+                                        error = { validationInput({ type: 'email', value: inputsRedux.feedback.email }) }
+                                        helperText = { validationInput({ type: 'email', value: inputsRedux.feedback.email }) && 'Incorrect input' }
                                         label = 'E-mail adress'
-                                        name = 'emailFeedback'
-                                        value = { inputsRedux.emailFeedback.value }
+                                        name = 'email'
+                                        value = { typeof inputsRedux.feedback.email !== 'string' ? '' : inputsRedux.feedback.email }
                                         variant = 'outlined'
                                         onChange = {
-                                            (event) => validationInput({ type: 'emailFeedback', value: event.target.value })
+                                            (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
                                         }
                                     />
                                 </Grid>
@@ -147,15 +144,15 @@ export const Footer: FC = () => {
                                     <MyTextField
                                         fullWidth
                                         multiline
-                                        error = { !inputsRedux.textFeedback.isValidate }
-                                        helperText = { !inputsRedux.textFeedback.isValidate && 'Incorrect input' }
+                                        error = { validationInput({ type: 'text', value: inputsRedux.feedback.text }) }
+                                        helperText = { validationInput({ type: 'text', value: inputsRedux.feedback.text }) && 'Incorrect input' }
                                         label = 'How can we help?'
-                                        name = 'textFeedback'
+                                        name = 'text'
                                         rows = { 6 }
-                                        value = { inputsRedux.textFeedback.value }
+                                        value = { typeof inputsRedux.feedback.text !== 'string' ? '' : inputsRedux.feedback.text }
                                         variant = 'outlined'
                                         onChange = {
-                                            (event) => validationInput({ type: 'textFeedback', value: event.target.value })
+                                            (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
                                         }
                                     />
                                 </Grid>
@@ -164,6 +161,7 @@ export const Footer: FC = () => {
                                     item
                                     xs = { 12 }>
                                     <MyButton
+                                        disabled = { !checkValidationFeedbackForm() }
                                         typebutton = 'sm'
                                         onClick = { onSubmitButton }>
                                         Send
