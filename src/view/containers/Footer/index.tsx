@@ -24,17 +24,18 @@ import { useInputsRedux } from '../../../bus/client/inputs';
 // import { useMessage } from '../../../bus/message';
 
 // Hooks
-import { useValidation } from '../../../tools/hooks';
+import { useForm } from 'react-hook-form';
 
 export const Footer: FC = () => {
     // const { message, setMessage } = useMessage();
 
-    const { validationInput } = useValidation();
+    const { register, handleSubmit, watch, formState: { errors }} = useForm();
+
+    // const { validationInput } = useValidation();
 
     const {
         inputsRedux,
         setInputAction,
-        checkValidationFeedbackForm,
         resetInputsToInitial,
     } = useInputsRedux();
 
@@ -45,6 +46,10 @@ export const Footer: FC = () => {
         event: ChangeEvent<HTMLInputElement>,
     ) => {
         setInputAction({ type: 'feedback', value: { ...inputsRedux.feedback, [ event.target.name ]: event.target.value }});
+    };
+
+    const onSubmit = (data) => {
+        console.log(data);
     };
 
     return (
@@ -74,8 +79,9 @@ export const Footer: FC = () => {
                         xs = { 12 }>
                         <Form
                             component = 'form'
-                            isValidateForm = { checkValidationFeedbackForm() }
-                            sx = {{ margin: '0 auto', width: { sm: '60vw', md: 'auto' }}}>
+                            // isValidateForm = { checkValidationFeedbackForm() }
+                            sx = {{ margin: '0 auto', width: { sm: '60vw', md: 'auto' }}}
+                            onSubmit = { handleSubmit(onSubmit) }>
                             <Grid
                                 container
                                 rowSpacing = { '10px' }>
@@ -94,7 +100,7 @@ export const Footer: FC = () => {
                                             error = { validationInput({ type: 'text', value: inputsRedux.feedback.firstName }) }
                                             helperText = { validationInput({ type: 'text', value: inputsRedux.feedback.firstName }) && 'Incorrect input' }
                                             label = 'First Name'
-                                            name = 'firstName'
+                                            { ...register('firstName') }
                                             value = { inputsRedux.feedback.firstName }
                                             variant = 'outlined'
                                             onChange = {

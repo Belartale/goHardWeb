@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
 // Tools
-import { useSelector, useValidation } from '../../../tools/hooks';
+import { useSelector } from '../../../tools/hooks';
 
 const initialState = {
     feedback: {
@@ -50,29 +50,11 @@ export default inputsSlice.reducer;
 export const useInputsRedux = () => {
     const dispatch = useDispatch();
     const inputs = useSelector(({ inputs }) => inputs);
-    const { validationInput } = useValidation();
-
-    const checkValidationFeedbackFormFun = (): boolean => [
-        validationInput({ type: 'text', value: inputs.feedback.firstName }),
-        validationInput({ type: 'text', value: inputs.feedback.lastName }),
-        validationInput({ type: 'email', value: inputs.feedback.email }),
-        validationInput({ type: 'text', value: inputs.feedback.text }),
-    ].every((element: boolean) => element === false);
-
-    const checkValidationVacanciesFormFun = (): boolean => [
-        validationInput({ type: 'text', value: inputs.vacancy.firstName }),
-        validationInput({ type: 'text', value: inputs.vacancy.lastName }),
-        validationInput({ type: 'email', value: inputs.vacancy.email }),
-        validationInput({ type: 'text', value: inputs.vacancy.text }),
-        validationInput({ type: 'text', value: inputs.vacancy.select }),
-    ].every((element: boolean) => element === false);
 
     return {
-        inputsRedux:                  inputs,
-        setInputAction:               (options: Options) => void dispatch(inputsActions.inputCreatorAction(options)),
-        checkValidationFeedbackForm:  (): boolean => checkValidationFeedbackFormFun(),
-        checkValidationVacanciesForm: (): boolean => checkValidationVacanciesFormFun(),
-        resetInputsToInitial:         () => void dispatch(inputsActions.resetInputsToInitialAction()),
+        inputsRedux:          inputs,
+        setInputAction:       (options: Options) => void dispatch(inputsActions.inputCreatorAction(options)),
+        resetInputsToInitial: () => void dispatch(inputsActions.resetInputsToInitialAction()),
     };
 };
 
