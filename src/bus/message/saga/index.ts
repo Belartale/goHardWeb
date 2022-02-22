@@ -5,18 +5,20 @@ import { all, call } from 'redux-saga/effects';
 
 // Watchers & Actions
 import { postMessageFeedbackAction, watchPostMessageFeedback } from './postMessageFeedback';
+import { postMessageVacancyAction, watchPostMessageVacancy } from './postMessageVacancy';
 
 // Types
-import { Message } from '../types';
+import { MessageFeedback, MessageVacancy } from '../types';
 
 export const useMessageSaga = () => {
     const dispatch = useDispatch();
 
     return {
-        postMessage: (payload: Message) => void dispatch(postMessageAction(payload)),
+        postMessageFeedback: (payload: MessageFeedback) => void dispatch(postMessageFeedbackAction(payload)),
+        postMessageVacancy:  (payload: MessageVacancy) => void dispatch(postMessageVacancyAction(payload)),
     };
 };
 
 export function* watchMessage(): SagaIterator {
-    yield all([ call(watchPostMessage) ]);
+    yield all([ call(watchPostMessageFeedback), call(watchPostMessageVacancy) ]);
 }

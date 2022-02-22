@@ -7,7 +7,22 @@ import * as types from './types';
 // Reducers
 import * as reducers from './reducers';
 
-const initialState: types.MessageState = null;
+export const initialState: types.MessageState = {
+    feedback: {
+        firstName: '',
+        lastName:  '',
+        email:     '',
+        text:      '',
+    },
+
+    vacancy: {
+        firstName: '',
+        lastName:  '',
+        email:     '',
+        text:      '',
+        select:    '',
+    },
+};
 
 export const messageSlice = createSlice<types.MessageState, typeof reducers>({
     name: 'message',

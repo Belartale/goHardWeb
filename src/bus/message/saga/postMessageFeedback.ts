@@ -11,17 +11,17 @@ import { makeRequest } from '../../../tools/utils';
 import { API_URL } from '../../../init/constants';
 
 // Action
-export const postMessageFeedbackAction = createAction<Message>(`${sliceName}/POST_MESSAGES_ASYNC`);
+export const postMessageFeedbackAction = createAction<MessageFeedback>(`${sliceName}/POST_MESSAGES_ASYNC`);
 
 // Types
-import { Message } from '../types';
+import { MessageFeedback } from '../types';
 
 // Saga
-const postMessageFeedback = (callAction: ReturnType<typeof postMessageFeedbackAction>) => makeRequest<Message>({
+const postMessageFeedback = (callAction: ReturnType<typeof postMessageFeedbackAction>) => makeRequest<MessageFeedback>({
     callAction,
     fetchOptions: {
         successStatusCode: 201,
-        fetch:             () => fetch(`${API_URL}/message`, {
+        fetch:             () => fetch(`${API_URL}/message/postMessageFeedback`, {
             method:  'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,11 +31,11 @@ const postMessageFeedback = (callAction: ReturnType<typeof postMessageFeedbackAc
     },
     succes: function* (result) {
         yield console.log(result);
-        yield put(messageActions.setMessage(result));
+        yield put(messageActions.resetToInitial());
     },
 });
 
 // Watcher
-export function* watchPostMessage(): SagaIterator {
+export function* watchPostMessageFeedback(): SagaIterator {
     yield takeLatest(postMessageFeedbackAction.type, postMessageFeedback);
 }

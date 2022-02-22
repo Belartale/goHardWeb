@@ -11,13 +11,13 @@ import { makeRequest } from '../../../tools/utils';
 import { API_URL } from '../../../init/constants';
 
 // Action
-export const postMessageVacancyAction = createAction<Message>(`${sliceName}/POST_MESSAGES_ASYNC`);
+export const postMessageVacancyAction = createAction<MessageVacancy>(`${sliceName}/POST_MESSAGES_ASYNC`);
 
 // Types
-import { Message } from '../types';
+import { MessageVacancy } from '../types';
 
 // Saga
-const postMessageVacancy = (callAction: ReturnType<typeof postMessageVacancyAction>) => makeRequest<Message>({
+const postMessageVacancy = (callAction: ReturnType<typeof postMessageVacancyAction>) => makeRequest<MessageVacancy>({
     callAction,
     fetchOptions: {
         successStatusCode: 201,
@@ -31,11 +31,11 @@ const postMessageVacancy = (callAction: ReturnType<typeof postMessageVacancyActi
     },
     succes: function* (result) {
         yield console.log(result);
-        yield put(messageActions.setMessage(result));
+        yield put(messageActions.resetToInitial());
     },
 });
 
 // Watcher
-export function* watchPostMessage(): SagaIterator {
+export function* watchPostMessageVacancy(): SagaIterator {
     yield takeLatest(postMessageVacancyAction.type, postMessageVacancy);
 }

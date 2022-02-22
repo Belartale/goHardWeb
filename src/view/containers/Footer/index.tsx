@@ -20,7 +20,9 @@ import imageLogo from '../../../assets/images/logo.png';
 import { ContactBar } from '../../components';
 
 // Bus
-import { initialState, useInputsRedux } from '../../../bus/client/inputs';
+// import { initialState, useInputsRedux } from '../../../bus/client/inputs';
+import { initialState } from '../../../bus/message/slice';
+import { useMessage } from '../../../bus/message';
 // import { useMessage } from '../../../bus/message';
 
 // Hooks
@@ -29,11 +31,13 @@ import { Controller, useForm } from 'react-hook-form';
 export const Footer: FC = () => {
     // const { message, setMessage } = useMessage();
 
-    const {
-        inputsRedux,
-        setInputAction,
-        resetInputsToInitial,
-    } = useInputsRedux();
+    // const {
+    //     message,
+    //     setMessage,
+    //     resetToInitialMessage,
+    // } = useInputsRedux();
+
+    const { message, setMessage, resetToInitialMessage } = useMessage();
 
     const { control, handleSubmit, watch, getValues, reset, formState: { errors, isValid }} = useForm({
         defaultValues: initialState.feedback,
@@ -41,7 +45,7 @@ export const Footer: FC = () => {
     });
 
     useEffect(() => {
-        setInputAction({ type:  'feedback',
+        setMessage({ type:  'feedback',
             value: {
                 firstName: getValues('firstName'),
                 lastName:  getValues('lastName'),
@@ -59,9 +63,9 @@ export const Footer: FC = () => {
     // const handleInput = (
     //     event: ChangeEvent<HTMLInputElement>,
     // ) => {
-    //     setInputAction({
+    //     setMessage({
     //         type:  'feedback',
-    //         value: { ...inputsRedux.feedback, [ event.target.name ]: event.target.value,
+    //         value: { ...message.feedback, [ event.target.name ]: event.target.value,
     //         },
     //     });
     // };
@@ -69,7 +73,7 @@ export const Footer: FC = () => {
     const onSubmit = () => {
         console.log('Click !!!!!!!!!!!!!!!!!!!');
         reset();
-        resetInputsToInitial();
+        resetToInitialMessage();
     };
 
     return (
@@ -128,7 +132,7 @@ export const Footer: FC = () => {
                                                     error = { !!errors.firstName }
                                                     helperText = { !!errors.firstName && 'Incorrect input' }
                                                     label = 'First Name'
-                                                    value = { typeof inputsRedux.feedback.firstName !== 'string' ? '' : inputsRedux.feedback.firstName }
+                                                    value = { typeof message.feedback.firstName !== 'string' ? '' : message.feedback.firstName }
                                                     variant = 'outlined'
                                                 />
                                             ) }
@@ -141,7 +145,7 @@ export const Footer: FC = () => {
                                             error = { isValid }
                                             helperText = { isValid && 'Incorrect input' }
                                             label = 'First Name'
-                                            value = { inputsRedux.feedback.firstName }
+                                            value = { message.feedback.firstName }
                                             variant = 'outlined'
                                             onChange = {
                                                 (event: ChangeEvent<HTMLInputElement>) => {
@@ -167,7 +171,7 @@ export const Footer: FC = () => {
                                                     error = { !!errors.lastName }
                                                     helperText = { !!errors.lastName && 'Incorrect input' }
                                                     label = 'Last Name'
-                                                    value = { typeof inputsRedux.feedback.lastName !== 'string' ? '' : inputsRedux.feedback.lastName }
+                                                    value = { typeof message.feedback.lastName !== 'string' ? '' : message.feedback.lastName }
                                                     variant = 'outlined'
                                                 />
                                             ) }
@@ -184,7 +188,7 @@ export const Footer: FC = () => {
                                                     error = { !isValid }
                                                     helperText = { !isValid && 'Incorrect input' }
                                                     label = 'Last Name'
-                                                    value = { typeof inputsRedux.feedback.lastName !== 'string' ? '' : inputsRedux.feedback.lastName }
+                                                    value = { typeof message.feedback.lastName !== 'string' ? '' : message.feedback.lastName }
                                                     variant = 'outlined'
                                                     onChange = {
                                                         (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
@@ -211,7 +215,7 @@ export const Footer: FC = () => {
                                                 error = { !!errors.email }
                                                 helperText = { !!errors.email && 'Incorrect input' }
                                                 label = 'E-mail adress'
-                                                value = { typeof inputsRedux.feedback.email !== 'string' ? '' : inputsRedux.feedback.email }
+                                                value = { typeof message.feedback.email !== 'string' ? '' : message.feedback.email }
                                                 variant = 'outlined'
                                             />
                                         ) }
@@ -225,7 +229,7 @@ export const Footer: FC = () => {
                                         label = 'E-mail adress'
                                         { ...register('email', { ...settingsError }) }
 
-                                        value = { typeof inputsRedux.feedback.email !== 'string' ? '' : inputsRedux.feedback.email }
+                                        value = { typeof message.feedback.email !== 'string' ? '' : message.feedback.email }
                                         variant = 'outlined'
                                         onChange = {
                                             (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
@@ -249,7 +253,7 @@ export const Footer: FC = () => {
                                                 helperText = { !!errors.text && 'Incorrect input' }
                                                 label = 'How can we help?'
                                                 rows = { 6 }
-                                                value = { typeof inputsRedux.feedback.text !== 'string' ? '' : inputsRedux.feedback.text }
+                                                value = { typeof message.feedback.text !== 'string' ? '' : message.feedback.text }
                                                 variant = 'outlined'
                                             />
                                         ) }
@@ -265,7 +269,7 @@ export const Footer: FC = () => {
                                         { ...register('text', { ...settingsError }) }
 
                                         rows = { 6 }
-                                        value = { typeof inputsRedux.feedback.text !== 'string' ? '' : inputsRedux.feedback.text }
+                                        value = { typeof message.feedback.text !== 'string' ? '' : message.feedback.text }
                                         variant = 'outlined'
                                         onChange = {
                                             (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
