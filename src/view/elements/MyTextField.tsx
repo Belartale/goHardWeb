@@ -1,5 +1,5 @@
 // Core
-import React, { FC } from 'react';
+import React, { FC, forwardRef } from 'react';
 import { styled, TextField, TextFieldProps } from '@mui/material';
 
 const MyTextFieldStyled  = styled(TextField, {})<TextFieldProps>(({ theme }) => ({
@@ -27,11 +27,13 @@ const MyTextFieldStyled  = styled(TextField, {})<TextFieldProps>(({ theme }) => 
     },
 }));
 
-export const MyTextField: FC<TextFieldProps> = ({ children, ...props }) => {
+export const MyTextField: FC<TextFieldProps> = forwardRef(({ children, ...props }, ref) => {
     return (
-        <MyTextFieldStyled { ...props }>
+        <MyTextFieldStyled
+            ref = { ref }
+            { ...props }>
             {children}
         </MyTextFieldStyled>
     );
-};
+});
 

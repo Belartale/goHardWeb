@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 // Tools
 import { useSelector } from '../../../tools/hooks';
 
-const initialState = {
+export const initialState = {
     feedback: {
         firstName: null,
         lastName:  null,
@@ -51,10 +51,14 @@ export const useInputsRedux = () => {
     const dispatch = useDispatch();
     const inputs = useSelector(({ inputs }) => inputs);
 
+    // const checkValidationFeedbackFormFun = (): boolean => Object.values(inputs.feedback).every((element: string | null) => typeof element === 'string' && element.length > 0);
+    const checkValidationFeedbackFormFun = (): boolean => [ inputs.feedback.firstName ].every((element: string | null) => typeof element === 'string' && element.length > 0);
+
     return {
-        inputsRedux:          inputs,
-        setInputAction:       (options: Options) => void dispatch(inputsActions.inputCreatorAction(options)),
-        resetInputsToInitial: () => void dispatch(inputsActions.resetInputsToInitialAction()),
+        inputsRedux:                 inputs,
+        setInputAction:              (options: Options) => void dispatch(inputsActions.inputCreatorAction(options)),
+        checkValidationFeedbackForm: (): boolean => checkValidationFeedbackFormFun(),
+        resetInputsToInitial:        () => void dispatch(inputsActions.resetInputsToInitialAction()),
     };
 };
 

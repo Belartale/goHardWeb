@@ -1,5 +1,5 @@
 // Core
-import React, { ChangeEvent, FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Grid, Box } from '@mui/material';
 
 // Container
@@ -20,18 +20,14 @@ import imageLogo from '../../../assets/images/logo.png';
 import { ContactBar } from '../../components';
 
 // Bus
-import { useInputsRedux } from '../../../bus/client/inputs';
+import { initialState, useInputsRedux } from '../../../bus/client/inputs';
 // import { useMessage } from '../../../bus/message';
 
 // Hooks
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 
 export const Footer: FC = () => {
     // const { message, setMessage } = useMessage();
-
-    const { register, handleSubmit, watch, formState: { errors }} = useForm();
-
-    // const { validationInput } = useValidation();
 
     const {
         inputsRedux,
@@ -39,17 +35,41 @@ export const Footer: FC = () => {
         resetInputsToInitial,
     } = useInputsRedux();
 
+    const { control, handleSubmit, watch, getValues, reset, formState: { errors, isValid }} = useForm({
+        defaultValues: initialState.feedback,
+        mode:          'onBlur',
+    });
 
-    const onSubmitButton = () => !checkValidationFeedbackForm() && resetInputsToInitial();
+    useEffect(() => {
+        setInputAction({ type:  'feedback',
+            value: {
+                firstName: getValues('firstName'),
+                lastName:  getValues('lastName'),
+                email:     getValues('email'),
+                text:      getValues('text'),
+            },
+        });
+    }, [
+        watch('firstName'),
+        watch('lastName'),
+        watch('email'),
+        watch('text'),
+    ]);
 
-    const handleInput = (
-        event: ChangeEvent<HTMLInputElement>,
-    ) => {
-        setInputAction({ type: 'feedback', value: { ...inputsRedux.feedback, [ event.target.name ]: event.target.value }});
-    };
+    // const handleInput = (
+    //     event: ChangeEvent<HTMLInputElement>,
+    // ) => {
+    //     setInputAction({
+    //         type:  'feedback',
+    //         value: { ...inputsRedux.feedback, [ event.target.name ]: event.target.value,
+    //         },
+    //     });
+    // };
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = () => {
+        console.log('Click !!!!!!!!!!!!!!!!!!!');
+        reset();
+        resetInputsToInitial();
     };
 
     return (
@@ -79,7 +99,9 @@ export const Footer: FC = () => {
                         xs = { 12 }>
                         <Form
                             component = 'form'
-                            // isValidateForm = { checkValidationFeedbackForm() }
+                            isValidateForm = { [ errors.firstName, errors.lastName, errors.email, errors.text ].every(
+                                (element) => !!element === false,
+                            ) }
                             sx = {{ margin: '0 auto', width: { sm: '60vw', md: 'auto' }}}
                             onSubmit = { handleSubmit(onSubmit) }>
                             <Grid
@@ -95,81 +117,168 @@ export const Footer: FC = () => {
                                         item
                                         md = { 6 }
                                         xs = { 12 }>
-                                        <MyTextField
+
+                                        <Controller
+                                            control = { control }
+                                            name = 'firstName'
+                                            render = { ({ field }) => (
+                                                <MyTextField
+                                                    { ...field }
+                                                    fullWidth
+                                                    error = { !!errors.firstName }
+                                                    helperText = { !!errors.firstName && 'Incorrect input' }
+                                                    label = 'First Name'
+                                                    value = { typeof inputsRedux.feedback.firstName !== 'string' ? '' : inputsRedux.feedback.firstName }
+                                                    variant = 'outlined'
+                                                />
+                                            ) }
+                                            rules = {{ required: true }}
+                                        />
+
+                                        {/* <MyTextField
+                                            { ...register('firstName', { min: 1, required: true }) }
                                             fullWidth
-                                            error = { validationInput({ type: 'text', value: inputsRedux.feedback.firstName }) }
-                                            helperText = { validationInput({ type: 'text', value: inputsRedux.feedback.firstName }) && 'Incorrect input' }
+                                            error = { isValid }
+                                            helperText = { isValid && 'Incorrect input' }
                                             label = 'First Name'
-                                            { ...register('firstName') }
                                             value = { inputsRedux.feedback.firstName }
                                             variant = 'outlined'
                                             onChange = {
-                                                (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
+                                                (event: ChangeEvent<HTMLInputElement>) => {
+                                                    handleInput(event);
+                                                }
                                             }
-                                        />
+                                        /> */}
+
                                     </Grid>
                                     <Grid
                                         item
                                         md = { 6 }
                                         xs = { 12 }>
-                                        <MyTextField
-                                            fullWidth
-                                            error = { validationInput({ type: 'text', value: inputsRedux.feedback.lastName }) }
-                                            helperText = { validationInput({ type: 'text', value: inputsRedux.feedback.lastName }) && 'Incorrect input' }
-                                            label = 'Last Name'
+
+
+                                        <Controller
+                                            control = { control }
                                             name = 'lastName'
-                                            value = { typeof inputsRedux.feedback.lastName !== 'string' ? '' : inputsRedux.feedback.lastName }
-                                            variant = 'outlined'
-                                            onChange = {
-                                                (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
-                                            }
+                                            render = { ({ field }) => (
+                                                <MyTextField
+                                                    { ...field }
+                                                    fullWidth
+                                                    error = { !!errors.lastName }
+                                                    helperText = { !!errors.lastName && 'Incorrect input' }
+                                                    label = 'Last Name'
+                                                    value = { typeof inputsRedux.feedback.lastName !== 'string' ? '' : inputsRedux.feedback.lastName }
+                                                    variant = 'outlined'
+                                                />
+                                            ) }
+                                            rules = {{ required: true }}
                                         />
+
+                                        {/* <Controller
+                                            control = { control }
+                                            name = 'lastName'
+                                            render = { ({ field }) => (
+                                                <MyTextField
+                                                    { ...field }
+                                                    fullWidth
+                                                    error = { !isValid }
+                                                    helperText = { !isValid && 'Incorrect input' }
+                                                    label = 'Last Name'
+                                                    value = { typeof inputsRedux.feedback.lastName !== 'string' ? '' : inputsRedux.feedback.lastName }
+                                                    variant = 'outlined'
+                                                    onChange = {
+                                                        (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
+                                                    }
+                                                />
+                                            ) }
+                                        /> */}
+
+
                                     </Grid>
                                 </Grid>
 
                                 <Grid
                                     item
                                     xs = { 12 }>
-                                    <MyTextField
-                                        fullWidth
-                                        error = { validationInput({ type: 'email', value: inputsRedux.feedback.email }) }
-                                        helperText = { validationInput({ type: 'email', value: inputsRedux.feedback.email }) && 'Incorrect input' }
-                                        label = 'E-mail adress'
+
+                                    <Controller
+                                        control = { control }
                                         name = 'email'
+                                        render = { ({ field }) => (
+                                            <MyTextField
+                                                { ...field }
+                                                fullWidth
+                                                error = { !!errors.email }
+                                                helperText = { !!errors.email && 'Incorrect input' }
+                                                label = 'E-mail adress'
+                                                value = { typeof inputsRedux.feedback.email !== 'string' ? '' : inputsRedux.feedback.email }
+                                                variant = 'outlined'
+                                            />
+                                        ) }
+                                        rules = {{ required: true, validate: (value) => typeof value === 'string' && /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value) }}
+                                    />
+
+                                    {/* <MyTextField
+                                        fullWidth
+                                        error = { isValid }
+                                        helperText = { isValid && 'Incorrect input' }
+                                        label = 'E-mail adress'
+                                        { ...register('email', { ...settingsError }) }
+
                                         value = { typeof inputsRedux.feedback.email !== 'string' ? '' : inputsRedux.feedback.email }
                                         variant = 'outlined'
                                         onChange = {
                                             (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
                                         }
-                                    />
+                                    /> */}
                                 </Grid>
 
                                 <Grid
                                     item
                                     xs = { 12 }>
-                                    <MyTextField
+
+                                    <Controller
+                                        control = { control }
+                                        name = 'text'
+                                        render = { ({ field }) => (
+                                            <MyTextField
+                                                { ...field }
+                                                fullWidth
+                                                multiline
+                                                error = { !!errors.text }
+                                                helperText = { !!errors.text && 'Incorrect input' }
+                                                label = 'How can we help?'
+                                                rows = { 6 }
+                                                value = { typeof inputsRedux.feedback.text !== 'string' ? '' : inputsRedux.feedback.text }
+                                                variant = 'outlined'
+                                            />
+                                        ) }
+                                        rules = {{ required: true }}
+                                    />
+
+                                    {/* <MyTextField
                                         fullWidth
                                         multiline
-                                        error = { validationInput({ type: 'text', value: inputsRedux.feedback.text }) }
-                                        helperText = { validationInput({ type: 'text', value: inputsRedux.feedback.text }) && 'Incorrect input' }
+                                        error = { isValid }
+                                        helperText = { isValid && 'Incorrect input' }
                                         label = 'How can we help?'
-                                        name = 'text'
+                                        { ...register('text', { ...settingsError }) }
+
                                         rows = { 6 }
                                         value = { typeof inputsRedux.feedback.text !== 'string' ? '' : inputsRedux.feedback.text }
                                         variant = 'outlined'
                                         onChange = {
                                             (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
                                         }
-                                    />
+                                    /> */}
                                 </Grid>
 
                                 <Grid
                                     item
                                     xs = { 12 }>
                                     <MyButton
-                                        disabled = { !checkValidationFeedbackForm() }
-                                        typebutton = 'sm'
-                                        onClick = { onSubmitButton }>
+                                        type = 'submit'
+                                        typebutton = 'sm'>
                                         Send
                                     </MyButton>
                                 </Grid>

@@ -9,6 +9,22 @@ export type Message = {
     text: string
 }
 
+export type postMessageFeedback = {
+    firstName: string
+    lastName: string
+    email: string
+    text: string
+}
+
+export type postMessageVacancy = {
+    firstName: string
+    lastName: string
+    email: string
+    select: string
+    text: string
+}
+
+
 export type MessageState = Message | null
 
 // Contracts

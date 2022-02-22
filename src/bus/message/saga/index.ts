@@ -4,7 +4,7 @@ import { SagaIterator } from '@redux-saga/core';
 import { all, call } from 'redux-saga/effects';
 
 // Watchers & Actions
-import { postMessageAction, watchPostMessage } from './postMessage';
+import { postMessageFeedbackAction, watchPostMessageFeedback } from './postMessageFeedback';
 
 // Types
 import { Message } from '../types';
