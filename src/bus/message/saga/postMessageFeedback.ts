@@ -30,8 +30,11 @@ const postMessageFeedback = (callAction: ReturnType<typeof postMessageFeedbackAc
         }),
     },
     succes: function* (result) {
-        yield console.log(result);
+        yield console.log('YESSSSSSSSSSSSSSSSSSSSS');
         yield put(messageActions.resetToInitial());
+    },
+    error: function* () {
+        yield console.log('ERORRRRRRRRRRRRRRRRRR');
     },
 });
 

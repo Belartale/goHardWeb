@@ -25,6 +25,9 @@ import { initialState } from '../../../bus/message/slice';
 import { useMessage } from '../../../bus/message';
 // import { useMessage } from '../../../bus/message';
 
+// Saga
+import { useMessageSaga } from '../../../bus/message/saga';
+
 // Hooks
 import { Controller, useForm } from 'react-hook-form';
 
@@ -36,6 +39,8 @@ export const Footer: FC = () => {
     //     setMessage,
     //     resetToInitialMessage,
     // } = useInputsRedux();
+
+    const { postMessageFeedback } = useMessageSaga();
 
     const { message, setMessage, resetToInitialMessage } = useMessage();
 
@@ -72,6 +77,7 @@ export const Footer: FC = () => {
 
     const onSubmit = () => {
         console.log('Click !!!!!!!!!!!!!!!!!!!');
+        postMessageFeedback(message.feedback);
         reset();
         resetToInitialMessage();
     };
