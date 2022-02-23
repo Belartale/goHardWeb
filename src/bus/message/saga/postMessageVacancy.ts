@@ -1,17 +1,17 @@
 // Core
 import { SagaIterator } from '@redux-saga/core';
 import { createAction } from '@reduxjs/toolkit';
-import { put, takeLatest } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 
 // Slice
-import { messageActions, sliceName } from '../slice';
+import { sliceName } from '../slice';
 
 // Tools
 import { makeRequest } from '../../../tools/utils';
 import { API_URL } from '../../../init/constants';
 
 // Action
-export const postMessageVacancyAction = createAction<MessageVacancy>(`${sliceName}/POST_MESSAGES_ASYNC`);
+export const postMessageVacancyAction = createAction<MessageVacancy>(`${sliceName}/POST_MESSAGES_VACANCY_ASYNC`);
 
 // Types
 import { MessageVacancy } from '../types';
@@ -29,10 +29,7 @@ const postMessageVacancy = (callAction: ReturnType<typeof postMessageVacancyActi
             body: JSON.stringify(callAction.payload),
         }),
     },
-    succes: function* (result) {
-        yield console.log(result);
-        yield put(messageActions.resetToInitial());
-    },
+    togglerType: 'isPostForm',
 });
 
 // Watcher

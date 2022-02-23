@@ -16,17 +16,6 @@ export const useMessage = () => {
     const dispatch = useDispatch();
     const message = useSelector(({ message }) => message); // Add message to ./src/init/redux/index.ts
 
-    // useEffect(() => {
-    //     dispatch(sagaActions.fetchMessageAction('any payload'));
-    // }, []);
-
-    // return {
-    //     message,
-    //     setMessage: (
-    //         payload: any,
-    //     ) => void dispatch(messageActions.setMessage({ ...payload })),
-    // };
-
     const checkValidationFeedbackFormFun = (): boolean => [ message.feedback.firstName ].every((element: string | null) => typeof element === 'string' && element.length > 0);
 
     return {

@@ -76,10 +76,9 @@ export const Footer: FC = () => {
     // };
 
     const onSubmit = () => {
-        console.log('Click !!!!!!!!!!!!!!!!!!!');
         postMessageFeedback(message.feedback);
-        reset();
         resetToInitialMessage();
+        reset();
     };
 
     return (
