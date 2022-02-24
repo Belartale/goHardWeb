@@ -30,7 +30,6 @@ export const SliderMainPage: FC<PropTypes> = ({ images }) => {
     return (
         <Wrapper>
             <Swiper
-                autoHeight
                 loop
                 navigation
                 roundLengths
@@ -38,7 +37,6 @@ export const SliderMainPage: FC<PropTypes> = ({ images }) => {
                     10: {
                         slidesPerView: 1,
                         spaceBetween:  100,
-                        autoHeight:    true,
                     },
                     900: {
                         slidesPerView: 3,

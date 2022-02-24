@@ -17,24 +17,20 @@ export const postMessageFeedbackAction = createAction<MessageFeedback>(`${sliceN
 import { MessageFeedback } from '../types';
 
 // Saga
-const postMessageFeedback = (callAction: ReturnType<typeof postMessageFeedbackAction>) => {
-    console.log('some text');
-
-    return makeRequest<MessageFeedback>({
-        callAction,
-        fetchOptions: {
-            successStatusCode: 201,
-            fetch:             () => fetch(`${API_URL}/message/postMessageFeedback`, {
-                method:  'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(callAction.payload),
-            }),
-        },
-        togglerType: 'isPostForm',
-    });
-};
+const postMessageFeedback = (callAction: ReturnType<typeof postMessageFeedbackAction>) => makeRequest<MessageFeedback>({
+    callAction,
+    fetchOptions: {
+        successStatusCode: 201,
+        fetch:             () => fetch(`${API_URL}/message/postMessageFeedback`, {
+            method:  'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(callAction.payload),
+        }),
+    },
+    togglerType: 'isPostForm',
+});
 
 // Watcher
 export function* watchPostMessageFeedback(): SagaIterator {

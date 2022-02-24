@@ -1,18 +1,18 @@
 // Core
 import React, { FC, useState, useEffect } from 'react';
-import {
-    styled,
-    Box,
-    CircularProgress,
-    CircularProgressProps,
-} from '@mui/material';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SizeProp } from '@fortawesome/fontawesome-svg-core';
 
-// Types
-interface SpinnerProps extends CircularProgressProps {
+// Theme
+import { defaultTheme } from '../../assets';
+
+interface SpinnerProps {
+    size?: SizeProp
     absolute?: boolean
 }
 
-const Container = styled(Box, {})<{ isActive: boolean, absolute: boolean }>`
+const Container = styled.div<{ isActive: boolean, absolute: boolean }>`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,14 +39,10 @@ const Container = styled(Box, {})<{ isActive: boolean, absolute: boolean }>`
     transition: opacity 1s;
 `;
 
-const CircularProgressStyled = styled(CircularProgress, {})`
-    color: ${({ theme }) => theme.colors.success[ 50 ]}; 
-`;
-
 // eslint-disable-next-line init-declarations
 let timerId: ReturnType<typeof setTimeout>;
 
-export const Spinner: FC<SpinnerProps> = ({ absolute = false, ...props }) => {
+export const Spinner: FC<SpinnerProps> = ({ size = '5x', absolute = false }) => {
     const [ isActive, setIsActive ] = useState(false);
 
 
@@ -60,8 +56,12 @@ export const Spinner: FC<SpinnerProps> = ({ absolute = false, ...props }) => {
         <Container
             absolute = { absolute }
             isActive = { isActive }>
-            <CircularProgressStyled
-                { ...props }
+            <FontAwesomeIcon
+                spin
+                color = { defaultTheme.colors.success[ 50 ] }
+                icon = 'cog'
+                size = { size }
+                title = 'Loading...'
             />
         </Container>
     );

@@ -12,3 +12,4 @@ export * from './ImagesServices';
 export * from './Link';
 export * from './MyTextField';
 export * from './Form';
+export * from './MySelect';

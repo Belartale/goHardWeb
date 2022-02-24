@@ -1,5 +1,5 @@
 // Core
-import React, { FC } from 'react';
+import React, { FC, useLayoutEffect, useRef } from 'react';
 import {
     Box,
     Card,
@@ -29,17 +29,22 @@ type PropTypes = {
 }
 
 export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
+    const elementRef = useRef(null);
+    useLayoutEffect(() => {
+        console.log(elementRef);
+    }, [ images ]);
+
+
     return (
         <Wrapper>
+
             <Swiper
-                autoHeight
                 loop
                 navigation
                 roundLengths
                 breakpoints = {{
                     10: {
                         slidesPerView: 1,
-                        autoHeight:    true,
                     },
                     900: {
                         slidesPerView: 3,
@@ -49,7 +54,7 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                 }}
                 loopedSlides = { images.length }
                 modules = { [ Navigation ] }>
-                <Box>
+                <div ref = { elementRef }>
                     {images.map((element) => (
                         <SwiperSlide
                             key = { element.alt }>
@@ -77,7 +82,7 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                             </Card>
                         </SwiperSlide>
                     ))}
-                </Box>
+                </div>
             </Swiper>
         </Wrapper>
     );

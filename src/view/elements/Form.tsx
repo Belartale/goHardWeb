@@ -9,7 +9,7 @@ interface FormTypes extends BoxProps {
 
 export const FormStyled = styled(Box, {})<FormTypes>`
     padding: 15px 30px;
-    border: 1px solid ${({ theme, isValidateForm }) => isValidateForm === true ? theme.colors.primary[ 50 ] : 'red'};
+    border: 1px solid ${({ theme, isValidateForm }) => isValidateForm === true ? theme.colors.primary[ 50 ] : theme.colors.error};
     border-radius: 5px;
 
     width: auto;

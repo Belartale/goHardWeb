@@ -12,6 +12,7 @@ export const defaultTheme = {
         secondary: black,
         success:   green,
         grey:      grey,
+        error:     '#d32f2f',
     },
     fonts: {
         size: {

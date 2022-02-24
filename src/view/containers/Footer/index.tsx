@@ -1,15 +1,20 @@
 // Core
 import React, { FC, useEffect } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { Grid, Box } from '@mui/material';
 
 // Container
 import { MyContainer } from '..';
+
+// Components
+import { ContactBar } from '../../components';
 
 // Elements
 import {
     Form,
     MyButton,
     MyTextField,
+    Spinner,
 } from '../../elements';
 
 // Styles
@@ -17,36 +22,27 @@ import * as S from './styles';
 
 // Images
 import imageLogo from '../../../assets/images/logo.png';
-import { ContactBar } from '../../components';
 
 // Bus
-// import { initialState, useInputsRedux } from '../../../bus/client/inputs';
+import { useTogglersRedux } from '../../../bus/client/togglers';
 import { initialState } from '../../../bus/message/slice';
 import { useMessage } from '../../../bus/message';
-// import { useMessage } from '../../../bus/message';
 
 // Saga
 import { useMessageSaga } from '../../../bus/message/saga';
 
-// Hooks
-import { Controller, useForm } from 'react-hook-form';
+// Tools
+import { validateEmail } from '../../../tools/utils';
 
 export const Footer: FC = () => {
-    // const { message, setMessage } = useMessage();
-
-    // const {
-    //     message,
-    //     setMessage,
-    //     resetToInitialMessage,
-    // } = useInputsRedux();
-
+    const { togglersRedux } = useTogglersRedux();
     const { postMessageFeedback } = useMessageSaga();
 
     const { message, setMessage, resetToInitialMessage } = useMessage();
 
-    const { control, handleSubmit, watch, getValues, reset, formState: { errors, isValid }} = useForm({
+    const { control, handleSubmit, watch, getValues, reset, formState: { errors }} = useForm({
         defaultValues: initialState.feedback,
-        mode:          'onBlur',
+        mode:          'onSubmit',
     });
 
     useEffect(() => {
@@ -64,16 +60,6 @@ export const Footer: FC = () => {
         watch('email'),
         watch('text'),
     ]);
-
-    // const handleInput = (
-    //     event: ChangeEvent<HTMLInputElement>,
-    // ) => {
-    //     setMessage({
-    //         type:  'feedback',
-    //         value: { ...message.feedback, [ event.target.name ]: event.target.value,
-    //         },
-    //     });
-    // };
 
     const onSubmit = () => {
         postMessageFeedback(message.feedback);
@@ -111,99 +97,53 @@ export const Footer: FC = () => {
                             isValidateForm = { [ errors.firstName, errors.lastName, errors.email, errors.text ].every(
                                 (element) => !!element === false,
                             ) }
-                            sx = {{ margin: '0 auto', width: { sm: '60vw', md: 'auto' }}}
+                            sx = {{ position: 'relative', margin: '0 auto', width: { sm: '60vw', md: 'auto' }}}
                             onSubmit = { handleSubmit(onSubmit) }>
                             <Grid
                                 container
+                                columnSpacing = { '20px' }
                                 rowSpacing = { '10px' }>
                                 <Grid
-                                    container
                                     item
-                                    columnSpacing = { '20px' }
-                                    rowSpacing = { '10px' }
+                                    md = { 6 }
                                     xs = { 12 }>
-                                    <Grid
-                                        item
-                                        md = { 6 }
-                                        xs = { 12 }>
-
-                                        <Controller
-                                            control = { control }
-                                            name = 'firstName'
-                                            render = { ({ field }) => (
-                                                <MyTextField
-                                                    { ...field }
-                                                    fullWidth
-                                                    error = { !!errors.firstName }
-                                                    helperText = { !!errors.firstName && 'Incorrect input' }
-                                                    label = 'First Name'
-                                                    value = { typeof message.feedback.firstName !== 'string' ? '' : message.feedback.firstName }
-                                                    variant = 'outlined'
-                                                />
-                                            ) }
-                                            rules = {{ required: true }}
-                                        />
-
-                                        {/* <MyTextField
-                                            { ...register('firstName', { min: 1, required: true }) }
-                                            fullWidth
-                                            error = { isValid }
-                                            helperText = { isValid && 'Incorrect input' }
-                                            label = 'First Name'
-                                            value = { message.feedback.firstName }
-                                            variant = 'outlined'
-                                            onChange = {
-                                                (event: ChangeEvent<HTMLInputElement>) => {
-                                                    handleInput(event);
-                                                }
-                                            }
-                                        /> */}
-
-                                    </Grid>
-                                    <Grid
-                                        item
-                                        md = { 6 }
-                                        xs = { 12 }>
-
-
-                                        <Controller
-                                            control = { control }
-                                            name = 'lastName'
-                                            render = { ({ field }) => (
-                                                <MyTextField
-                                                    { ...field }
-                                                    fullWidth
-                                                    error = { !!errors.lastName }
-                                                    helperText = { !!errors.lastName && 'Incorrect input' }
-                                                    label = 'Last Name'
-                                                    value = { typeof message.feedback.lastName !== 'string' ? '' : message.feedback.lastName }
-                                                    variant = 'outlined'
-                                                />
-                                            ) }
-                                            rules = {{ required: true }}
-                                        />
-
-                                        {/* <Controller
-                                            control = { control }
-                                            name = 'lastName'
-                                            render = { ({ field }) => (
-                                                <MyTextField
-                                                    { ...field }
-                                                    fullWidth
-                                                    error = { !isValid }
-                                                    helperText = { !isValid && 'Incorrect input' }
-                                                    label = 'Last Name'
-                                                    value = { typeof message.feedback.lastName !== 'string' ? '' : message.feedback.lastName }
-                                                    variant = 'outlined'
-                                                    onChange = {
-                                                        (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
-                                                    }
-                                                />
-                                            ) }
-                                        /> */}
-
-
-                                    </Grid>
+                                    <Controller
+                                        control = { control }
+                                        name = 'firstName'
+                                        render = { ({ field }) => (
+                                            <MyTextField
+                                                { ...field }
+                                                fullWidth
+                                                error = { !!errors.firstName }
+                                                helperText = { errors.firstName?.message }
+                                                label = 'First Name'
+                                                value = { message.feedback.firstName }
+                                                variant = 'outlined'
+                                            />
+                                        ) }
+                                        rules = {{ required: 'Field must be filled' }}
+                                    />
+                                </Grid>
+                                <Grid
+                                    item
+                                    md = { 6 }
+                                    xs = { 12 }>
+                                    <Controller
+                                        control = { control }
+                                        name = 'lastName'
+                                        render = { ({ field }) => (
+                                            <MyTextField
+                                                { ...field }
+                                                fullWidth
+                                                error = { !!errors.lastName }
+                                                helperText = { errors.lastName?.message }
+                                                label = 'Last Name'
+                                                value = { message.feedback.lastName }
+                                                variant = 'outlined'
+                                            />
+                                        ) }
+                                        rules = {{ required: 'Field must be filled' }}
+                                    />
                                 </Grid>
 
                                 <Grid
@@ -218,28 +158,17 @@ export const Footer: FC = () => {
                                                 { ...field }
                                                 fullWidth
                                                 error = { !!errors.email }
-                                                helperText = { !!errors.email && 'Incorrect input' }
+                                                helperText = { errors.email?.message }
                                                 label = 'E-mail adress'
-                                                value = { typeof message.feedback.email !== 'string' ? '' : message.feedback.email }
+                                                value = { message.feedback.email }
                                                 variant = 'outlined'
                                             />
                                         ) }
-                                        rules = {{ required: true, validate: (value) => typeof value === 'string' && /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(value) }}
+                                        rules = {{
+                                            required: 'Field must be filled or incorrect email',
+                                            validate: (value) => validateEmail(value) ? true : 'Incorrect email',
+                                        }}
                                     />
-
-                                    {/* <MyTextField
-                                        fullWidth
-                                        error = { isValid }
-                                        helperText = { isValid && 'Incorrect input' }
-                                        label = 'E-mail adress'
-                                        { ...register('email', { ...settingsError }) }
-
-                                        value = { typeof message.feedback.email !== 'string' ? '' : message.feedback.email }
-                                        variant = 'outlined'
-                                        onChange = {
-                                            (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
-                                        }
-                                    /> */}
                                 </Grid>
 
                                 <Grid
@@ -255,31 +184,15 @@ export const Footer: FC = () => {
                                                 fullWidth
                                                 multiline
                                                 error = { !!errors.text }
-                                                helperText = { !!errors.text && 'Incorrect input' }
+                                                helperText = { errors.text?.message }
                                                 label = 'How can we help?'
                                                 rows = { 6 }
-                                                value = { typeof message.feedback.text !== 'string' ? '' : message.feedback.text }
+                                                value = { message.feedback.text }
                                                 variant = 'outlined'
                                             />
                                         ) }
-                                        rules = {{ required: true }}
+                                        rules = {{ required: 'Field must be filled' }}
                                     />
-
-                                    {/* <MyTextField
-                                        fullWidth
-                                        multiline
-                                        error = { isValid }
-                                        helperText = { isValid && 'Incorrect input' }
-                                        label = 'How can we help?'
-                                        { ...register('text', { ...settingsError }) }
-
-                                        rows = { 6 }
-                                        value = { typeof message.feedback.text !== 'string' ? '' : message.feedback.text }
-                                        variant = 'outlined'
-                                        onChange = {
-                                            (event: ChangeEvent<HTMLInputElement>) => handleInput(event)
-                                        }
-                                    /> */}
                                 </Grid>
 
                                 <Grid
@@ -291,8 +204,21 @@ export const Footer: FC = () => {
                                         Send
                                     </MyButton>
                                 </Grid>
-
                             </Grid>
+                            {
+                                togglersRedux.isPostForm
+                            && (
+
+                                <Spinner
+                                    absolute
+                                    size = { '60px' }
+                                />
+                                // <Spinner
+                                //     absolute
+                                //     size = '5x'
+                                // />
+                            )
+                            }
                         </Form>
                     </Grid>
                 </Grid>
