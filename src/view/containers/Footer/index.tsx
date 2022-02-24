@@ -213,10 +213,6 @@ export const Footer: FC = () => {
                                     absolute
                                     size = { '60px' }
                                 />
-                                // <Spinner
-                                //     absolute
-                                //     size = '5x'
-                                // />
                             )
                             }
                         </Form>

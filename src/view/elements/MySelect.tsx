@@ -1,6 +1,14 @@
 // Core
 import React, { FC, forwardRef } from 'react';
-import { FormControl, FormHelperText, InputLabel, MenuItem, Select, SelectProps, styled } from '@mui/material';
+import {
+    FormControl,
+    FormHelperText,
+    InputLabel,
+    MenuItem,
+    Select,
+    SelectProps,
+    styled,
+} from '@mui/material';
 
 const InputLabelStyled = styled(InputLabel, {})`
     color: ${({ theme, error }) => error ? 'red' : theme.colors.grey[ 100 ] };
