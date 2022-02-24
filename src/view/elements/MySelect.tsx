@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 
 const InputLabelStyled = styled(InputLabel, {})`
-    color: ${({ theme, error }) => error ? 'red' : theme.colors.grey[ 100 ] };
+    color: ${({ theme, error }) => error && theme.colors.grey[ 100 ] };
 `;
 
 
@@ -48,7 +48,7 @@ interface PropTypes extends SelectProps {
     nameSelect: string
 }
 
-export const MySelect: FC<PropTypes> = forwardRef(({ values, nameSelect, error, ...props }) => {
+export const MySelect: FC<PropTypes> = forwardRef(({ values, nameSelect, error, ...props }, ref) => {
     return (
         <FormControlStyled
             fullWidth
@@ -59,6 +59,7 @@ export const MySelect: FC<PropTypes> = forwardRef(({ values, nameSelect, error, 
                 {nameSelect}
             </InputLabelStyled>
             <Select
+                ref = { ref }
                 { ...props }
                 id = { nameSelect }
                 label = { nameSelect }
