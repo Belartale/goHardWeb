@@ -40,7 +40,14 @@ export const Footer: FC = () => {
 
     const { message, setMessage, resetToInitialMessage } = useMessage();
 
-    const { control, handleSubmit, watch, getValues, reset, formState: { errors }} = useForm({
+    const {
+        control,
+        handleSubmit,
+        watch,
+        getValues,
+        reset,
+        formState: { errors },
+    } = useForm({
         defaultValues: initialState.feedback,
         mode:          'onSubmit',
     });

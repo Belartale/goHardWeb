@@ -73,7 +73,7 @@ const Vacancies: FC = () => {
                 <MyContainer sx = {{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <Subtitle
                         maxWidth = { '920px' }
-                        mb = { '30px' }
+                        mb = { '50px' }
                         textAlign = { 'center' }>
                         Like other growing companies, we are actively looking for employees.
                         Depending on the period, we need different specialists, but there is

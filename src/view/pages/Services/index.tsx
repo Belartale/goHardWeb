@@ -22,7 +22,7 @@ import {
 } from '../../elements';
 
 // Styles
-import { ColumnSpaceBetweenAndSpace } from './styles';
+import { ColumnSpaceBetweenAndSpace, StrokeText } from './styles';
 
 // Images
 import programmerScanning from '../../../assets/images/programmerScanning.png';
@@ -36,7 +36,8 @@ const Services: FC = () => {
                 <MyContainer  sx = {{ height: '100%' }}>
                     <ContainerCenter>
                         <Title>
-                            Our <GreenText>Services</GreenText>
+                            <StrokeText>Our </StrokeText>
+                            <GreenText>Services</GreenText>
                         </Title>
                     </ContainerCenter>
                 </MyContainer>

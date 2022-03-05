@@ -29,7 +29,7 @@ import { ArrowsBottom,
 } from '../../elements';
 
 // Styles
-import { TextStroke } from './styles';
+import { StrokeText } from './styles';
 
 // Images
 import laptop from '../../../assets/images/laptop.png';
@@ -51,17 +51,17 @@ const Main: FC = () => {
                     <ContainerCenter position = { 'relative' }>
                         <Title>
                             Software<br />
-                            <TextStroke
-                                className = { `${titleHover && 'devActive'}` }
+                            <StrokeText
+                                ishover = { titleHover ? 'true' : 'false' }
                                 onMouseLeave = { () => setTitleHover(false) }
                                 onMouseOver = { () => setTitleHover(true) }>development
-                            </TextStroke> services
+                            </StrokeText> services
                         </Title>
                         <Title sx = {{ opacity: '0.3', transform: 'scaleY(-100%) translate(0%, -100%)', position: 'absolute', filter: 'blur(3px)' }}>
                             Software<br />
-                            <TextStroke
-                                className = { `${titleHover && 'devActive'}` }>development
-                            </TextStroke> services
+                            <StrokeText
+                                ishover = { titleHover ? 'true' : 'false' }>development
+                            </StrokeText> services
                         </Title>
                     </ContainerCenter>
                     <ArrowsBottom />
