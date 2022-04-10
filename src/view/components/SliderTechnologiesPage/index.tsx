@@ -1,5 +1,5 @@
 // Core
-import React, { FC, useLayoutEffect, useRef } from 'react';
+import React, { FC } from 'react';
 import {
     Box,
     Card,
@@ -29,15 +29,8 @@ type PropTypes = {
 }
 
 export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
-    const elementRef = useRef(null);
-    useLayoutEffect(() => {
-        console.log(elementRef);
-    }, [ images ]);
-
-
     return (
         <Wrapper>
-
             <Swiper
                 loop
                 navigation
@@ -54,7 +47,7 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                 }}
                 loopedSlides = { images.length }
                 modules = { [ Navigation ] }>
-                <div ref = { elementRef }>
+                <div>
                     {images.map((element) => (
                         <SwiperSlide
                             key = { element.alt }>
