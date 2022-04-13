@@ -46,7 +46,7 @@ export function* makeRequest<SuccessData, ErrorData = {}>(options: OptionsType<S
     } = options;
 
     try {
-        // ------------- TRY BLOCK START -------------
+        //todo ------------- TRY BLOCK START -------------
         if (tryStart) {
             yield tryStart();
         }
@@ -69,9 +69,9 @@ export function* makeRequest<SuccessData, ErrorData = {}>(options: OptionsType<S
         }
 
         return result;
-        // ------------- TRY BLOCK END -------------
+        //todo ------------- TRY BLOCK END -------------
     } catch (errorData: ErrorData | any) {
-        // ------------- CATCH BLOCK START -------------
+        //! ------------- CATCH BLOCK START -------------
         if (catchStart) {
             yield catchStart(errorData);
         }
@@ -89,24 +89,17 @@ export function* makeRequest<SuccessData, ErrorData = {}>(options: OptionsType<S
         }
 
         return errorData;
-        // ------------- CATCH BLOCK END -------------
+        //! ------------- CATCH BLOCK END -------------
     } finally {
         if (finallyStart) {
             yield finallyStart();
         }
 
-        // ------------- FINALLY BLOCK START -------------
-        if (togglerType) {
-            yield put(togglerCreatorAction({
-                type:  togglerType,
-                value: false,
-            }));
-        }
-
+        //? ------------- FINALLY BLOCK START -------------
         if (finallyEnd) {
             yield finallyEnd();
         }
-        // ------------- FINALLY BLOCK END -------------
+        //? ------------- FINALLY BLOCK END -------------
     }
 }
 
