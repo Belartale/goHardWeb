@@ -1,0 +1,40 @@
+{
+  "icons": [
+    {
+      "src": "/icon_512x512.764085162d3caf6fb85dd825bd31c65c.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_384x384.487d94b6631f8ab9380976836d695695.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_256x256.4bf02a7a8fe42c83316aa0de624762d1.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_192x192.9faa8df19b86d62fc09571eb294fa14d.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_128x128.c8a8ed820981a1b9f83df273e979774c.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_96x96.c78ec799d75a46f1ca241630a6dabee6.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "GoHard",
+  "short_name": "GoHard",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#ffffff"
+}
