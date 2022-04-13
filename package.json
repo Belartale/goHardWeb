@@ -13,7 +13,9 @@
         "gen": "cross-env-shell ts-node -P \"./tsconfig.generate.json\" \"./scripts/generate\"",
         "analyze": "webpack-bundle-analyzer \"./build/stats.json\"",
         "serve": "serve \"./build\" -s",
-        "clean": "rm -rf node_modules"
+        "clean": "rm -rf node_modules",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "dependencies": {
         "@emotion/react": "^11.7.1",
