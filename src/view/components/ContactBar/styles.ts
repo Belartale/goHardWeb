@@ -97,3 +97,23 @@ export const MyTypographyContact  = styled(Typography, {})<PropTypesContactBar>`
     })}
 `;
 
+
+export const Link  = styled('a', {})`
+    &, &:hover, &:focus, &:active {
+        text-decoration: none;
+    }
+
+    &:hover svg path {
+        fill: ${({ theme }) => theme.colors.grey[ 50 ]};
+    }
+    &:focus svg path {
+        fill: ${({ theme }) => theme.colors.grey[ 100 ]};
+    }
+
+    &:hover * {
+        color: ${({ theme }) => theme.colors.grey[ 50 ]};
+    }
+    &:focus * {
+        color: ${({ theme }) => theme.colors.grey[ 100 ]};
+    }
+`;

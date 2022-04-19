@@ -1,9 +1,6 @@
 // Core
 import React, { FC } from 'react';
 
-// Elements
-import { Link } from '../../elements';
-
 // Styles
 import * as S from './styles';
 
@@ -34,9 +31,9 @@ export const ContactBar: FC<PropTypesContactBar> = ({ size, ...props }) => {
                 </S.MyTypographyContact>
             </S.BoxContainer>
             <S.BoxContainer size = { size }>
-                <Link
-                    display = { 'flex' }
-                    to = 'https://www.upwork.com/ag/gohard/'>
+                <S.Link
+                    href = 'https://www.upwork.com/ag/gohard/'
+                    style = {{ display: 'flex' }}>
                     <svg
                         fill = 'none'
                         height = { `${size === 'sm' ? '20px' : '20px'}` }
@@ -50,7 +47,7 @@ export const ContactBar: FC<PropTypesContactBar> = ({ size, ...props }) => {
                     <S.MyTypographyContact size = { size }>
                         UpWork
                     </S.MyTypographyContact>
-                </Link>
+                </S.Link>
             </S.BoxContainer>
             <S.BoxContainer size = { size }>
                 <svg
