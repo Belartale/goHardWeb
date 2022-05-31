@@ -1,4 +1,4 @@
-# [GoHardWeb](https://belartale-gohardweb.herokuapp.com/)
+# [GoHardWeb](https://belartale-gohardweb.herokuapp.com/) (commercial project)
 
 ![Image-main-page](https://user-images.githubusercontent.com/33392042/171160703-361d18e4-2066-46ad-9ad9-b7912cee2f56.gif)
 
