@@ -3,8 +3,16 @@
 
 It is commercial project. I used component  
 
-### I used stack: 
-React, React-Router-Dom v6, TypeScript, Style-components, Redux, Redux-saga, Redux-toolkit and Swiper.
+### I used stack:
+✅ React `v17.0.2`<br>
+✅ TypeScript `v4.4.4`<br>
+✅ React-Router-Dom `v6.0.2`<br>
+✅ MaterialUI `v5.3.1`<br>
+✅ Styled-Components `v5.3.3`<br>
+✅ Redux `v4.1.1`<br>
+✅ Redux-Toolkit `v1.6.1`<br>
+✅ Redux-Saga `v1.1.3`<br>
+✅ Swiper `v7.4.1`<br>
 
 ## Preview main page:
 ![Image-main-page](https://user-images.githubusercontent.com/33392042/171160703-361d18e4-2066-46ad-9ad9-b7912cee2f56.gif)
