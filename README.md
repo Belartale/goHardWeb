@@ -4,7 +4,7 @@
 It is commercial project. I used component  
 
 ### I used stack: 
-React, TypeScript, Style-components, Redux, Redux-saga and Redux-toolkit.
+React, React-Router-Dom v6, TypeScript, Style-components, Redux, Redux-saga, Redux-toolkit and Swiper.
 
 ## Preview main page:
 ![Image-main-page](https://user-images.githubusercontent.com/33392042/171160703-361d18e4-2066-46ad-9ad9-b7912cee2f56.gif)
