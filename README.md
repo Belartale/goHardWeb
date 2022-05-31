@@ -12,6 +12,7 @@ It is commercial project. I used component
 ✅ Redux `v4.1.1`<br>
 ✅ Redux-Toolkit `v1.6.1`<br>
 ✅ Redux-Saga `v1.1.3`<br>
+✅ Eeact-Hook-Form `v7.27.1`<br>
 ✅ Swiper `v7.4.1`<br>
 
 ## Preview main page:
