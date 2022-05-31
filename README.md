@@ -6,8 +6,12 @@ It is commercial project. I used component
 ### I used stack: 
 React, TypeScript, Style-components, Redux, Redux-saga and Redux-toolkit.
 
+## Preview main page:
 ![Image-main-page](https://user-images.githubusercontent.com/33392042/171160703-361d18e4-2066-46ad-9ad9-b7912cee2f56.gif)
 
+## Preview other page:
+![Screenshot 2022-05-31 161600](https://user-images.githubusercontent.com/33392042/171194717-78dcbb6a-3086-4464-8466-92f01724d28b.png)
+![Screenshot 2022-05-31 162751](https://user-images.githubusercontent.com/33392042/171194775-f5933962-d6d0-4531-a7b2-1ef6c18527c9.png)
 
 # [Arziburst React App (boilerplate)](https://github.com/Arziburst/boilerplate)
 
