@@ -1,7 +1,7 @@
 # [GoHardWeb](https://belartale-gohardweb.herokuapp.com/) (commercial project)
 
 
-It is commercial project. I used component  
+It is commercial project.
 
 ### I used stack:
 ✅ React `v17.0.2`<br>
