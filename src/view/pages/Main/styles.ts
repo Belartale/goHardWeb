@@ -13,3 +13,13 @@ export const StrokeText = styled('span', {})<StrokeTextPropTypes>`
         WebkitTextStrokeColor: theme.colors.primary[ 50 ],
     }}
 `;
+
+export const ImagePortfolio = styled('img', {})`
+    border-radius: 5px;
+    width: calc(100vw - 50px);
+    object-fit: cover;
+
+    @media (min-width: 578px) {
+        width: 528px;
+    }
+`;

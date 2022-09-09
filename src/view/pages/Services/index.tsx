@@ -45,7 +45,10 @@ const Services: FC = () => {
             <Section sx = {{ position: 'relative' }}>
                 <MyContainer>
                     <Subtitle textAlign = { 'center' }>
-                        Here you can find the best seveces for you case
+                        We are a fast-growing software development agency with a strong expertise
+                        in the most relevant and innovative programming languages, frameworks, libraries
+                        and tools. We are a fast-growing software development agency with a strong expertise
+                        in the most relevant and innovative programming languages, frameworks, libraries and tools.
                     </Subtitle>
                 </MyContainer>
             </Section>
@@ -150,7 +153,7 @@ const Services: FC = () => {
                                     type = 'Product development'
                                 />
                             }
-                            secondTitle = { <p><GreenText>Product </GreenText><br />develop</p> }
+                            secondTitle = { <p><GreenText>Product development</GreenText><br />and support</p> }
                             variantCard = 'transparent'>
                             Previous experience in creating an idea, development and support
                             of different solutions in the Medical and Telecommunication fields

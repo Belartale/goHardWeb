@@ -61,14 +61,6 @@ export const Nav: FC<PropTypesNav> = ({ fontSize, ...props }) => {
                 <MenuLink
                     fontSize = { fontSize }
                     navigate = { navigate }
-                    to = { book.pageFive }>
-                    Portfolio
-                </MenuLink>
-            </ListItem>
-            <ListItem>
-                <MenuLink
-                    fontSize = { fontSize }
-                    navigate = { navigate }
                     to = { book.pageSix }>
                     Vacancies
                 </MenuLink>

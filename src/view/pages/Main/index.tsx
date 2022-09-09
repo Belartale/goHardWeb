@@ -15,7 +15,6 @@ import { ContainerCenter,
 import { ErrorBoundary,
     MyCardWithBlurBackground,
     SmallCard,
-    SliderMainPage,
 } from '../../components';
 
 // Elements
@@ -29,7 +28,7 @@ import { ArrowsBottom,
 } from '../../elements';
 
 // Styles
-import { StrokeText } from './styles';
+import { ImagePortfolio, StrokeText } from './styles';
 
 // Images
 import laptop from '../../../assets/images/laptop.png';
@@ -265,7 +264,7 @@ const Main: FC = () => {
                                 xs = { 6 }>
                                 <SmallCard
                                     secondText = 'and support'
-                                    text = 'Product develop'>
+                                    text = 'Product development'>
                                     <ImagesServices
                                         size = 'sm'
                                         type = 'Product development'
@@ -346,7 +345,7 @@ const Main: FC = () => {
                         direction = 'column'>
                         <Grid item >
                             <TitleSecond>
-                                <Link to = { book.pageFive } >
+                                <Link>
                                     <UnderlineText>
                                         Portfolio
                                     </UnderlineText>
@@ -355,7 +354,7 @@ const Main: FC = () => {
                         </Grid>
                         <Grid
                             item
-                            sx = {{ mt: '50px', mb: '60px' }}>
+                            sx = {{ mt: '50px', mb: '40px' }}>
                             <Subtitle
                                 paragraph
                                 textAlign = { 'center' }>
@@ -364,17 +363,13 @@ const Main: FC = () => {
                                 and ideas, in order to achieve their business objectives.
                             </Subtitle>
                         </Grid>
-                        <Grid
-                            item
-                            sx = {{ mb: '60px' }}>
-                            <MyButton
-                                href = { book.pageFive }
-                                typebutton = 'lg clear'>
-                                Our works
-                            </MyButton>
-                        </Grid>
                         <Grid item>
-                            <SliderMainPage images = { images }/>
+                            <a href = { images[ 0 ].link }>
+                                <ImagePortfolio
+                                    alt = { images[ 0 ].alt }
+                                    src = { images[ 0 ].src }
+                                />
+                            </a>
                         </Grid>
                     </Grid>
                 </MyContainer>

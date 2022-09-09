@@ -10,7 +10,6 @@ import { Navigation } from 'swiper';
 
 // Styles
 import {
-    TextSlide,
     TitleSlide,
     Wrapper,
 } from './styles';
@@ -51,7 +50,7 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                     {images.map((element) => (
                         <SwiperSlide
                             key = { element.alt }>
-                            <Card>
+                            <Card sx = {{ minWidth: '300px' }}>
                                 <CardActionArea>
                                     <Box
                                         sx = {{
@@ -64,13 +63,11 @@ export const SliderTechnologiesPage: FC<PropTypes> = ({ images }) => {
                                         />
                                     </Box>
                                     <TitleSlide
+                                        style = {{ marginBottom: '0px' }}
                                         textAlign = { 'center' }
                                         variant = 'h3'>
                                         {element.title}
                                     </TitleSlide>
-                                    <TextSlide>
-                                        {element.text}
-                                    </TextSlide>
                                 </CardActionArea>
                             </Card>
                         </SwiperSlide>

@@ -3,6 +3,5 @@ export enum book {
     pageTwo = '/about-us',
     pageThree = '/our-services',
     pageFour = '/technologies',
-    pageFive = '/portfolio',
     pageSix = '/vacancies',
 }

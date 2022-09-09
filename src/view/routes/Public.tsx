@@ -7,7 +7,6 @@ import { book } from '.';
 import {
     About,
     Main,
-    Portfolio,
     Services,
     Technologies,
     Vacancies,
@@ -30,10 +29,6 @@ export const Public: FC = () => {
         {
             path:    book.pageFour,
             element: <Technologies />,
-        },
-        {
-            path:    book.pageFive,
-            element: <Portfolio />,
         },
         {
             path:    book.pageSix,

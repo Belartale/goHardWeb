@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { styled, Box, BoxProps } from '@mui/material';
 
 interface TypeProps extends BoxProps {
-    to: string
+    to?: string
 }
 
 export const Container = styled(Box, {})`
@@ -17,7 +17,7 @@ export const Link: FC<TypeProps> = ({ to, children, ...props }) => {
     return (
         <Container
             { ...props }
-            onClick = { () => navigate(to) }>
+            onClick = { () => to && navigate(to) }>
             {children}
         </Container>
     );
