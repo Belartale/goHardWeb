@@ -1,6 +1,7 @@
 {
     "name": "boilerplate-frontend",
     "version": "5.0.0",
+    "home": "http://gohard.team",
     "description": "boilerplate",
     "author": "arziburst@gmail.com",
     "repository": {

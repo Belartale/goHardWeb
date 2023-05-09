@@ -13,14 +13,17 @@ export const BoxWithTopBorder = styled(Box, {})(({ theme }) => ({
     width:     '100%',
 }));
 
+export const ContainerContact = styled(Box, {})`
+    padding-bottom: 15px;
+    width:   100%;
+`;
 
-export const MyTypographyParagraph  = styled(Typography, {})(({ theme }) => ({
-    padding:    '15px 0px',
-    width:      '100%',
+export const MyTypographyParagraph  = styled('p', {})(({ theme }) => ({
+    padding:    '5px 0px',
     fontSize:   theme.fonts.size[ 200 ],
     fontFamily: 'Nunito',
-    fontWeight: 300,
-    color:      theme.colors.grey[ 50 ],
+    fontWeight: 700,
+    color:      theme.colors.primary[ 50 ],
 
     [ theme.breakpoints.down('md') ]: {
         '&': {

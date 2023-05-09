@@ -83,16 +83,34 @@ export const Footer: FC = () => {
                     <Grid
                         item
                         md = { 6 }
+                        sx = {{
+                            display:        'flex',
+                            flexDirection:  'column',
+                            justifyContent: 'space-between',
+                        }}
                         xs = { 12 } >
-                        <Box sx = {{ display: { xs: 'flex', md: 'block' }, justifyContent: 'center' }}>
-                            <img
-                                alt = 'Image logo'
-                                src = { imageLogo }
-                            />
+                        <Box sx = {{ width: '100%' }}>
+                            <Box sx = {{ display: { xs: 'flex', md: 'block' }, justifyContent: 'center' }}>
+                                <img
+                                    alt = 'Image logo'
+                                    src = { imageLogo }
+                                />
+                            </Box>
+                            <S.BoxWithTopBorder>
+                                <ContactBar size = 'sm' />
+                            </S.BoxWithTopBorder>
                         </Box>
-                        <S.BoxWithTopBorder>
-                            <ContactBar size = 'sm' />
-                        </S.BoxWithTopBorder>
+                        <S.ContainerContact>
+                            <S.MyTypographyParagraph>
+                                Softpro LLC
+                            </S.MyTypographyParagraph>
+                            <S.MyTypographyParagraph>
+                                12A Metalurgiv avenue, Zaporizhia, 69006 Ukraine
+                            </S.MyTypographyParagraph>
+                            <S.MyTypographyParagraph>
+                                USREOU number 42816295
+                            </S.MyTypographyParagraph>
+                        </S.ContainerContact>
                     </Grid>
 
                     <Grid
